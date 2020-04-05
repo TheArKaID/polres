@@ -10,11 +10,11 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/"><span class="fa fa-arrow-left"></span>Homepage</a>
+        <a class="navbar-brand" href="/">Homepage</a>
     </nav>
     <nav class="navbar navbar-light bg-light mb-3">
 
-        
+
     </nav>
     @yield('content')
 
