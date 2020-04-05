@@ -18,7 +18,7 @@
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th style="width: 40px">No</th>
                             <th>Judul</th>
                             <th style="width: 500px">Deskripsi</th>
                             <th style="width: 200px">Gambar</th>

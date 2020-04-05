@@ -59,6 +59,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/banner/', "AdminController@banner");
     
     Route::get('/admin/banner/tambah', "AdminController@tambahBanner");
+
+    Route::post('/admin/banner/prosestambah', "AdminController@prosesTambahBanner");
     
     Route::get('/admin/banner/ubah', function () {
         return view('pages.admin.banner.edit');
