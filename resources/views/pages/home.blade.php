@@ -35,6 +35,30 @@ Polrestabes Yogyakarta
                 </div>
             </div>
         </div>
+        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                           <h3>Polisi Jaya!</h3>
+                            <p>Pelatihan wajib militer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                           <h3>Polisi Jaya!</h3>
+                            <p>Pelatihan wajib militer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <!-- slider_area_end -->
