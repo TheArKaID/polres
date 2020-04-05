@@ -20,7 +20,7 @@ body {
 }
 
 .logo-img a img {
-    width: 90px;
+    width: 85px;
 }
 
 .img {
@@ -778,6 +778,7 @@ h3 {
 }
 
 .header-area .main-header-area .main-menu ul li a {
+    text-decoration: none;
     color: #fff;
     font-size: 16px;
     text-transform: capitalize;

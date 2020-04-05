@@ -9,24 +9,22 @@
                              <nav>
                                  <ul id="navigation">
                                      <li><a class="active" href="{{url('/')}}">beranda</a></li>
-                                     <li><a href="#">profil</a></li>
+                                     <li><a href="#">profil <i class="ti-angle-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="{{url('/pengaduan')}}">Tupoksi</a></li>
+                                            <li><a href="{{url('#')}}">Personil</a></li>
+                                            <li><a href="{{url('/galeri/galeri-all')}}">galeri</a></li>
+                                            <li><a href="{{url('/berita/berita-1')}}">berita</a></li>
+                                        </ul>
+                                    </li>
                                      <li><a href="#">polsek</a></li>
                                      <li><a href="#">pelayanan <i class="ti-angle-down"></i></a>
                                          <ul class="submenu">
                                              <li><a href="{{url('/pelayanan/pelayanan-all')}}">Semua Pelayanan</a></li>
                                              <li><a href="{{url('/pengaduan')}}">Pengaduan</a></li>
                                              <li><a href="{{url('/pengaduan/cek-status')}}">Cek Pengaduan</a></li>
-
                                          </ul>
                                      </li>
-                                     <li><a href="#">tupoksi <i class="ti-angle-down"></i></a>
-                                         <ul class="submenu">
-                                             <li><a href="elements.html">elements</a></li>
-                                         </ul>
-                                     </li>
-                                     <li><a href="{{url('/berita/berita-1')}}">berita</a></li>
-                                     <li><a href="{{url('/galeri/galeri-all')}}">galeri</a></li>
-                                     <li><a href="#">personil</a></li>
                                  </ul>
                              </nav>
                          </div>
