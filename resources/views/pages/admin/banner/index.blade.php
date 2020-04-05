@@ -27,27 +27,50 @@
                     </thead>
                     <tbody>
                         @php
-                            $row = 1;
+                        $row = 1;
                         @endphp
                         @foreach ($banner as $b)
-                            <tr>
-                                <td>{{$row}}</td>
-                                <td>{{$b->judul}}</td>
-                                <td>{{$b->deskripsi}}</td>
-                                <td>
-                                    <img src="{{url($b->gambar)}}" alt="" style="width: 200px" class="img-thumbnail" />
-                                </td>
-                                <td>
-                                    <a href="/admin/banner/ubah/{{$b->id}}" class="btn btn-info">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </a>
-                                    <form action="/admin/banner/hapus/{{$b->id}}" class="d-inline">
-                                        <button class="btn btn-danger">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>{{$row}}</td>
+                            <td>{{$b->judul}}</td>
+                            <td>{{$b->deskripsi}}</td>
+                            <td>
+                                <img src="{{url($b->gambar)}}" alt="" style="width: 200px" class="img-thumbnail" />
+                            </td>
+                            <td>
+                                <a href="/admin/banner/ubah/{{$b->id}}" class="btn btn-info">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <form class="d-inline">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Hapus Banner</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Apakah anda yakin menghapus file ini?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <a href="/admin/banner/hapus/{{$b->id}}" type="button" class="btn btn-danger">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>

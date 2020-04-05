@@ -42,11 +42,6 @@
                                 <a href="{{url('/admin/pengaduan/ubah')}}" class="btn btn-primary">
                                     <i class="fas fa-comments"></i>
                                 </a>
-                                <form action="" class="d-inline">
-                                    <button class="btn btn-danger">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </form>
                             </td>
                         </tr>
 
