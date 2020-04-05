@@ -13,4 +13,9 @@ class AdminController extends Controller
             'banner' => $banner
         ]);
     }
+
+    public function tambahBanner()
+    {
+        return view('pages.admin.banner.create');
+    }
 }
