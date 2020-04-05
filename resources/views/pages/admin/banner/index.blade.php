@@ -8,7 +8,7 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Banner</h1>
         <a href="{{url('/admin/banner/tambah')}}" class="btn btn-sm btn-primary shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Galeri
+            <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Banner
         </a>
     </div>
 
@@ -19,29 +19,36 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Gambar</th>
-                            <th>Action</th>
+                            <th>Judul</th>
+                            <th style="width: 500px">Deskripsi</th>
+                            <th style="width: 200px">Gambar</th>
+                            <th style="width: 150px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <img src="{{url('frontend/img/galeri/polisi-9.jpg')}}" alt="" style="width: 150px"
-                                    class="img-thumbnail" />
-                            </td>
-                            <td>
-                                <a href="{{url('/admin/banner/ubah')}}" class="btn btn-info">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </a>
-                                <form action="" class="d-inline">
-                                    <button class="btn btn-danger">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-
+                        @php
+                            $row = 1;
+                        @endphp
+                        @foreach ($banner as $b)
+                            <tr>
+                                <td>{{$row}}</td>
+                                <td>{{$b->judul}}</td>
+                                <td>{{$b->deskripsi}}</td>
+                                <td>
+                                    <img src="{{url($b->gambar)}}" alt="" style="width: 200px" class="img-thumbnail" />
+                                </td>
+                                <td>
+                                    <a href="/admin/banner/ubah/{{$b->id}}" class="btn btn-info">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    <form action="/admin/banner/hapus/{{$b->id}}" class="d-inline">
+                                        <button class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

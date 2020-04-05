@@ -51,10 +51,21 @@ Route::get('/pengaduan/cek-status', function () {
 
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
+
     Route::get('/admin', function () {
         return view('pages.admin.dashboard');
     })->name('admin');
     
+    Route::get('/admin/banner/', "AdminController@banner");
+    
+    Route::get('/admin/banner/tambah', function () {
+        return view('pages.admin.banner.create');
+    });
+    
+    Route::get('/admin/banner/ubah', function () {
+        return view('pages.admin.banner.edit');
+    });
+
     Route::get('/admin/galeri/', function () {
         return view('pages.admin.galeri.index');
     });
@@ -109,18 +120,6 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('/admin/pengaduan/ubah', function () {
         return view('pages.admin.pengaduan.reply');
-    });
-    
-    Route::get('/admin/banner/', function () {
-        return view('pages.admin.banner.index');
-    });
-    
-    Route::get('/admin/banner/tambah', function () {
-        return view('pages.admin.banner.create');
-    });
-    
-    Route::get('/admin/banner/ubah', function () {
-        return view('pages.admin.banner.edit');
     });
     
     Route::get('/home', 'HomeController@index')->name('home');
