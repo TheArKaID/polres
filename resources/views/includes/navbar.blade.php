@@ -38,10 +38,10 @@
                      </div>
                      <div class="col-xl-5 col-lg-4 d-none d-lg-block">
                          <div class="book_room">
-                             <li><a style="color: white" href="{{url('/pengaduan/cek-status')}}">cek pengaduan</a></li>
+                             <li><a style="color: white" href="{{url('/pengaduan/cek-status')}}">Cek Pengaduan</a></li>
 
-                             <div class="book_btn d-none d-lg-block">
-                                 <li><a href="{{url('/pengaduan')}}">Pengaduan</a></li>
+                             <div class="d-none d-lg-block">
+                                 <li><a class="btn bg-warning px-4 py-2 ml-4 text-white" href="{{url('/pengaduan')}}">Pengaduan</a></li>
                              </div>
                          </div>
                      </div>

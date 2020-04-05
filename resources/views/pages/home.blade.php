@@ -15,10 +15,10 @@ Polrestabes Yogyakarta
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        {{-- <div class="slider_text text-center">
-                            <h3>Montana Resort</h3>
-                            <p>Unlock to enjoy the view of Martine</p>
-                        </div> --}}
+                        <div class="slider_text text-center">
+                            <h3>Polisi Jaya!</h3>
+                            <p>Pelatihan wajib militer</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,10 +27,10 @@ Polrestabes Yogyakarta
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        {{-- <div class="slider_text text-center">
-                            <h3>Life is Beautiful</h3>
-                            <p>Unlock to enjoy the view of Martine</p>
-                        </div> --}}
+                        <div class="slider_text text-center">
+                            <h3>Polisi Jaya!</h3>
+                            <p>Pelatihan wajib militer</p>
+                        </div>
                     </div>
                 </div>
             </div>

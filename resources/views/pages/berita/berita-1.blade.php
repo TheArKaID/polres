@@ -156,7 +156,7 @@ Polrestabes Yogyakarta
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget search_widget">
-                            <form action="#">
+                            <form action="#" style="text-align: center;">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder='Search Keyword'
@@ -167,8 +167,8 @@ Polrestabes Yogyakarta
                                         </div>
                                     </div>
                                 </div>
-                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                    type="submit" style="background: #009DFF">Search</button>
+                                <button class="btn btn-warning text-white px-5"
+                                    type="submit">Search</button>
                             </form>
                         </aside>
                     </div>

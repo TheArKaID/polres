@@ -74,7 +74,7 @@ Polrestabes Yogyakarta
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                        <button type="submit" class="btn btn-warning px-5 py-3 text-white">Send Message</button>
                     </div>
                 </form>
             </div>
