@@ -11,54 +11,20 @@ Polrestabes Yogyakarta
 <!-- slider_area_start -->
 <div class="slider_area">
     <div class="slider_active owl-carousel">
-        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="slider_text text-center">
-                            <h3>Polisi Jaya!</h3>
-                            <p>Pelatihan wajib militer</p>
+        @foreach ($banner as $b)
+            <div class="single_slider d-flex align-items-center justify-content-center" style="background-image: url({{$b->gambar}}) !important">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>{{$b->judul}}</h3>
+                                <p>{{$b->deskripsi}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="slider_text text-center">
-                            <h3>Polisi Jaya!</h3>
-                            <p>Pelatihan wajib militer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="slider_text text-center">
-                           <h3>Polisi Jaya!</h3>
-                            <p>Pelatihan wajib militer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="slider_text text-center">
-                           <h3>Polisi Jaya!</h3>
-                            <p>Pelatihan wajib militer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <!-- slider_area_end -->
