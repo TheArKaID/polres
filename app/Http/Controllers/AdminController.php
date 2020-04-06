@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Banner;
 class AdminController extends Controller
 {
     public function banner()
@@ -42,5 +42,24 @@ class AdminController extends Controller
         $banner->save();
 
         return redirect('/admin/banner')->with("Berhasil", "Banner Berhasil Ditambahkan!");
+    }
+
+    public function edit(Banner $banner)
+    {
+        return view('pages.admin.banner.edit', compact("banner"));
+    }
+
+    public function prosesEditBanner(Request $request)
+    {
+        $this->validate($request,[
+            'judul' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        $input=$request->all();
+        $banner = \App\Banner::find($input['id']);
+        $banner->update($input);
+
+        return redirect('/admin/banner')->with("Berhasil", "Banner Berhasil Diubah!");
     }
 }

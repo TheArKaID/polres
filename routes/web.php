@@ -57,14 +57,10 @@ Route::group(['middleware' => ['auth']], function () {
     })->name('admin');
     
     Route::get('/admin/banner/', "AdminController@banner");
-    
     Route::get('/admin/banner/tambah', "AdminController@tambahBanner");
-
     Route::post('/admin/banner/prosestambah', "AdminController@prosesTambahBanner");
-    
-    Route::get('/admin/banner/ubah', function () {
-        return view('pages.admin.banner.edit');
-    });
+    Route::get('/admin/banner/ubah/{banner}', "AdminController@edit");
+    Route::post('/admin/banner/prosesedit', "AdminController@prosesEditBanner");
 
     Route::get('/admin/galeri/', function () {
         return view('pages.admin.galeri.index');
