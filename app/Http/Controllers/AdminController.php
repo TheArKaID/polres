@@ -27,7 +27,8 @@ class AdminController extends Controller
             'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
         ]);
         
-        $id = \App\Banner::all()->last()->id;
+        
+        $id = \App\Banner::all()->last()!=NULL ? \App\Banner::all()->last()->id : 0;
         $id++;
 
         $input=$request->all();
