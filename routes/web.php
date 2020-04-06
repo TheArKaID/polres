@@ -61,6 +61,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin/banner/prosestambah', "AdminController@prosesTambahBanner");
     Route::get('/admin/banner/ubah/{banner}', "AdminController@edit");
     Route::post('/admin/banner/prosesedit', "AdminController@prosesEditBanner");
+    Route::get('/admin/banner/hapus/{id}', "AdminController@prosesHapusBanner");
 
     Route::get('/admin/galeri/', function () {
         return view('pages.admin.galeri.index');

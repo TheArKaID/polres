@@ -41,36 +41,14 @@
                                 <a href="/admin/banner/ubah/{{$b->id}}" class="btn btn-info">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
-                                <form class="d-inline">
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Hapus Banner</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Apakah anda yakin menghapus file ini?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
-                                                    <a href="/admin/banner/hapus/{{$b->id}}" type="button" class="btn btn-danger">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" onclick="hapus('{{$b->id}}')">
+                                    <i class="fa fa-trash"></i>
+                                </button>
                             </td>
                         </tr>
+                        @php
+                            $row++;
+                        @endphp
                         @endforeach
                     </tbody>
                 </table>
@@ -78,5 +56,34 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Hapus Banner</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Apakah anda yakin menghapus banner ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                    data-dismiss="modal">Close</button>
+                <a id="deleteButton" href="#" type="button" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- /.container-fluid -->
+<script>
+    function hapus(id) {
+        var deleteButton = document.getElementById('deleteButton');
+        deleteButton.href = "/admin/banner/hapus/"+id;
+    }
+</script>
 @endsection

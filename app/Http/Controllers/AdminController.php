@@ -62,4 +62,13 @@ class AdminController extends Controller
 
         return redirect('/admin/banner')->with("Berhasil", "Banner Berhasil Diubah!");
     }
+
+    public function prosesHapusBanner($id)
+    {
+        $banner = \App\Banner::find($id);
+        unlink($banner->gambar);
+        $banner->delete();
+        
+        return redirect('/admin/banner')->with("Berhasil", "Banner Berhasil Dihapus!");
+    }
 }
