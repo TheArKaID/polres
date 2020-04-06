@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', "FrontController@index");
 
 Route::get('/pelayanan/pelayanan-sim', function () {
     return view('pages.pelayanan.pelayanan-sim');
