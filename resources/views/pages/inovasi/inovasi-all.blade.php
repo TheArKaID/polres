@@ -18,101 +18,53 @@ Polrestabes Yogyakarta
     <div class="features_room bg-light mb-100" style="padding-top: 0px;">
         <div class="rooms_here">
             <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="{{url('frontend/img/inovasi/polisi-3.jpg')}}" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Superior Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
+            <div class="room_thumb">
+                <img src="{{url('frontend/img/inovasi/polisi-3.jpg')}}" alt="">
+                <div class="room_heading d-flex justify-content-between align-items-center">
+                    <div class="room_heading_inner">
+                        <span>Inovasi</span>
+                        <h3>Polisi Kerja Sama</h3>
                     </div>
+                    <a href="{{url('/inovasi/inovasi-1')}}" class="line-button">Selengkapnya</a>
                 </div>
             </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="{{url('frontend/img/inovasi/polisi-4.jpg')}}" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Deluxe Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
+        </div>
+        <div class="single_rooms">
+            <div class="room_thumb">
+                <img src="{{url('frontend/img/inovasi/polisi-4.jpg')}}" alt="">
+                <div class="room_heading d-flex justify-content-between align-items-center">
+                    <div class="room_heading_inner">
+                        <span>Inovasi</span>
+                        <h3>Polisi Kerja Sama</h3>
                     </div>
+                    <a href="#" class="line-button">Selengkapnya</a>
                 </div>
             </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="{{url('frontend/img/inovasi/polisi-5.jpg')}}" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Signature Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
+        </div>
+        <div class="single_rooms">
+            <div class="room_thumb">
+                <img src="{{url('frontend/img/inovasi/polisi-5.jpg')}}" alt="">
+                <div class="room_heading d-flex justify-content-between align-items-center">
+                    <div class="room_heading_inner">
+                        <span>Inovasi</span>
+                        <h3>Polisi Kerja Sama</h3>
                     </div>
+                    <a href="#" class="line-button">Selengkapnya</a>
                 </div>
             </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="{{url('frontend/img/inovasi/polisi-6.jpeg')}}" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Couple Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
+        </div>
+        <div class="single_rooms">
+            <div class="room_thumb">
+                <img src="{{url('frontend/img/inovasi/polisi-6.jpeg')}}" alt="">
+                <div class="room_heading d-flex justify-content-between align-items-center">
+                    <div class="room_heading_inner">
+                        <span>Inovasi</span>
+                        <h3>Polisi Kerja Sama</h3>
                     </div>
+                    <a href="#" class="line-button">Selengkapnya</a>
                 </div>
             </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="{{url('frontend/img/inovasi/polisi-3.jpg')}}" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Superior Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="{{url('frontend/img/inovasi/polisi-4.jpg')}}" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Deluxe Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="{{url('frontend/img/inovasi/polisi-5.jpg')}}" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Signature Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="single_rooms">
-                <div class="room_thumb">
-                    <img src="{{url('frontend/img/inovasi/polisi-6.jpeg')}}" alt="">
-                    <div class="room_heading d-flex justify-content-between align-items-center">
-                        <div class="room_heading_inner">
-                            <span>From $250/night</span>
-                            <h3>Couple Room</h3>
-                        </div>
-                        <a href="#" class="line-button">book now</a>
-                    </div>
-                </div>
-            </div>
+        </div>
         </div>
     </div>
            <nav class="blog-pagination justify-content-center d-flex mb-100">

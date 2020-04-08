@@ -14,6 +14,7 @@
                                             <li><a href="{{url('/pengaduan')}}">Tupoksi</a></li>
                                             <li><a href="{{url('#')}}">Personil</a></li>
                                             <li><a href="{{url('/galeri/galeri-all')}}">galeri</a></li>
+                                            <li><a href="{{url('/inovasi/inovasi-all')}}">inovasi</a></li>
                                             <li><a href="{{url('/berita/berita-1')}}">berita</a></li>
                                         </ul>
                                     </li>
