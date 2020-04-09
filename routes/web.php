@@ -70,6 +70,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin/pelayanan/prosesedit',"AdminController@prosesEditPelayanan");
     Route::get('/admin/pelayanan/hapus/{id}', "AdminController@prosesHapusPelayanan");
 
+    // Inovasi
+    Route::get('/admin/inovasi/', "AdminController@inovasi");
+    Route::get('/admin/inovasi/tambah', "AdminController@tambahInovasi");
+    Route::post('/admin/inovasi/prosestambah', "AdminController@prosesTambahInovasi");
+    Route::get('/admin/inovasi/ubah', function () {
+        return view('pages.admin.inovasi.edit');
+    });
+    
     Route::get('/admin/galeri/', function () {
         return view('pages.admin.galeri.index');
     });
@@ -82,17 +90,6 @@ Route::group(['middleware' => ['auth']], function () {
         return view('pages.admin.galeri.edit');
     });
     
-    Route::get('/admin/inovasi/tambah', function () {
-        return view('pages.admin.inovasi.create');
-    });
-    
-    Route::get('/admin/inovasi/', function () {
-        return view('pages.admin.inovasi.index');
-    });
-    
-    Route::get('/admin/inovasi/ubah', function () {
-        return view('pages.admin.inovasi.edit');
-    });
     
     Route::get('/admin/berita/tambah', function () {
         return view('pages.admin.berita.create');

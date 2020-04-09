@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Banner;
 use App\Pelayanan;
+use App\Inovasi;
 
 class AdminController extends Controller
 {
@@ -142,5 +143,40 @@ class AdminController extends Controller
         $pelayanan->delete();
         
         return redirect('/admin/pelayanan')->with("Berhasil", "Pelayanan Berhasil Dihapus!");
+    }
+
+    public function inovasi()
+    {
+        return view('pages.admin.inovasi.index');
+    }
+
+    public function tambahInovasi()
+    {
+        return view('pages.admin.inovasi.create');
+    }
+
+    public function prosesTambahInovasi(Request $request)
+    {
+        $this->validate($request, [
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
+        ]);
+
+        $id = Inovasi::all()->last()!=NULL ? Inovasi::all()->last()->id : 0;
+        $id++;
+
+        $file = $request->file("gambar");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $name = "inovasi-".$id.".".$ext;
+        $file->move('frontend/img/inovasi', $name);
+
+        $inovasi = new Inovasi;
+        $inovasi->judul = $request["judul"];
+        $inovasi->deskripsi = $request["deskripsi"];
+        $inovasi->gambar = $name;
+        $inovasi->save();
+
+        return redirect('/admin/inovasi')->with("Berhasil", "Inovasi Berhasil Ditambahkan!");
     }
 }
