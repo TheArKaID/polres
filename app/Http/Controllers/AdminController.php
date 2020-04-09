@@ -216,7 +216,10 @@ class AdminController extends Controller
 
     public function galeri()
     {
-        return view('pages.admin.galeri.index');
+        $galeri = Galeri::all();
+        return view('pages.admin.galeri.index', [
+            "galeri" => $galeri
+        ]);
     }
 
     public function tambahGaleri()
@@ -243,5 +246,14 @@ class AdminController extends Controller
         $galeri->save();
 
         return redirect('/admin/galeri')->with("Berhasil", "Galeri Berhasil Ditambahkan!");
+    }
+
+    public function prosesHapusGaleri($id)
+    {
+        $galeri = Galeri::find($id);
+        unlink('frontend/img/galeri/'.$galeri->gambar);
+        $galeri->delete();
+        
+        return redirect('/admin/galeri')->with("Berhasil", "Galeri Berhasil Dihapus!");
     }
 }

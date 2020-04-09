@@ -82,6 +82,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/galeri/', "AdminController@galeri");
     Route::get('/admin/galeri/tambah', "AdminController@tambahGaleri");
     Route::post('/admin/galeri/prosestambah', "AdminController@prosesTambahGaleri");
+    Route::get('/admin/galeri/hapus/{id}', "AdminController@prosesHapusGaleri");
     
     Route::get('/admin/galeri/ubah', function () {
         return view('pages.admin.galeri.edit');
