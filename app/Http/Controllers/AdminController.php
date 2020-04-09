@@ -260,7 +260,10 @@ class AdminController extends Controller
 
     public function berita()
     {
-        return view('pages.admin.berita.index');
+        $berita = Berita::all();
+        return view('pages.admin.berita.index', [
+            "berita" => $berita
+        ]);
     }
 
     public function tambahBerita()
