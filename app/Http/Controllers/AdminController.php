@@ -70,7 +70,7 @@ class AdminController extends Controller
     public function prosesHapusBanner($id)
     {
         $banner = Banner::find($id);
-        unlink($banner->gambar);
+        unlink('frontend/img/banner/'.$banner->gambar);
         $banner->delete();
         
         return redirect('/admin/banner')->with("Berhasil", "Banner Berhasil Dihapus!");
@@ -133,5 +133,14 @@ class AdminController extends Controller
         $pelayanan->update($input);
 
         return redirect('/admin/pelayanan')->with("Berhasil", "Pelayanan Berhasil Diubah!");
+    }
+
+    public function prosesHapusPelayanan($id)
+    {
+        $pelayanan = Pelayanan::find($id);
+        unlink('frontend/img/pelayanan/'.$pelayanan->gambar);
+        $pelayanan->delete();
+        
+        return redirect('/admin/pelayanan')->with("Berhasil", "Pelayanan Berhasil Dihapus!");
     }
 }

@@ -68,6 +68,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin/pelayanan/prosestambah', "AdminController@prosesTambahPelayanan");
     Route::get('/admin/pelayanan/ubah/{pelayanan}', "AdminController@editPelayanan");
     Route::post('/admin/pelayanan/prosesedit',"AdminController@prosesEditPelayanan");
+    Route::get('/admin/pelayanan/hapus/{id}', "AdminController@prosesHapusPelayanan");
 
     Route::get('/admin/galeri/', function () {
         return view('pages.admin.galeri.index');
