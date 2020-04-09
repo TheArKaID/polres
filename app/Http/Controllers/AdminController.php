@@ -7,6 +7,7 @@ use App\Banner;
 use App\Pelayanan;
 use App\Inovasi;
 use App\Galeri;
+use App\Berita;
 
 class AdminController extends Controller
 {
@@ -255,5 +256,40 @@ class AdminController extends Controller
         $galeri->delete();
         
         return redirect('/admin/galeri')->with("Berhasil", "Galeri Berhasil Dihapus!");
+    }
+
+    public function berita()
+    {
+        return view('pages.admin.berita.index');
+    }
+
+    public function tambahBerita()
+    {
+        return view('pages.admin.berita.create');
+    }
+
+    public function prosesTambahBerita(Request $request)
+    {
+        $this->validate($request, [
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
+        ]);
+
+        $id = Berita::all()->last()!=NULL ? Berita::all()->last()->id : 0;
+        $id++;
+
+        $file = $request->file("gambar");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $name = "berita-".$id.".".$ext;
+        $file->move('frontend/img/berita', $name);
+
+        $berita = new Berita;
+        $berita->judul = $request["judul"];
+        $berita->deskripsi = $request["deskripsi"];
+        $berita->gambar = $name;
+        $berita->save();
+
+        return redirect('/admin/berita')->with("Berhasil", "Berita Berhasil Ditambahkan!");
     }
 }

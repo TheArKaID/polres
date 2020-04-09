@@ -84,18 +84,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin/galeri/prosestambah', "AdminController@prosesTambahGaleri");
     Route::get('/admin/galeri/hapus/{id}', "AdminController@prosesHapusGaleri");
     
-    Route::get('/admin/galeri/ubah', function () {
-        return view('pages.admin.galeri.edit');
-    });
-    
-    
-    Route::get('/admin/berita/tambah', function () {
-        return view('pages.admin.berita.create');
-    });
-    
-    Route::get('/admin/berita/', function () {
-        return view('pages.admin.berita.index');
-    });
+    // Berita
+    Route::get('/admin/berita/', "AdminController@berita");
+    Route::get('/admin/berita/tambah', "AdminController@tambahBerita");
+    Route::post('/admin/berita/prosestambah', "AdminController@prosesTambahBerita");
     
     Route::get('/admin/berita/ubah', function () {
         return view('pages.admin.berita.edit');
