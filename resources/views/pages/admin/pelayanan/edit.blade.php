@@ -13,19 +13,13 @@
     <div class="card shadow">
         <div class="card-body">
             <form action="">
-                 <div class="form-group">
-                    <label for="id" class="bold">Id</label>
-                </div>
-                <div class="form-group">
-                    <label for="id">1</label>
-                </div>
                 <div class="form-group">
                     <label for="judul" class="bold">Judul</label>
                     <input type="text" class="form-control" name="judul" placeholder="Judul" value="">
                 </div>
                 <div class="form-group">
                     <label for="deskripsi" class="bold">Deskripsi</label>
-                    <textarea name="deskripsi" rows="10" class="d-block w-100 form-control"></textarea>
+                    <textarea name="deskripsi" rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="gambar" class="bold">Gambar</label>

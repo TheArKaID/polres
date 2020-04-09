@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label for="deskripsi" class="bold">Deskripsi</label>
-                    <textarea name="deskripsi" rows="10" class="d-block w-100 form-control"></textarea>
+                    <textarea name="deskripsi" rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="image" class="bold">Image</label>
