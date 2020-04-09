@@ -58,7 +58,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/banner/', "AdminController@banner");
     Route::get('/admin/banner/tambah', "AdminController@tambahBanner");
     Route::post('/admin/banner/prosestambah', "AdminController@prosesTambahBanner");
-    Route::get('/admin/banner/ubah/{banner}', "AdminController@edit");
+    Route::get('/admin/banner/ubah/{banner}', "AdminController@editBanner");
     Route::post('/admin/banner/prosesedit', "AdminController@prosesEditBanner");
     Route::get('/admin/banner/hapus/{id}', "AdminController@prosesHapusBanner");
 
@@ -66,10 +66,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pelayanan/', "AdminController@pelayanan");
     Route::get('/admin/pelayanan/tambah', "AdminController@tambahPelayanan");
     Route::post('/admin/pelayanan/prosestambah', "AdminController@prosesTambahPelayanan");
-    Route::get('/admin/pelayanan/ubah', function () {
-        return view('pages.admin.pelayanan.edit');
-    });
-    
+    Route::get('/admin/pelayanan/ubah/{pelayanan}', "AdminController@editPelayanan");
+    Route::post('/admin/pelayanan/prosesedit',"AdminController@prosesEditPelayanan");
 
     Route::get('/admin/galeri/', function () {
         return view('pages.admin.galeri.index');

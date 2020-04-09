@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Banner;
+use App\Pelayanan;
+
 class AdminController extends Controller
 {
     public function banner()
     {
-        $banner = \App\Banner::all();
+        $banner = Banner::all();
         return view("pages.admin.banner.index", [
             'banner' => $banner
         ]);
@@ -28,7 +30,7 @@ class AdminController extends Controller
         ]);
         
         
-        $id = \App\Banner::all()->last()!=NULL ? \App\Banner::all()->last()->id : 0;
+        $id = Banner::all()->last()!=NULL ? Banner::all()->last()->id : 0;
         $id++;
 
         $input=$request->all();
@@ -37,7 +39,7 @@ class AdminController extends Controller
         $name = "banner-".$id.".".$ext;
         $files->move('frontend/img/banner/', $name);
         
-        $banner = new \App\Banner;
+        $banner = new Banner;
         $banner->judul = $input["judul"];
         $banner->deskripsi = $input["deskripsi"];
         $banner->gambar = $name;
@@ -46,7 +48,7 @@ class AdminController extends Controller
         return redirect('/admin/banner')->with("Berhasil", "Banner Berhasil Ditambahkan!");
     }
 
-    public function edit(Banner $banner)
+    public function editBanner(Banner $banner)
     {
         return view('pages.admin.banner.edit', compact("banner"));
     }
@@ -59,7 +61,7 @@ class AdminController extends Controller
         ]);
 
         $input=$request->all();
-        $banner = \App\Banner::find($input['id']);
+        $banner = Banner::find($input['id']);
         $banner->update($input);
 
         return redirect('/admin/banner')->with("Berhasil", "Banner Berhasil Diubah!");
@@ -67,7 +69,7 @@ class AdminController extends Controller
 
     public function prosesHapusBanner($id)
     {
-        $banner = \App\Banner::find($id);
+        $banner = Banner::find($id);
         unlink($banner->gambar);
         $banner->delete();
         
@@ -76,7 +78,7 @@ class AdminController extends Controller
 
     public function pelayanan()
     {       
-        $pelayanan = \App\Pelayanan::all();
+        $pelayanan = Pelayanan::all();
         return view('pages.admin.pelayanan.index',[
             'pelayanan' => $pelayanan
         ]);
@@ -94,8 +96,8 @@ class AdminController extends Controller
             'deskripsi' => 'required',
             'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
         ]);
-        
-        $id = \App\Pelayanan::all()->last()!=NULL ? \App\Pelayanan::all()->last()->id : 0;
+
+        $id = Pelayanan::all()->last()!=NULL ? Pelayanan::all()->last()->id : 0;
         $id++;
 
         $file = $request->file("gambar");
@@ -103,12 +105,33 @@ class AdminController extends Controller
         $name = "pelayanan-".$id.".".$ext;
         $file->move('frontend/img/pelayanan', $name);
 
-        $pelayanan = new \App\Pelayanan;
+        $pelayanan = new Pelayanan;
         $pelayanan->judul = $request["judul"];
         $pelayanan->deskripsi = $request["deskripsi"];
         $pelayanan->gambar = $name;
         $pelayanan->save();
 
         return redirect('/admin/pelayanan')->with("Berhasil", "Pelayanan Berhasil Ditambahkan!");
+    }
+
+    public function editPelayanan(Pelayanan $pelayanan)
+    {
+        return view('pages.admin.pelayanan.edit', [
+            "pelayanan" => $pelayanan
+        ]);
+    }
+
+    public function prosesEditPelayanan(Request $request)
+    {
+        $this->validate($request,[
+            'judul' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        $input=$request->all();
+        $pelayanan = Pelayanan::find($input['id']);
+        $pelayanan->update($input);
+
+        return redirect('/admin/pelayanan')->with("Berhasil", "Pelayanan Berhasil Diubah!");
     }
 }

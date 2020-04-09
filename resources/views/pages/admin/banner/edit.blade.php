@@ -19,7 +19,7 @@
     @endif
     <div class="card shadow">
         <div class="card-body">
-            <form action="/admin/banner/prosesedit" enctype="multipart/form-data" method="POST">
+            <form action="/admin/banner/prosesedit" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="judul" class="bold">Judul</label>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="image"  class="bold">Image</label>
-                    <img src="{{url($banner->gambar)}}" width="100%">
+                    <img src="{{url('frontend/img/banner/'.$banner->gambar)}}" width="100%">
                 </div>
                 <input type="hidden" name="id" value="{{$banner->id}}">
                 <button type="submit" class="btn btn-primary btn-block">

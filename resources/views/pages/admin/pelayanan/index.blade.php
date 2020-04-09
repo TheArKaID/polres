@@ -39,7 +39,7 @@
                                         class="img-thumbnail" />
                                 </td>
                                 <td>
-                                    <a href="{{url('/admin/pelayanan/ubah')}}" class="btn btn-info">
+                                    <a href="/admin/pelayanan/ubah/{{$p->id}}" class="btn btn-info">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
                                     <form class="d-inline">
