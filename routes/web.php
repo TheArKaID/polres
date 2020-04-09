@@ -78,13 +78,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin/inovasi/prosesedit', "AdminController@prosesEditInovasi");
     Route::get('/admin/inovasi/hapus/{id}', "AdminController@prosesHapusInovasi");
     
-    Route::get('/admin/galeri/', function () {
-        return view('pages.admin.galeri.index');
-    });
-    
-    Route::get('/admin/galeri/tambah', function () {
-        return view('pages.admin.galeri.create');
-    });
+    // Galeri
+    Route::get('/admin/galeri/', "AdminController@galeri");
+    Route::get('/admin/galeri/tambah', "AdminController@tambahGaleri");
+    Route::post('/admin/galeri/prosestambah', "AdminController@prosesTambahGaleri");
     
     Route::get('/admin/galeri/ubah', function () {
         return view('pages.admin.galeri.edit');

@@ -10,10 +10,11 @@
     </div>
     <div class="card shadow">
         <div class="card-body">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="/admin/galeri/prosestambah" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="image" class="bold">Image</label>
-                    <input type="file" class="form-control" name="image" placeholder="Image" class="form-control">
+                    <label for="gambar" class="bold">Gambar</label>
+                    <input type="file" class="form-control" name="gambar" placeholder="gambar" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     Simpan

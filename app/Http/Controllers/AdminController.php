@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Banner;
 use App\Pelayanan;
 use App\Inovasi;
+use App\Galeri;
 
 class AdminController extends Controller
 {
@@ -211,5 +212,36 @@ class AdminController extends Controller
         $inovasi->delete();
         
         return redirect('/admin/inovasi')->with("Berhasil", "Inovasi Berhasil Dihapus!");
+    }
+
+    public function galeri()
+    {
+        return view('pages.admin.galeri.index');
+    }
+
+    public function tambahGaleri()
+    {
+        return view('pages.admin.galeri.create');
+    }
+
+    public function prosesTambahGaleri(Request $request)
+    {
+        $this->validate($request, [
+            'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
+        ]);
+
+        $id = Galeri::all()->last()!=NULL ? Galeri::all()->last()->id : 0;
+        $id++;
+
+        $file = $request->file("gambar");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $name = "galeri-".$id.".".$ext;
+        $file->move('frontend/img/galeri', $name);
+
+        $galeri = new Galeri;
+        $galeri->gambar = $name;
+        $galeri->save();
+
+        return redirect('/admin/galeri')->with("Berhasil", "Galeri Berhasil Ditambahkan!");
     }
 }
