@@ -12,7 +12,8 @@
 
     <div class="card shadow">
         <div class="card-body">
-            <form action="">
+            <form action="/admin/pelayanan/prosestambah" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
                 <div class="form-group">
                     <label for="judul" class="bold">Judul</label>
                     <input type="text" class="form-control" name="judul" placeholder="Judul" value="">

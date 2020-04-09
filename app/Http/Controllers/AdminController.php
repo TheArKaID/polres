@@ -34,12 +34,13 @@ class AdminController extends Controller
         $input=$request->all();
         $files=$request->file('gambar');
         $ext = pathinfo($files->getClientOriginalName(), PATHINFO_EXTENSION);
-        $files->move('frontend/img/banner/', "banner-".$id.".".$ext);
+        $name = "banner-".$id.".".$ext;
+        $files->move('frontend/img/banner/', $name);
         
         $banner = new \App\Banner;
         $banner->judul = $input["judul"];
         $banner->deskripsi = $input["deskripsi"];
-        $banner->gambar = "frontend/img/banner/banner-".$id.".".$ext;
+        $banner->gambar = $name;
         $banner->save();
 
         return redirect('/admin/banner')->with("Berhasil", "Banner Berhasil Ditambahkan!");
@@ -71,5 +72,43 @@ class AdminController extends Controller
         $banner->delete();
         
         return redirect('/admin/banner')->with("Berhasil", "Banner Berhasil Dihapus!");
+    }
+
+    public function pelayanan()
+    {       
+        $pelayanan = \App\Pelayanan::all();
+        return view('pages.admin.pelayanan.index',[
+            'pelayanan' => $pelayanan
+        ]);
+    }
+
+    public function tambahPelayanan()
+    {
+        return view('pages.admin.pelayanan.create');
+    }
+
+    public function prosesTambahPelayanan(Request $request)
+    {
+        $this->validate($request, [
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
+        ]);
+        
+        $id = \App\Pelayanan::all()->last()!=NULL ? \App\Pelayanan::all()->last()->id : 0;
+        $id++;
+
+        $file = $request->file("gambar");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $name = "pelayanan-".$id.".".$ext;
+        $file->move('frontend/img/pelayanan', $name);
+
+        $pelayanan = new \App\Pelayanan;
+        $pelayanan->judul = $request["judul"];
+        $pelayanan->deskripsi = $request["deskripsi"];
+        $pelayanan->gambar = $name;
+        $pelayanan->save();
+
+        return redirect('/admin/pelayanan')->with("Berhasil", "Pelayanan Berhasil Ditambahkan!");
     }
 }

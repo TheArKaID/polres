@@ -54,12 +54,22 @@ Route::group(['middleware' => ['auth']], function () {
         return view('pages.admin.dashboard');
     })->name('admin');
     
+    // Banner
     Route::get('/admin/banner/', "AdminController@banner");
     Route::get('/admin/banner/tambah', "AdminController@tambahBanner");
     Route::post('/admin/banner/prosestambah', "AdminController@prosesTambahBanner");
     Route::get('/admin/banner/ubah/{banner}', "AdminController@edit");
     Route::post('/admin/banner/prosesedit', "AdminController@prosesEditBanner");
     Route::get('/admin/banner/hapus/{id}', "AdminController@prosesHapusBanner");
+
+    // Pelayanan
+    Route::get('/admin/pelayanan/', "AdminController@pelayanan");
+    Route::get('/admin/pelayanan/tambah', "AdminController@tambahPelayanan");
+    Route::post('/admin/pelayanan/prosestambah', "AdminController@prosesTambahPelayanan");
+    Route::get('/admin/pelayanan/ubah', function () {
+        return view('pages.admin.pelayanan.edit');
+    });
+    
 
     Route::get('/admin/galeri/', function () {
         return view('pages.admin.galeri.index');
@@ -71,18 +81,6 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('/admin/galeri/ubah', function () {
         return view('pages.admin.galeri.edit');
-    });
-    
-    Route::get('/admin/pelayanan/tambah', function () {
-        return view('pages.admin.pelayanan.create');
-    });
-    
-    Route::get('/admin/pelayanan/', function () {
-        return view('pages.admin.pelayanan.index');
-    });
-    
-    Route::get('/admin/pelayanan/ubah', function () {
-        return view('pages.admin.pelayanan.edit');
     });
     
     Route::get('/admin/inovasi/tambah', function () {
