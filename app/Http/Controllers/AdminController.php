@@ -203,4 +203,13 @@ class AdminController extends Controller
 
         return redirect('/admin/inovasi')->with("Berhasil", "Inovasi Berhasil Diubah!");
     }
+
+    public function prosesHapusInovasi($id)
+    {
+        $inovasi = Inovasi::find($id);
+        unlink('frontend/img/inovasi/'.$inovasi->gambar);
+        $inovasi->delete();
+        
+        return redirect('/admin/inovasi')->with("Berhasil", "Inovasi Berhasil Dihapus!");
+    }
 }
