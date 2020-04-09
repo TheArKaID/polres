@@ -74,9 +74,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/inovasi/', "AdminController@inovasi");
     Route::get('/admin/inovasi/tambah', "AdminController@tambahInovasi");
     Route::post('/admin/inovasi/prosestambah', "AdminController@prosesTambahInovasi");
-    Route::get('/admin/inovasi/ubah', function () {
-        return view('pages.admin.inovasi.edit');
-    });
+    Route::get('/admin/inovasi/ubah/{inovasi}', "AdminController@editInovasi");
+    Route::post('/admin/inovasi/prosesedit', "AdminController@prosesEditInovasi");
     
     Route::get('/admin/galeri/', function () {
         return view('pages.admin.galeri.index');

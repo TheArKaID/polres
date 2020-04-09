@@ -182,4 +182,25 @@ class AdminController extends Controller
 
         return redirect('/admin/inovasi')->with("Berhasil", "Inovasi Berhasil Ditambahkan!");
     }
+
+    public function editInovasi(Inovasi $inovasi)
+    {
+        return view('pages.admin.inovasi.edit', [
+            'inovasi' => $inovasi
+        ]);
+    }
+
+    public function prosesEditInovasi(Request $request)
+    {
+        $this->validate($request,[
+            'judul' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        $input=$request->all();
+        $inovasi = Inovasi::find($input['id']);
+        $inovasi->update($input);
+
+        return redirect('/admin/inovasi')->with("Berhasil", "Inovasi Berhasil Diubah!");
+    }
 }
