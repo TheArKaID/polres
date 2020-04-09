@@ -295,4 +295,25 @@ class AdminController extends Controller
 
         return redirect('/admin/berita')->with("Berhasil", "Berita Berhasil Ditambahkan!");
     }
+
+    public function editBerita(Berita $berita)
+    {
+        return view('pages.admin.berita.edit', [
+            "berita" => $berita
+        ]);
+    }
+
+    public function prosesEditBerita(Request $request)
+    {
+        $this->validate($request,[
+            'judul' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        $input=$request->all();
+        $berita = Berita::find($input['id']);
+        $berita->update($input);
+
+        return redirect('/admin/berita')->with("Berhasil", "Berita Berhasil Diubah!");
+    }
 }

@@ -88,10 +88,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/berita/', "AdminController@berita");
     Route::get('/admin/berita/tambah', "AdminController@tambahBerita");
     Route::post('/admin/berita/prosestambah', "AdminController@prosesTambahBerita");
-    
-    Route::get('/admin/berita/ubah', function () {
-        return view('pages.admin.berita.edit');
-    });
+    Route::get('/admin/berita/ubah/{berita}', "AdminController@editBerita");
+    Route::post('/admin/berita/prosesedit', "AdminController@prosesEditBerita");
     
     Route::get('/admin/pengaduan/', function () {
         return view('pages.admin.pengaduan.index');
