@@ -35,7 +35,7 @@
                             <td>{{$b->judul}}</td>
                             <td>{{$b->deskripsi}}</td>
                             <td>
-                                <img src="{{url($b->gambar)}}" alt="" style="width: 200px" class="img-thumbnail" />
+                                <img src="{{url('frontend/img/banner/'.$b->gambar)}}" alt="" style="width: 200px" class="img-thumbnail" />
                             </td>
                             <td>
                                 <a href="/admin/banner/ubah/{{$b->id}}" class="btn btn-info">

@@ -35,7 +35,7 @@
                                 <td>{{$p->judul}}</td>
                                 <td>{!!$p->deskripsi!!}</td>
                                 <td>
-                                    <img src="{{url('/frontend/img/pelayanan/'.$p->gambar)}}" alt="" style="width: 150px"
+                                    <img src="{{url('frontend/img/pelayanan/'.$p->gambar)}}" alt="" style="width: 150px"
                                         class="img-thumbnail" />
                                 </td>
                                 <td>
