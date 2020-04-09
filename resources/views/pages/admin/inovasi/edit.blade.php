@@ -20,20 +20,20 @@
                     <label for="id">1</label>
                 </div>
                 <div class="form-group">
-                    <label for="title" class="bold">Judul</label>
+                    <label for="judul" class="bold">Judul</label>
                     <input type="text" class="form-control" name="judul" placeholder="Judul" value="">
                 </div>
                 <div class="form-group">
-                    <label for="tulisan" class="bold">Tulisan</label>
-                    <textarea name="tulisan" rows="10" class="d-block w-100 form-control"></textarea>
+                    <label for="deskripsi" class="bold">deskripsi</label>
+                    <textarea name="deskripsi" rows="10" class="d-block w-100 form-control"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="image" class="bold">Image</label>
+                    <label for="gambar" class="bold">Gambar</label>
                 </div>
                 <div class="form-group">
                      <img src="{{url('frontend/img/galeri/polisi-9.jpg')}}" alt="" style="width: 150px"
                                     class="img-thumbnail" />
-                    <input type="file" class="form-control" name="image" placeholder="Image" class="form-control">
+                    <input type="file" class="form-control" name="gambar" placeholder="gambar" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     Simpan
@@ -43,6 +43,10 @@
     </div>
 
 </div>
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+<script>
+    CKEDITOR.replace('deskripsi');
+</script>
 <!-- /.container-fluid -->
 
 @endsection
