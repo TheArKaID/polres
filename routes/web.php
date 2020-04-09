@@ -91,10 +91,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/berita/ubah/{berita}', "AdminController@editBerita");
     Route::post('/admin/berita/prosesedit', "AdminController@prosesEditBerita");
     
-    Route::get('/admin/pengaduan/', function () {
-        return view('pages.admin.pengaduan.index');
-    });
-    
+    // Pengaduan
+    Route::get('/admin/pengaduan/', "AdminController@pengaduan");
     Route::get('/admin/pengaduan/ubah', function () {
         return view('pages.admin.pengaduan.reply');
     });

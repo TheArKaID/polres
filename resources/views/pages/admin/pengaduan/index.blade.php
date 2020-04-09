@@ -15,36 +15,43 @@
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>No</th>
                             <th>Nama Lengkap</th>
                             <th>Email</th>
                             <th>No Telepon</th>
                             <th>Kategori Pengaduan</th>
                             <th>Jenis Kelamin</th>
-                            <th>Pengaduan</th>
+                            <th>Penjelasan</th>
                             <th>Status</th>
                              <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Admin Mantap</td>
-                            <td>0000000000000</td>
-                            <td>Admin@google.com</td>
-                            <td>Curanmor</td>
-                            <td>Laki-laki</td>
-                            <td>kenapa motor saya dicuri?</td>
-                            <td>Menunggu</td>
+                        @php
+                            $no = 1;
+                        @endphp
+                        @foreach ($pengaduan as $p)
+                            <tr>
+                                <td>{{$no}}</td>
+                                <td>{{$p->nama}}</td>
+                                <td>{{$p->email}}</td>
+                                <td>{{$p->notelpon}}</td>
+                                <td>{{$p->kategori}}</td>
+                                <td>{{$p->jeniskelamin}}</td>
+                                <td>{!!$p->penjelasan!!}</td>
+                                <td>{{$p->status}}</td>
 
 
-                            <td>
-                                <a href="{{url('/admin/pengaduan/ubah')}}" class="btn btn-primary">
-                                    <i class="fas fa-comments"></i>
-                                </a>
-                            </td>
-                        </tr>
-
+                                <td>
+                                    <a href="{{url('/admin/pengaduan/ubah/'.$p->id)}}" class="btn btn-primary">
+                                        <i class="fas fa-comments"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @php
+                                $no++;
+                            @endphp
+                        @endforeach
                     </tbody>
                 </table>
             </div>

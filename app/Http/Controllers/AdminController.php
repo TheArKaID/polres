@@ -8,6 +8,7 @@ use App\Pelayanan;
 use App\Inovasi;
 use App\Galeri;
 use App\Berita;
+use App\Pengaduan;
 
 class AdminController extends Controller
 {
@@ -315,5 +316,13 @@ class AdminController extends Controller
         $berita->update($input);
 
         return redirect('/admin/berita')->with("Berhasil", "Berita Berhasil Diubah!");
+    }
+
+    public function pengaduan()
+    {
+        $pengaduan = Pengaduan::all();
+        return view('pages.admin.pengaduan.index', [
+            "pengaduan" => $pengaduan
+        ]);
     }
 }
