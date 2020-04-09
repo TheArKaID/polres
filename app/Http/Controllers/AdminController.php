@@ -147,7 +147,10 @@ class AdminController extends Controller
 
     public function inovasi()
     {
-        return view('pages.admin.inovasi.index');
+        $inovasi = Inovasi::all();
+        return view('pages.admin.inovasi.index', [
+            'inovasi' => $inovasi
+        ]);
     }
 
     public function tambahInovasi()
