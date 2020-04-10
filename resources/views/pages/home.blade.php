@@ -39,7 +39,7 @@ Polrestabes Yogyakarta
 </div>
 <!-- Akhir Pengumuman -->
 
-<!-- offers_area_start -->
+<!-- Pelayanan_start -->
 <div class="offers_area">
     <div class="container">
         <div class="row">
@@ -83,9 +83,9 @@ Polrestabes Yogyakarta
         </div>
     </div>
 </div>
-<!-- offers_area_end -->
+<!-- Pelayanan_end -->
 
-<!-- features_room_startt -->
+<!-- Inovasi_startt -->
 <div class="features_room bg-light mb-100">
     <div class="container">
         <div class="row">
@@ -131,9 +131,9 @@ Polrestabes Yogyakarta
         </div>
     @endif
 </div>
-<!-- features_room_end -->
+<!-- Inovasi_end -->
 
-<!-- instragram_area_start -->
+<!-- Galeri_start -->
 <div class="instragram_area">
     <div class="container">
         <div class="row">
@@ -146,56 +146,37 @@ Polrestabes Yogyakarta
     </div>
     <div class="row">
         <div class="center-content">
-            <div class="single_instagram popup">
-                <img src="{{url('frontend/img/galeri/polisi-7.jpg')}}" alt="">
-                <div class="ovrelay">
-                    <a href="#">
-                        <i class="fa fa-camera"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="single_instagram popup">
-                <img src="{{url('frontend/img/galeri/polisi-8.jfif')}}" alt="">
-                <div class="ovrelay">
-                    <a href="#">
-                        <i class="fa fa-camera"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="single_instagram popup">
-                <img src="{{url('frontend/img/galeri/polisi-9.jpg')}}" alt="">
-                <div class="ovrelay">
-                    <a href="{{url('frontend/img/galeri/polisi-9.jpg')}}">
-                        <i class="fa fa-camera"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="single_instagram popup">
-                <img src="{{url('frontend/img/galeri/polisi-7.jpg')}}" alt="">
-                <div class="ovrelay">
-                    <a href="#">
-                        <i class="fa fa-camera"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="single_instagram popup">
-                <img src="{{url('frontend/img/galeri/polisi-8.jfif')}}" alt="">
-                <div class="ovrelay">
-                    <a href="#">
-                        <i class="fa fa-camera"></i>
-                    </a>
-                </div>
-            </div>
+            @if (count($galeri)>0)
+                @php
+                    $row = 0
+                @endphp
+                @foreach ($galeri as $g)
+                    @php
+                        $row++;
+                    @endphp
+                    <div class="single_instagram popup">
+                        <img src="{{url('frontend/img/galeri/'.$g->gambar)}}" alt="">
+                        <div class="ovrelay">
+                            <a href="#">
+                                <i class="fa fa-camera"></i>
+                            </a>
+                        </div>
+                    </div>
+                    @if ($row==5)
+                        @break
+                    @endif
+                @endforeach
+            @endif
         </div>
     </div>
     <div class="row pt-100 mb-100">
         <div class="center-link">
-
-            <a class="btn-selengkapnya" href="{{url('/galeri/galeri-all')}}">Lihat Semua</a>
-
+            @if (count($galeri)>5)
+                <a class="btn-selengkapnya" href="{{url('/galeri/galeri-all')}}">Lihat Semua</a>
+            @endif
         </div>
     </div>
 </div>
-<!-- instragram_area_end -->
+<!-- Galeri_area_end -->
 
 @endsection
