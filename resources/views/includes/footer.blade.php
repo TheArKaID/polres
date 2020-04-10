@@ -5,17 +5,18 @@
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                address
+                                alamat
                             </h3>
-                            <p class="footer_text"> 200, Green road, Mongla, <br>
-                                New Yor City USA</p>
-                            <a href="#" class="line-button">Get Direction</a>
+                            <p class="footer_text"> Jl. Gajah Mada No.200, Dracik Barat, Proyonanggan Sel., Kec. Batang, Kabupaten Batang, Jawa Tengah 51211 <br>
+                            (0285) 391074
+                            </p>
+                            <a href="https://www.google.com/maps/place/Polres+Batang/@-6.9182675,109.7299067,15z/data=!4m5!3m4!1s0x0:0x8f4f99463cfb2ab4!8m2!3d-6.9182675!4d109.7299067" target="_blank" class="line-button">Get Direction</a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Reservation
+                                Social Media
                             </h3>
                             <p class="footer_text">+10 367 267 2678 <br>
                                 reservation@montana.com</p>
