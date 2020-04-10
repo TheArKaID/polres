@@ -12,7 +12,7 @@ Polrestabes Yogyakarta
 <div class="slider_area">
     <div class="slider_active owl-carousel">
         @foreach ($banner as $b)
-            <div class="single_slider d-flex align-items-center justify-content-center" style="background-image: url({{$b->gambar}}) !important">
+            <div class="single_slider d-flex align-items-center justify-content-center" style="background-image: url({{'frontend/img/banner/'.$b->gambar}}) !important">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -50,35 +50,33 @@ Polrestabes Yogyakarta
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-4 col-md-4">
-                <div class="single_offers">
-                    <div class="about_thumb">
-                        <img src="{{url('frontend/img/offers/1.png')}}" alt="">
+            @if (count($pelayanan)>0)
+                @php
+                    $row = 1
+                @endphp
+                @foreach ($pelayanan as $p)
+                    <div class="col-xl-4 col-md-4">
+                        <div class="single_offers">
+                            <div class="about_thumb">
+                                <img src="{{url('frontend/img/pelayanan/'.$p->gambar)}}" alt="">
+                            </div>
+                            <a href="{{url('/pelayanan/pelayanan-sim')}}" class="book_now">{{$p->judul}}</a>
+                        </div>
                     </div>
-                    <a href="{{url('/pelayanan/pelayanan-sim')}}" class="book_now">SIM</a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-4">
-                <div class="single_offers">
-                    <div class="about_thumb">
-                        <img src="{{url('frontend/img/offers/2.png')}}" alt="">
+                    @php
+                        $row++;
+                    @endphp
+                @endforeach
+            @endif
+        </div>
+        <div class="row">
+            @if (count($pelayanan)>3)
+                <div class="center-link mt-100">
+                    <div class="row">
+                        <a class="btn-selengkapnya" href="{{url('/pelayanan/pelayanan-all')}}">Lihat Semua</a>
                     </div>
-                    <a href="#" class="book_now">book now</a>
                 </div>
-            </div>
-            <div class="col-xl-4 col-md-4">
-                <div class="single_offers">
-                    <div class="about_thumb">
-                        <img src="{{url('frontend/img/offers/3.png')}}" alt="">
-                    </div>
-                    <a href="#" class="book_now">book now</a>
-                </div>
-            </div>
-            <div class="center-link mt-100">
-                <div class="row">
-                    <a class="btn-selengkapnya" href="{{url('/pelayanan/pelayanan-all')}}">Lihat Semua</a>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
 </div>
