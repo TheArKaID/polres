@@ -12,6 +12,11 @@ use App\Pengaduan;
 
 class AdminController extends Controller
 {
+    public function admin()
+    {
+        return view('pages.admin.dashboard');
+    }
+    
     public function banner()
     {
         $banner = Banner::all();

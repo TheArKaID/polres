@@ -50,9 +50,7 @@ Route::get('/pengaduan/cek-status', function () {
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::get('/admin', function () {
-        return view('pages.admin.dashboard');
-    })->name('admin');
+    Route::get('/admin', "AdminController@admin")->name('admin');
     
     // Banner
     Route::get('/admin/banner/', "AdminController@banner");
