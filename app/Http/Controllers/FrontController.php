@@ -17,7 +17,8 @@ class FrontController extends Controller
 
         return view('pages.home', [
             'banner' => $banner,
-            'pelayanan' => $pelayanan
+            'pelayanan' => $pelayanan,
+            'inovasi' => $inovasi
         ]);
     }
 }

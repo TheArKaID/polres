@@ -52,9 +52,12 @@ Polrestabes Yogyakarta
         <div class="row">
             @if (count($pelayanan)>0)
                 @php
-                    $row = 1
+                    $row = 0
                 @endphp
                 @foreach ($pelayanan as $p)
+                    @php
+                        $row++;
+                    @endphp
                     <div class="col-xl-4 col-md-4">
                         <div class="single_offers">
                             <div class="about_thumb">
@@ -63,9 +66,9 @@ Polrestabes Yogyakarta
                             <a href="{{url('/pelayanan/pelayanan-sim')}}" class="book_now">{{$p->judul}}</a>
                         </div>
                     </div>
-                    @php
-                        $row++;
-                    @endphp
+                    @if ($row==3)
+                        @break
+                    @endif
                 @endforeach
             @endif
         </div>
@@ -94,62 +97,39 @@ Polrestabes Yogyakarta
         </div>
     </div>
     <div class="rooms_here">
-        <div class="single_rooms">
-            <div class="room_thumb">
-                <img src="{{url('frontend/img/inovasi/polisi-3.jpg')}}" alt="">
-                <div class="room_heading d-flex justify-content-between align-items-center">
-                    <div class="room_heading_inner">
-                        <span>Inovasi</span>
-                        <h3>Polisi Kerja Sama</h3>
+        @if (count($inovasi)>0)
+            @php
+                $row = 0;
+            @endphp
+            @foreach ($inovasi as $i)
+                @php
+                    $row++;
+                @endphp
+                <div class="single_rooms">
+                    <div class="room_thumb">
+                        <img src="{{url('frontend/img/inovasi/'.$i->gambar)}}" alt="">
+                        <div class="room_heading d-flex justify-content-between align-items-center">
+                            <div class="room_heading_inner">
+                                <span>Inovasi</span>
+                                <h3>{{$i->judul}}</h3>
+                            </div>
+                            <a href="#" class="line-button">Selengkapnya</a>
+                        </div>
                     </div>
-                    <a href="{{url('/inovasi/inovasi-1')}}" class="line-button">Selengkapnya</a>
                 </div>
-            </div>
-        </div>
-        <div class="single_rooms">
-            <div class="room_thumb">
-                <img src="{{url('frontend/img/inovasi/polisi-4.jpg')}}" alt="">
-                <div class="room_heading d-flex justify-content-between align-items-center">
-                    <div class="room_heading_inner">
-                        <span>Inovasi</span>
-                        <h3>Polisi Kerja Sama</h3>
-                    </div>
-                    <a href="#" class="line-button">Selengkapnya</a>
-                </div>
-            </div>
-        </div>
-        <div class="single_rooms">
-            <div class="room_thumb">
-                <img src="{{url('frontend/img/inovasi/polisi-5.jpg')}}" alt="">
-                <div class="room_heading d-flex justify-content-between align-items-center">
-                    <div class="room_heading_inner">
-                        <span>Inovasi</span>
-                        <h3>Polisi Kerja Sama</h3>
-                    </div>
-                    <a href="#" class="line-button">Selengkapnya</a>
-                </div>
-            </div>
-        </div>
-        <div class="single_rooms">
-            <div class="room_thumb">
-                <img src="{{url('frontend/img/inovasi/polisi-6.jpeg')}}" alt="">
-                <div class="room_heading d-flex justify-content-between align-items-center">
-                    <div class="room_heading_inner">
-                        <span>Inovasi</span>
-                        <h3>Polisi Kerja Sama</h3>
-                    </div>
-                    <a href="#" class="line-button">Selengkapnya</a>
-                </div>
-            </div>
-        </div>
+                @if ($row==4)
+                    @break
+                @endif
+            @endforeach
+        @endif
     </div>
-    <div class="row pt-100 mb-100">
-        <div class="center-link">
-
-            <a class="btn-selengkapnya" href="{{url('/inovasi/inovasi-all')}}">Lihat Semua</a>
-
+    @if (count($inovasi)>4)
+        <div class="row pt-100 mb-100">
+            <div class="center-link">
+                <a class="btn-selengkapnya" href="{{url('/inovasi/inovasi-all')}}">Lihat Semua</a>
+            </div>
         </div>
-    </div>
+    @endif
 </div>
 <!-- features_room_end -->
 
