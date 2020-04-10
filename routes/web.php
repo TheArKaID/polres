@@ -96,8 +96,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pengaduan/ubah', function () {
         return view('pages.admin.pengaduan.reply');
     });
-    
-    Route::get('/home', 'HomeController@index')->name('home');
 });
 
 
