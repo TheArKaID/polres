@@ -18,6 +18,12 @@
         <span>Dashboard</span></a>
     </li>
 
+<li class="nav-item">
+      <a class="nav-link" href="{{url('/admin/pengumuman')}}">
+        <i class="fas fa-fw fa-bullhorn"></i>
+        <span>Pengumuman</span></a>
+    </li>
+
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
       <a class="nav-link" href="{{url('/admin/banner')}}">

@@ -19,6 +19,14 @@ Route::get('/pelayanan/pelayanan-sim', function () {
     return view('pages.pelayanan.pelayanan-sim');
 });
 
+Route::get('/admin/pengumuman/tambah', function () {
+    return view('pages.admin.pengumuman.create');
+});
+
+Route::get('/admin/pengumuman/', function () {
+    return view('pages.admin.pengumuman.index');
+});
+
 Route::get('/inovasi/inovasi-1', function () {
     return view('pages.inovasi.inovasi-1');
 });
@@ -51,7 +59,7 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/admin', "AdminController@admin")->name('admin');
-    
+
     // Banner
     Route::get('/admin/banner/', "AdminController@banner");
     Route::get('/admin/banner/tambah', "AdminController@tambahBanner");
@@ -65,7 +73,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pelayanan/tambah', "AdminController@tambahPelayanan");
     Route::post('/admin/pelayanan/prosestambah', "AdminController@prosesTambahPelayanan");
     Route::get('/admin/pelayanan/ubah/{pelayanan}', "AdminController@editPelayanan");
-    Route::post('/admin/pelayanan/prosesedit',"AdminController@prosesEditPelayanan");
+    Route::post('/admin/pelayanan/prosesedit', "AdminController@prosesEditPelayanan");
     Route::get('/admin/pelayanan/hapus/{id}', "AdminController@prosesHapusPelayanan");
 
     // Inovasi
@@ -75,25 +83,23 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/inovasi/ubah/{inovasi}', "AdminController@editInovasi");
     Route::post('/admin/inovasi/prosesedit', "AdminController@prosesEditInovasi");
     Route::get('/admin/inovasi/hapus/{id}', "AdminController@prosesHapusInovasi");
-    
+
     // Galeri
     Route::get('/admin/galeri/', "AdminController@galeri");
     Route::get('/admin/galeri/tambah', "AdminController@tambahGaleri");
     Route::post('/admin/galeri/prosestambah', "AdminController@prosesTambahGaleri");
     Route::get('/admin/galeri/hapus/{id}', "AdminController@prosesHapusGaleri");
-    
+
     // Berita
     Route::get('/admin/berita/', "AdminController@berita");
     Route::get('/admin/berita/tambah', "AdminController@tambahBerita");
     Route::post('/admin/berita/prosestambah', "AdminController@prosesTambahBerita");
     Route::get('/admin/berita/ubah/{berita}', "AdminController@editBerita");
     Route::post('/admin/berita/prosesedit', "AdminController@prosesEditBerita");
-    
+
     // Pengaduan
     Route::get('/admin/pengaduan/', "AdminController@pengaduan");
     Route::get('/admin/pengaduan/ubah', function () {
         return view('pages.admin.pengaduan.reply');
     });
 });
-
-
