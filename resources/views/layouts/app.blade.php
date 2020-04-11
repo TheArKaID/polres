@@ -16,6 +16,7 @@
     <!-- Bootstrap navbar example -->
     <!-- https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
 
+    @include('includes.breaking-news')
     @include('includes.navbar')
 
     @yield('content')

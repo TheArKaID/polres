@@ -20,7 +20,7 @@ body {
 }
 
 .logo-img a img {
-    width: 85px;
+    width: 45px;
 }
 
 .img {
@@ -435,6 +435,27 @@ h3 {
     background: #009DFF
 } */
 
+.breaking-news {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
+
+    z-index: 99;
+    transition: transform 500ms ease,
+        background 500ms ease;
+    -webkit-transition: transform 500ms ease,
+        background 500ms ease;
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
+    background: #000;
+}
+
+.breaking-news p {
+    color: white;
+}
+
 .book_now {
     background: #f1f1f1;
     border: 1px solid #ddd;
@@ -445,7 +466,6 @@ h3 {
     border: none;
     text-decoration: none;
     background: #FFC107;
-    color: #fff
 }
 
 .section_title span {
@@ -1655,6 +1675,7 @@ h3 {
     -o-transition: .5s;
     transition: .5s;
     height: 300px;
+    width: 100%;
 }
 
 .instragram_area .single_instagram .ovrelay {

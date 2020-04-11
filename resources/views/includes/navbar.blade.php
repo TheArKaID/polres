@@ -33,7 +33,7 @@
                      <div class="col-xl-2 col-lg-2">
                          <div class="logo-img">
                              <a href="{{url('/')}}">
-                                 <img src="{{url('frontend/img/logo-polda-jatim.png')}}" alt="">
+                                 <img src="{{url('frontend/img/logo-polda-jateng.png')}}" alt="">
                              </a>
                          </div>
                      </div>

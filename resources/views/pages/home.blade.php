@@ -9,7 +9,7 @@ Polrestabes Yogyakarta
 @section('content')
 
 <!-- slider_area_start -->
-<div class="slider_area">
+<div class="slider_area mb-100">
     <div class="slider_active owl-carousel">
         @foreach ($banner as $b)
             <div class="single_slider d-flex align-items-center justify-content-center" style="background-image: url({{'frontend/img/banner/'.$b->gambar}}) !important">
@@ -28,16 +28,6 @@ Polrestabes Yogyakarta
     </div>
 </div>
 <!-- slider_area_end -->
-
-<!-- Awal Pengumuman -->
-<div class="p-2 bg-warning mb-100">
-    <div class="container">
-        <div class="row">
-            <h6>Pengumuman: </h6>
-        </div>
-    </div>
-</div>
-<!-- Akhir Pengumuman -->
 
 <!-- Pelayanan_start -->
 <div class="offers_area">
