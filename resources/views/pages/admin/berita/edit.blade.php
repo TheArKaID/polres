@@ -28,7 +28,8 @@
                 </div>
                 <div class="form-group">
                      <img src="{{url('frontend/img/berita/'.$berita->gambar)}}" alt="" style="width: 100%" class="img-thumbnail" />
-                </div>
+                                   <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
+                    </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     Simpan
                 </button>

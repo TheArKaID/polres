@@ -25,6 +25,7 @@
                 <div class="form-group">
                     <label for="gambar" class="bold">Gambar</label>
                     <input type="file" class="form-control" name="gambar" placeholder="gambar" class="form-control">
+                                    <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     Simpan

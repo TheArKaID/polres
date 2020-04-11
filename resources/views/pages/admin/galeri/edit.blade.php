@@ -25,6 +25,7 @@
                      <img src="{{url('frontend/img/galeri/polisi-9.jpg')}}" alt="" style="width: 150px"
                                     class="img-thumbnail" />
                     <input type="file" class="form-control" name="image" placeholder="Image" class="form-control">
+                                   <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     Update

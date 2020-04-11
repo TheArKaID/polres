@@ -32,6 +32,7 @@
                 <div class="form-group">
                     <label for="image"  class="bold">Image</label>
                     <img src="{{url('frontend/img/banner/'.$banner->gambar)}}" width="100%">
+                                   <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
                 </div>
                 <input type="hidden" name="id" value="{{$banner->id}}">
                 <button type="submit" class="btn btn-primary btn-block">
