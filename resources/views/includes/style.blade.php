@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{{url('frontend/styles/slicknav.css')}}">
     <link rel="stylesheet" href="{{url('frontend/styles/style.css')}}">
 
+  <link href="{{url('frontend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+
+
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
     <link

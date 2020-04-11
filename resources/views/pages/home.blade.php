@@ -60,10 +60,19 @@ Polrestabes Yogyakarta
                     @endphp
                     <div class="col-xl-4 col-md-4">
                         <div class="single_offers">
-                            <div class="about_thumb">
-                                <img src="{{url('frontend/img/pelayanan/'.$p->gambar)}}" alt="">
+                            <div class="about_thumb book_now">
+                                {{-- <img src="{{url('frontend/img/pelayanan/'.$p->gambar)}}" alt=""> --}}
+                                <div class="row" style="margin-top:16px;">
+
+                                    <div class="col-3">
+                                        <i class="fas fa-book fa-w-16 fa-3x"></i>
+                                    </div>
+                                    <div class="col-9">
+                                        <a style="color:black; font-weight:bold;" href="{{url('/pelayanan/pelayanan-sim')}}">{{$p->judul}}</a>
+                                        <p>Klik Untuk Mengakses</p>
+                                    </div>
+                                </div>
                             </div>
-                            <a href="{{url('/pelayanan/pelayanan-sim')}}" class="book_now">{{$p->judul}}</a>
                         </div>
                     </div>
                     @if ($row==3)

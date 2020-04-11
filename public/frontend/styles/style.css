@@ -436,13 +436,9 @@ h3 {
 } */
 
 .book_now {
-    font-weight: 600;
-    display: inline-block;
-    font-size: 14px;
-    color: black;
-    border: 1px solid black;
-    text-transform: capitalize;
-    padding: 10px 25px;
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 20px;
 }
 
 .book_now:hover {
