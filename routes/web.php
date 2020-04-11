@@ -27,6 +27,22 @@ Route::get('/admin/pengumuman/', function () {
     return view('pages.admin.pengumuman.index');
 });
 
+Route::get('/admin/settings/', function () {
+    return view('pages.admin.settings.index');
+});
+
+Route::get('/admin/settings/ubah-alamat', function () {
+    return view('pages.admin.settings.ganti-alamat');
+});
+
+Route::get('/admin/settings/ubah-background', function () {
+    return view('pages.admin.settings.ganti-background');
+});
+
+Route::get('/admin/settings/ubah-medsos', function () {
+    return view('pages.admin.settings.ganti-medsos');
+});
+
 Route::get('/inovasi/inovasi-1', function () {
     return view('pages.inovasi.inovasi-1');
 });
