@@ -1654,15 +1654,26 @@ h3 {
 }
 
 @media (max-width: 767px) {
+    .center-kop {
+        width: 96% !important;
+        margin: 0 auto;
+    }
+
     .instragram_area .single_instagram {
         width: 100%
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+
     .instragram_area .single_instagram {
         width: 50%
     }
+}
+
+.center-kop {
+    width: 30%;
+    margin: 0 auto;
 }
 
 .instragram_area .single_instagram img {

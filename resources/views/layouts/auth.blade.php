@@ -7,16 +7,27 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{url('frontend/styles/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('frontend/styles/font-awesome.min.css')}}">
-  </head>
+        <link rel="stylesheet" href="{{url('frontend/styles/style.css')}}">
+  <link href="{{url('frontend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+
+
+
+    {{-- @include('includes.style') --}}
+    </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Homepage</a>
-    </nav>
-    <nav class="navbar navbar-light bg-light mb-3">
 
+<div class="container mt-5 pt-5 mb-5">
+                            <div class="row center-kop">
+                                 <img class="mr-4" style="width: 60px" src="{{url('frontend/img/logo-polda-jateng.png')}}" alt="">
+                                        <h2 class="text-black">Kepolisian Resor <br> Kota Batang</h2>
+                            </div>
+</div>
 
-    </nav>
     @yield('content')
+
+    <div class="container mt-4 mb-5" style="text-align: center">
+        <a class="navbar-brand btn btn-danger" style="" href="/"><i class="fas fa-arrow-left" style="font-size: 16px"></i> Kembali</a>
+    </div>
 
     </body>
     <script src="{{url('frontend/scripts/vendor/jquery-1.12.4.min.js')}}"></script>
