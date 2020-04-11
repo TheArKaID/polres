@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polrestabes Yogyakarta
+Polres Batang
 
 @endsection
 
