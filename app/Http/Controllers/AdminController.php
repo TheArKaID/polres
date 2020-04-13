@@ -9,6 +9,7 @@ use App\Inovasi;
 use App\Galeri;
 use App\Berita;
 use App\Pengaduan;
+use App\Pengumuman;
 
 class AdminController extends Controller
 {
@@ -339,5 +340,18 @@ class AdminController extends Controller
     public function tambahPengumuman()
     {
         return view('pages.admin.pengumuman.create');
+    }
+
+    public function prosesTambahPengumuman(Request $request)
+    {
+        $this->validate($request, [
+            'pengumuman' => 'required',
+        ]);
+
+        $pengumuman = new Pengumuman;
+        $pengumuman->pengumuman = $request["pengumuman"];
+        $pengumuman->save();
+
+        return redirect('/admin/pengumuman')->with("Berhasil", "Pengumuman Berhasil Ditambahkan!");
     }
 }
