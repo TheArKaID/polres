@@ -7,6 +7,7 @@ use App\Banner;
 use App\Pelayanan;
 use App\Inovasi;
 use App\Galeri;
+use App\Pengumuman;
 
 class FrontController extends Controller
 {
@@ -16,12 +17,14 @@ class FrontController extends Controller
         $pelayanan = Pelayanan::all();
         $inovasi = Inovasi::all();
         $galeri = Galeri::all();
+        $pengumuman = Pengumuman::all();
 
         return view('pages.home', [
             'banner' => $banner,
             'pelayanan' => $pelayanan,
             'inovasi' => $inovasi,
-            'galeri' => $galeri
+            'galeri' => $galeri,
+            'pengumuman' => $pengumuman
         ]);
     }
 }
