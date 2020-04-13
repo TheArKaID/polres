@@ -27,4 +27,49 @@ class FrontController extends Controller
             'pengumuman' => $pengumuman
         ]);
     }
+
+    public function inovasi()
+    {
+        $pengumuman = Pengumuman::all();
+
+        return view('pages.inovasi.inovasi-all', [
+            'pengumuman' => $pengumuman
+        ]);
+    }
+
+    public function galeri()
+    {
+        $pengumuman = Pengumuman::all();
+
+        return view('pages.galeri.galeri-all', [
+            'pengumuman' => $pengumuman
+        ]);
+    }
+
+    public function pelayanan()
+    {
+        $pengumuman = Pengumuman::all();
+
+        return view('pages.pelayanan.pelayanan-all', [
+            'pengumuman' => $pengumuman
+        ]);
+    }
+
+    public function cekPengaduan()
+    {
+        $pengumuman = Pengumuman::all();
+
+        return view('pages.pengaduan.cek-status', [
+            'pengumuman' => $pengumuman
+        ]);
+    }
+
+    public function berita()
+    {
+        $pengumuman = Pengumuman::all();
+
+        return view('pages.berita.berita-all', [
+            'pengumuman' => $pengumuman
+        ]);
+    }
 }

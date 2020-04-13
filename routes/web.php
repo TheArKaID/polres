@@ -19,49 +19,21 @@ Route::get('/pelayanan/pelayanan-sim', function () {
     return view('pages.pelayanan.pelayanan-sim');
 });
 
-Route::get('/admin/settings/', function () {
-    return view('pages.admin.settings.index');
-});
-
-Route::get('/admin/settings/ubah-alamat', function () {
-    return view('pages.admin.settings.ganti-alamat');
-});
-
-Route::get('/admin/settings/ubah-background', function () {
-    return view('pages.admin.settings.ganti-background');
-});
-
-Route::get('/admin/settings/ubah-medsos', function () {
-    return view('pages.admin.settings.ganti-medsos');
-});
-
 Route::get('/inovasi/inovasi-1', function () {
     return view('pages.inovasi.inovasi-1');
 });
 
-Route::get('/berita/berita-1', function () {
-    return view('pages.berita.berita-1');
-});
+Route::get('/berita/berita-all', "FrontController@berita");
 
-Route::get('/inovasi/inovasi-all', function () {
-    return view('pages.inovasi.inovasi-all');
-});
+Route::get('/inovasi/inovasi-all', "FrontController@inovasi");
 
-Route::get('/galeri/galeri-all', function () {
-    return view('pages.galeri.galeri-all');
-});
+Route::get('/galeri/galeri-all', "FrontController@galeri");
 
-Route::get('/pelayanan/pelayanan-all', function () {
-    return view('pages.pelayanan.pelayanan-all');
-});
+Route::get('/pelayanan/pelayanan-all', "FrontController@pelayanan");
 
-Route::get('/pengaduan', function () {
-    return view('pages.pengaduan.pengaduan');
-});
+Route::get('/pengaduan', "FrontController@pengaduan");
 
-Route::get('/pengaduan/cek-status', function () {
-    return view('pages.pengaduan.cek-status');
-});
+Route::get('/pengaduan/cek-status', "FrontController@cekPengaduan");
 
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
@@ -114,5 +86,22 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pengaduan/', "AdminController@pengaduan");
     Route::get('/admin/pengaduan/ubah', function () {
         return view('pages.admin.pengaduan.reply');
+    });
+
+    // Setting
+    Route::get('/admin/settings/', function () {
+        return view('pages.admin.settings.index');
+    });
+
+    Route::get('/admin/settings/ubah-alamat', function () {
+        return view('pages.admin.settings.ganti-alamat');
+    });
+
+    Route::get('/admin/settings/ubah-background', function () {
+        return view('pages.admin.settings.ganti-background');
+    });
+
+    Route::get('/admin/settings/ubah-medsos', function () {
+        return view('pages.admin.settings.ganti-medsos');
     });
 });
