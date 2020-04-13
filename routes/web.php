@@ -72,6 +72,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pengumuman/', "AdminController@pengumuman");
     Route::get('/admin/pengumuman/tambah', "AdminController@tambahPengumuman");
     Route::post('/admin/pengumuman/prosestambah', "AdminController@prosesTambahPengumuman");
+    Route::get('/admin/pengumuman/hapus/{id}', "AdminController@prosesHapusPengumuman");
     // Banner
     Route::get('/admin/banner/', "AdminController@banner");
     Route::get('/admin/banner/tambah', "AdminController@tambahBanner");

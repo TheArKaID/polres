@@ -334,7 +334,11 @@ class AdminController extends Controller
 
     public function pengumuman()
     {
-        return view('pages.admin.pengumuman.index');
+        $pengumuman = Pengumuman::all();
+
+        return view('pages.admin.pengumuman.index', [
+            'pengumuman' => $pengumuman
+        ]);
     }
 
     public function tambahPengumuman()
@@ -353,5 +357,13 @@ class AdminController extends Controller
         $pengumuman->save();
 
         return redirect('/admin/pengumuman')->with("Berhasil", "Pengumuman Berhasil Ditambahkan!");
+    }
+
+    public function prosesHapusPengumuman($id)
+    {
+        $pengumuman = Pengumuman::find($id);
+        $pengumuman->delete();
+        
+        return redirect('/admin/pengumuman')->with("Berhasil", "Pengumuman Berhasil Dihapus!");
     }
 }

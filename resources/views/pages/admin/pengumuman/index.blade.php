@@ -24,16 +24,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Polisi siaga 1</td>
-
-                            <td>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
+                        @php
+                            $no = 0;
+                        @endphp
+                        @foreach ($pengumuman as $p)
+                            @php
+                                $no++
+                            @endphp
+                            <tr>
+                                <td>{{$no}}</td>
+                                <td>{{$p->pengumuman}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" onclick="hapus('{{$p->id}}')">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -67,7 +74,7 @@
 <script>
     function hapus(id) {
         var deleteButton = document.getElementById('deleteButton');
-        deleteButton.href = "/admin/banner/hapus/"+id;
+        deleteButton.href = "/admin/pengumuman/hapus/"+id;
     }
 </script>
 @endsection
