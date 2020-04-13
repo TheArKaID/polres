@@ -72,4 +72,13 @@ class FrontController extends Controller
             'pengumuman' => $pengumuman
         ]);
     }
+
+    public function pengaduan()
+    {
+        $pengumuman = Pengumuman::all();
+
+        return view('pages.pengaduan.pengaduan', [
+            'pengumuman' => $pengumuman
+        ]);
+    }
 }
