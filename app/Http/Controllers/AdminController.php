@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Banner;
 use App\Pelayanan;
 use App\Inovasi;
@@ -115,10 +116,13 @@ class AdminController extends Controller
         $name = "pelayanan-".$id.".".$ext;
         $file->move('frontend/img/pelayanan', $name);
 
+        $url = Str::of($request["judul"])->slug('-');
+        
         $pelayanan = new Pelayanan;
         $pelayanan->judul = $request["judul"];
         $pelayanan->deskripsi = $request["deskripsi"];
         $pelayanan->gambar = $name;
+        $pelayanan->url = $url;
         $pelayanan->save();
 
         return redirect('/admin/pelayanan')->with("Berhasil", "Pelayanan Berhasil Ditambahkan!");
@@ -139,7 +143,13 @@ class AdminController extends Controller
         ]);
 
         $input=$request->all();
+        
+
         $pelayanan = Pelayanan::find($input['id']);
+
+        $url = Str::of($input["judul"])->slug('-');
+        $pelayanan->url = $url;
+
         $pelayanan->update($input);
 
         return redirect('/admin/pelayanan')->with("Berhasil", "Pelayanan Berhasil Diubah!");
@@ -183,10 +193,13 @@ class AdminController extends Controller
         $name = "inovasi-".$id.".".$ext;
         $file->move('frontend/img/inovasi', $name);
 
+        $url = Str::of($request["judul"])->slug('-');
+        
         $inovasi = new Inovasi;
         $inovasi->judul = $request["judul"];
         $inovasi->deskripsi = $request["deskripsi"];
         $inovasi->gambar = $name;
+        $inovasi->url = $url;
         $inovasi->save();
 
         return redirect('/admin/inovasi')->with("Berhasil", "Inovasi Berhasil Ditambahkan!");
@@ -207,7 +220,12 @@ class AdminController extends Controller
         ]);
 
         $input=$request->all();
+        
         $inovasi = Inovasi::find($input['id']);
+        
+        $url = Str::of($input["judul"])->slug('-');
+        $inovasi->url = $url;
+
         $inovasi->update($input);
 
         return redirect('/admin/inovasi')->with("Berhasil", "Inovasi Berhasil Diubah!");
@@ -294,10 +312,13 @@ class AdminController extends Controller
         $name = "berita-".$id.".".$ext;
         $file->move('frontend/img/berita', $name);
 
+        $url = Str::of($request["judul"])->slug('-');
+        
         $berita = new Berita;
         $berita->judul = $request["judul"];
         $berita->deskripsi = $request["deskripsi"];
         $berita->gambar = $name;
+        $berita->url = $url;
         $berita->save();
 
         return redirect('/admin/berita')->with("Berhasil", "Berita Berhasil Ditambahkan!");
@@ -318,7 +339,12 @@ class AdminController extends Controller
         ]);
 
         $input=$request->all();
+        
         $berita = Berita::find($input['id']);
+        
+        $url = Str::of($input["judul"])->slug('-');
+        $berita->url = $url;
+        
         $berita->update($input);
 
         return redirect('/admin/berita')->with("Berhasil", "Berita Berhasil Diubah!");
