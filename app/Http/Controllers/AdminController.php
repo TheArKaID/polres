@@ -330,4 +330,14 @@ class AdminController extends Controller
             "pengaduan" => $pengaduan
         ]);
     }
+
+    public function pengumuman()
+    {
+        return view('pages.admin.pengumuman.index');
+    }
+
+    public function tambahPengumuman()
+    {
+        return view('pages.admin.pengumuman.create');
+    }
 }

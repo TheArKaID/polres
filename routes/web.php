@@ -19,14 +19,6 @@ Route::get('/pelayanan/pelayanan-sim', function () {
     return view('pages.pelayanan.pelayanan-sim');
 });
 
-Route::get('/admin/pengumuman/tambah', function () {
-    return view('pages.admin.pengumuman.create');
-});
-
-Route::get('/admin/pengumuman/', function () {
-    return view('pages.admin.pengumuman.index');
-});
-
 Route::get('/admin/settings/', function () {
     return view('pages.admin.settings.index');
 });
@@ -76,6 +68,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/admin', "AdminController@admin")->name('admin');
 
+    // Pengumuman
+    Route::get('/admin/pengumuman/', "AdminController@pengumuman");
+    Route::get('/admin/pengumuman/tambah', "AdminController@tambahPengumuman");
+    
     // Banner
     Route::get('/admin/banner/', "AdminController@banner");
     Route::get('/admin/banner/tambah', "AdminController@tambahBanner");
