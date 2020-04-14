@@ -344,7 +344,7 @@ class AdminController extends Controller
         
         $url = Str::of($input["judul"])->slug('-');
         $berita->url = $url;
-        
+
         $berita->update($input);
 
         return redirect('/admin/berita')->with("Berhasil", "Berita Berhasil Diubah!");
@@ -353,9 +353,38 @@ class AdminController extends Controller
     public function pengaduan()
     {
         $pengaduan = Pengaduan::all();
+        $kategori = \App\KategoriPengaduan::all();
+
         return view('pages.admin.pengaduan.index', [
-            "pengaduan" => $pengaduan
+            "pengaduan" => $pengaduan,
+            'kategori' => $kategori
         ]);
+    }
+
+    public function tambahKategoriPengaduan()
+    {
+        return view('pages.admin.pengaduan.createkategori');
+    }
+
+    public function prosesTambahKategoriPengaduan(Request $request)
+    {
+        $this->validate($request, [
+            'kategori' => 'required',
+        ]);
+
+        $kategori = new \App\KategoriPengaduan;
+        $kategori->kategori = $request["kategori"];
+        $kategori->save();
+
+        return redirect('/admin/pengaduan')->with("Berhasil", "Kategori Pengaduan Berhasil Ditambahkan!");
+    }
+
+    public function hapusKategoriPengaduan($id)
+    {
+        $kategori = \App\KategoriPengaduan::find($id);
+        $kategori->delete();
+        
+        return redirect('/admin/pengaduan')->with("Berhasil", "Kategori Berhasil Dihapus!");
     }
 
     public function pengumuman()

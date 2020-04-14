@@ -84,6 +84,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Pengaduan
     Route::get('/admin/pengaduan/', "AdminController@pengaduan");
+    Route::get('/admin/pengaduan/tambahKategori', "AdminController@tambahKategoriPengaduan");
+    Route::post('/admin/pengaduan/prosestambahkategori', "AdminController@prosesTambahKategoriPengaduan");
+    Route::get('/admin/pengaduan/hapusKategori/{id}', "AdminController@hapusKategoriPengaduan");
     Route::get('/admin/pengaduan/ubah', function () {
         return view('pages.admin.pengaduan.reply');
     });

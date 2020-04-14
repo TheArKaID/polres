@@ -4,6 +4,23 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
+    <div class="row">
+        <div class="card-body">
+            <a href="pengaduan/tambahKategori" class="btn btn-primary" style="float:right">Tambah Kategori</a>
+            <table class="table">
+                <tr>
+                    <th>Kategori</th>
+                    <th>Action</th>
+                </tr>
+                @foreach ($kategori as $k)
+                    <tr>
+                        <td>{{$k->kategori}}</td>
+                        <td><a href="pengaduan/hapusKategori/{{$k->id}}" class="btn btn-danger">Hapus</a></td>
+                    </tr>
+                @endforeach
+            </table>
+        </div>
+    </div>
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Pengaduan</h1>
