@@ -8,8 +8,8 @@
                          <div class="main-menu  d-none d-lg-block">
                              <nav>
                                  <ul id="navigation">
-                                     <li><a class="active" href="{{url('/')}}">beranda</a></li>
-                                     <li><a href="#">profil <i class="ti-angle-down"></i></a>
+                                     <li class="mr-4"><a class="active" href="{{url('/')}}">beranda</a></li>
+                                     <li class="mr-4"><a href="#">profil <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="{{url('/pengaduan')}}">Tupoksi</a></li>
                                             <li><a href="{{url('#')}}">Personil</a></li>
@@ -18,8 +18,8 @@
                                             <li><a href="{{url('/berita/berita-all')}}">berita</a></li>
                                         </ul>
                                     </li>
-                                     <li><a href="#">polsek</a></li>
-                                     <li><a href="#">pelayanan <i class="ti-angle-down"></i></a>
+                                     <li class="mr-4"><a href="#">polsek</a></li>
+                                     <li class="mr-4"><a href="#">pelayanan <i class="ti-angle-down"></i></a>
                                          <ul class="submenu">
                                              <li><a href="{{url('/pelayanan/pelayanan-all')}}">Semua Pelayanan</a></li>
                                              <li><a href="{{url('/pengaduan')}}">Pengaduan</a></li>
@@ -33,7 +33,7 @@
                      <div class="col-xl-2 col-lg-2">
                          <div class="logo-img">
                              <a href="{{url('/')}}">
-                                 <img src="{{url('frontend/img/logo-polda-jateng.png')}}" alt="">
+                                 <img class="logo-navbar" src="{{url('frontend/img/logo-polres-batang.png')}}" alt="">
                              </a>
                          </div>
                      </div>

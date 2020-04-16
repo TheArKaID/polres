@@ -20,7 +20,7 @@ body {
 }
 
 .logo-img a img {
-    width: 45px;
+    width: 100%;
 }
 
 .img {
@@ -427,11 +427,12 @@ h3 {
     left: 0
 }
 
-/* .line-button:hover {
-    color: #009DFF
+.line-button:hover {
+    color: #919191;
+    text-decoration: none;
 }
 
-.line-button:hover::before {
+/* .line-button:hover::before {
     background: #009DFF
 } */
 

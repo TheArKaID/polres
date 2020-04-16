@@ -5,19 +5,7 @@
                  <div class="col-xl-5 col-md-6 col-lg-5">
                     <div class="footer_widget">
                         <ul>
-                            <div class="row">
-                                <div class="col-3">
-                                    <img style="width: 60px" src="{{url('frontend/img/logo-polda-jateng.png')}}" alt="">
-                                </div>
-                                <div class="col-9">
-                                    <div class="row">
-                                        <h2 class="text-white">Kepolisian Resor</h2>
-                                    </div>
-                                    <div class="row">
-                                        <h2 class="text-white">Kota Batang</h2>
-                                    </div>
-                                </div>
-                            </div>
+                            <img src="frontend/img/logo-polres-batang.png" style="width: 70%">
                         </ul>
                     </div>
                 </div>
