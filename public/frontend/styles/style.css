@@ -715,13 +715,13 @@ h3 {
 
 @media (max-width: 767px) {
     .header-area .main-header-area .logo-img img {
-        width: 70px
+        width: 60%;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     .header-area .main-header-area .logo-img img {
-        width: 70px
+        width: 60%;
     }
 }
 
