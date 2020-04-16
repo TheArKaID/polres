@@ -28,11 +28,11 @@
                             Social Media
                         </h3>
                         <p class="footer_text"><i class="fab fa-instagram"></i>
-                            umyogya</p>
+                            RuangHalalIndonesia</p>
                         <p class="footer_text"><i class="fab fa-twitter"></i>
-                            umyogya</p>
+                            RuangHalalIndonesia</p>
                         <p class="footer_text"><i class="fab fa-facebook"></i>
-                            umyogya</p>
+                            RuangHalalIndonesia</p>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
 
-                        </script> All rights reserved | HUHUHU TEAM
+                        </script> All rights reserved | ruanghalal.com
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>
             </div>
