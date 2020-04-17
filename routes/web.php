@@ -39,6 +39,18 @@ Route::get('/admin/polsek/edit', function () {
     return view('pages.admin.polsek.edit');
 });
 
+Route::get('/admin/settings/ubah-favicon', function () {
+    return view('pages.admin.settings.ganti-favicon');
+});
+
+Route::get('/admin/settings/ubah-navbar', function () {
+    return view('pages.admin.settings.ganti-navbar');
+});
+
+Route::get('/admin/settings/ubah-footer', function () {
+    return view('pages.admin.settings.ganti-footer');
+});
+
 Route::get('/berita/berita-all', "FrontController@berita");
 
 Route::get('/inovasi/inovasi-all', "FrontController@inovasi");

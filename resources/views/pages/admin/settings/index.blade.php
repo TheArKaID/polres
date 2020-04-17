@@ -9,6 +9,96 @@
         <h1 class="h3 mb-0 text-gray-800">Settings</h1>
     </div>
 
+ <h6 class="bold mb-0 mt-5">Favicon</h6>
+    <div class="row">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" width="100%" collspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Favicon</th>
+                            <th style="width: 150px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img></td>
+
+                            <td>
+                                 <a href="/admin/settings/ubah-favicon" class="btn btn-primary">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+ <h6 class="bold mb-0 mt-5">Logo Navbar</h6>
+    <div class="row">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" width="100%" collspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Logo Navbar</th>
+                            <th style="width: 150px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img></td>
+
+                            <td>
+                                 <a href="/admin/settings/ubah-navbar" class="btn btn-primary">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+     <h6 class="bold mb-0 mt-5">Logo Footer</h6>
+    <div class="row">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" width="100%" collspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Logo Footer</th>
+                            <th style="width: 150px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img></td>
+
+                            <td>
+                                 <a href="/admin/settings/ubah-footer" class="btn btn-primary">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <h6 class="bold mb-0 mt-5">Ganti Alamat</h6>
     <div class="row">
         <div class="card-body">
@@ -22,11 +112,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Polisi siaga 1</td>
+                            <td><img></td>
 
                             <td>
-                                 <a href="/admin/settings/ubah-alamat" class="btn btn-info">
-                                        <i class="fas fa-pencil-alt"></i>
+                                 <a href="/admin/settings/ubah-alamat" class="btn btn-primary">
+                                        <i class="fas fa-plus"></i>
                                     </a>
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
                                     <i class="fa fa-trash"></i>
@@ -39,7 +129,7 @@
         </div>
     </div>
 
-    <h6 class="bold mb-0 mt-5">Ganti Background</h6>
+    <h6 class="bold mb-0 mt-5">Background Header</h6>
     <div class="row">
         <div class="card-body">
             <div class="table-responsive">
@@ -55,8 +145,8 @@
                             <td>Polisi siaga 1</td>
 
                             <td>
-                                 <a href="/admin/settings/ubah-background" class="btn btn-info">
-                                        <i class="fas fa-pencil-alt"></i>
+                                 <a href="/admin/settings/ubah-background" class="btn btn-primary">
+                                        <i class="fas fa-plus"></i>
                                     </a>
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
                                     <i class="fa fa-trash"></i>
@@ -69,7 +159,7 @@
         </div>
     </div>
 
-    <h6 class="bold mb-0 mt-5">Ganti Media Sosial</h6>
+    <h6 class="bold mb-0 mt-5">Media Sosial</h6>
     <div class="row">
         <div class="card-body">
             <div class="table-responsive">
@@ -88,8 +178,8 @@
                             <td>http://facebook.com</td>
                             <td>http://twitter.com</td>
                             <td>
-                                  <a href="/admin/settings/ubah-medsos" class="btn btn-info">
-                                        <i class="fas fa-pencil-alt"></i>
+                                  <a href="/admin/settings/ubah-medsos" class="btn btn-primary">
+                                        <i class="fas fa-plus"></i>
                                     </a>
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
                                     <i class="fa fa-trash"></i>
