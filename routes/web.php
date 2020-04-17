@@ -15,11 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', "FrontController@index");
 
-
-Route::get('/inovasi/inovasi-1', function () {
-    return view('pages.inovasi.inovasi-1');
-});
-
 Route::get('/polsek/index', function () {
     return view('pages.polsek.index');
 });
@@ -92,6 +87,7 @@ Route::get('/admin/personil/tambah', function () {
 Route::get('/berita/berita-all', "FrontController@berita");
 
 Route::get('/inovasi/inovasi-all', "FrontController@inovasi");
+Route::get('/inovasi/{inovasi}', "FrontController@inovasiOne");
 
 Route::get('/galeri/galeri-all', "FrontController@galeri");
 

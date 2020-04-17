@@ -31,10 +31,11 @@ class FrontController extends Controller
     public function inovasi()
     {
         $pengumuman = Pengumuman::all();
-
-
+        $inovasi = Inovasi::simplePaginate(1);
+        // dd($inovasi);
         return view('pages.inovasi.inovasi-all', [
-            'pengumuman' => $pengumuman
+            'pengumuman' => $pengumuman,
+            'inovasi' =>$inovasi
         ]);
     }
 
