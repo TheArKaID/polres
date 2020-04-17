@@ -32,6 +32,7 @@ class FrontController extends Controller
     {
         $pengumuman = Pengumuman::all();
 
+
         return view('pages.inovasi.inovasi-all', [
             'pengumuman' => $pengumuman
         ]);
@@ -49,8 +50,10 @@ class FrontController extends Controller
     public function pelayanan()
     {
         $pengumuman = Pengumuman::all();
+        $pelayanan = Pelayanan::all();
 
         return view('pages.pelayanan.pelayanan-all', [
+            'pelayanan' => $pelayanan,
             'pengumuman' => $pengumuman
         ]);
     }
