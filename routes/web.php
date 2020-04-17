@@ -59,6 +59,18 @@ Route::get('/tupoksi/detail', function () {
     return view('pages.tupoksi.detail');
 });
 
+Route::get('/admin/tupoksi', function () {
+    return view('pages.admin.tupoksi.index');
+});
+
+Route::get('/admin/tupoksi/ubah', function () {
+    return view('pages.admin.tupoksi.edit');
+});
+
+Route::get('/admin/tupoksi/tambah', function () {
+    return view('pages.admin.tupoksi.create');
+});
+
 Route::get('/berita/berita-all', "FrontController@berita");
 
 Route::get('/inovasi/inovasi-all', "FrontController@inovasi");

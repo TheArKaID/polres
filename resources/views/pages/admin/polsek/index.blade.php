@@ -6,7 +6,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Berita</h1>
+        <h1 class="h3 mb-0 text-gray-800">Polsek</h1>
         <a href="{{url('/admin/polsek/create')}}" class="btn btn-sm btn-primary shadow-sm">
             <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Polsek
         </a>
@@ -53,7 +53,7 @@
                                 width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""
                                 aria-hidden="false" tabindex="0"></iframe></td>
                                 <td>
-                                    <a href="" class="btn btn-info">
+                                    <a href="{{url('/admin/polsek/edit')}}" class="btn btn-info">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
                                     <form class="d-inline">
@@ -66,7 +66,7 @@
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Hapus Berita</h5>
+                                                        <h5 class="modal-title" id="exampleModalLabel">Hapus Polsek</h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>

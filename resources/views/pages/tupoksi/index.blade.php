@@ -44,7 +44,7 @@ Polres Batang
                                                 organisasi di lingkungan Polres dan unsur pelaksana kewilayahan dalam
                                                 jajarannya; dan Memberikan saran pertimbangan kepada Kapolda yang
                                                 terkait dengan pelaksanaan tugasnya.</p>
-                                                <a>Selengkapnya ></a>
+                                                <a href="tupoksi/detail">Selengkapnya ></a>
                                         </div>
                                     </div>
                         </div>
@@ -66,7 +66,7 @@ Polres Batang
                                                 organisasi di lingkungan Polres dan unsur pelaksana kewilayahan dalam
                                                 jajarannya; dan Memberikan saran pertimbangan kepada Kapolda yang
                                                 terkait dengan pelaksanaan tugasnya.</p>
-                                                <a>Selengkapnya ></a>
+                                                <a href="">Selengkapnya ></a>
                                         </div>
                                     </div>
                         </div>

@@ -73,6 +73,13 @@
         <span>Polsek</span></a>
     </li>
 
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('/admin/tupoksi')}}">
+<i class="fas fa-paperclip"></i>
+        <span>Tupoksi</span></a>
+    </li>
+
     <li class="nav-item">
       <a class="nav-link" href="{{url('/admin/settings')}}">
         <i class="fas fa-fw fa-cog"></i>

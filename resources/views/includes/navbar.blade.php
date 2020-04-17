@@ -11,7 +11,7 @@
                                      <li class="mr-4"><a class="active" href="{{url('/')}}">beranda</a></li>
                                      <li class="mr-4"><a href="#">profil <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="{{url('/pengaduan')}}">Tupoksi</a></li>
+                                            <li><a href="{{url('/tupoksi')}}">Tupoksi</a></li>
                                             <li><a href="{{url('#')}}">Personil</a></li>
                                             <li><a href="{{url('/galeri/galeri-all')}}">galeri</a></li>
                                             <li><a href="{{url('/inovasi/inovasi-all')}}">inovasi</a></li>
