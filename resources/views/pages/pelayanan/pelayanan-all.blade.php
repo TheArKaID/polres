@@ -28,7 +28,7 @@ Polres Batang
                                     <i class="fas fa-book fa-w-16 fa-3x"></i>
                                 </div>
                                 <div class="col-9">
-                                    <a style="color:black; font-weight:bold;" href="">{{$p->judul}}</a>
+                                    <a style="color:black; font-weight:bold;" href="{{url('pelayanan/'.$p->url)}}">{{$p->judul}}</a>
                                     <p>Klik Untuk Mengakses</p>
                                 </div>
                             </div>

@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', "FrontController@index");
 
-Route::get('/pelayanan/pelayanan-sim', function () {
-    return view('pages.pelayanan.pelayanan-sim');
-});
 
 Route::get('/inovasi/inovasi-1', function () {
     return view('pages.inovasi.inovasi-1');
@@ -99,9 +96,9 @@ Route::get('/inovasi/inovasi-all', "FrontController@inovasi");
 Route::get('/galeri/galeri-all', "FrontController@galeri");
 
 Route::get('/pelayanan/pelayanan-all', "FrontController@pelayanan");
+Route::get('/pelayanan/{pelayanan}', "FrontController@pelayananOne");
 
 Route::get('/pengaduan', "FrontController@pengaduan");
-
 Route::get('/pengaduan/cek-status', "FrontController@cekPengaduan");
 
 Auth::routes();

@@ -58,6 +58,18 @@ class FrontController extends Controller
         ]);
     }
 
+    public function pelayananOne($url)
+    {
+        $pelayanan = Pelayanan::where("url", $url)->first();
+        if($pelayanan==null){
+            return redirect('/pelayanan/pelayanan-all');
+        }
+        
+        return view('pages.pelayanan.pelayanan-one', [
+            'pelayanan' => $pelayanan
+        ]);
+    }
+
     public function cekPengaduan()
     {
         $pengumuman = Pengumuman::all();
