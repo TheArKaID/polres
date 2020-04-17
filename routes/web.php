@@ -51,6 +51,14 @@ Route::get('/admin/settings/ubah-footer', function () {
     return view('pages.admin.settings.ganti-footer');
 });
 
+Route::get('/tupoksi', function () {
+    return view('pages.tupoksi.index');
+});
+
+Route::get('/tupoksi/detail', function () {
+    return view('pages.tupoksi.detail');
+});
+
 Route::get('/berita/berita-all', "FrontController@berita");
 
 Route::get('/inovasi/inovasi-all', "FrontController@inovasi");
