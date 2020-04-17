@@ -80,6 +80,13 @@
         <span>Tupoksi</span></a>
     </li>
 
+     <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('/admin/personil')}}">
+<i class="fas fa-user-alt"></i>
+        <span>Personil</span></a>
+    </li>
+
     <li class="nav-item">
       <a class="nav-link" href="{{url('/admin/settings')}}">
         <i class="fas fa-fw fa-cog"></i>

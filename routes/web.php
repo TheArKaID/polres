@@ -71,6 +71,27 @@ Route::get('/admin/tupoksi/tambah', function () {
     return view('pages.admin.tupoksi.create');
 });
 
+Route::get('/personil/detail', function () {
+    return view('pages.personil.detail');
+});
+
+Route::get('/personil', function () {
+    return view('pages.personil.index');
+});
+
+Route::get('/admin/personil', function () {
+    return view('pages.admin.personil.index');
+});
+
+Route::get('/admin/personil/ubah', function () {
+    return view('pages.admin.personil.edit');
+});
+
+Route::get('/admin/personil/tambah', function () {
+    return view('pages.admin.personil.create');
+});
+
+
 Route::get('/berita/berita-all', "FrontController@berita");
 
 Route::get('/inovasi/inovasi-all', "FrontController@inovasi");
