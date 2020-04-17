@@ -23,6 +23,10 @@ Route::get('/inovasi/inovasi-1', function () {
     return view('pages.inovasi.inovasi-1');
 });
 
+Route::get('/polsek/index', function () {
+    return view('pages.polsek.index');
+});
+
 Route::get('/berita/berita-all', "FrontController@berita");
 
 Route::get('/inovasi/inovasi-all', "FrontController@inovasi");

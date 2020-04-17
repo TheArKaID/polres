@@ -225,6 +225,18 @@ h3 {
     z-index: 0
 }
 
+.submenu-right {
+    position: absolute !important;
+    top: -7px;
+    right: auto;
+    left: 100%;
+    background: #fff;
+    width: 100%;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
+    text-align: left;
+}
+
 .overlay::before {
     position: absolute;
     content: "";
