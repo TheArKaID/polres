@@ -66,6 +66,13 @@
         <span>Pengaduan</span></a>
     </li>
 
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('/admin/polsek/index')}}">
+<i class="fas fa-home"></i>
+        <span>Polsek</span></a>
+    </li>
+
     <li class="nav-item">
       <a class="nav-link" href="{{url('/admin/settings')}}">
         <i class="fas fa-fw fa-cog"></i>

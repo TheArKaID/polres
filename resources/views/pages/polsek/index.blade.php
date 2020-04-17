@@ -28,7 +28,6 @@ Polres Batang
                         </h2>
                         <ul class="blog-info-link mt-3 mb-4">
                             <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                         </ul>
                         <div class="row bg-light">
 

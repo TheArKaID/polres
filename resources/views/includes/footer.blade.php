@@ -5,7 +5,7 @@
                  <div class="col-xl-5 col-md-6 col-lg-5">
                     <div class="footer_widget">
                         <ul>
-                            <img src="frontend/img/logo-polres-batang.png" style="width: 70%">
+                            <img src="../frontend/img/logo-polres-batang.png" style="width: 70%">
                         </ul>
                     </div>
                 </div>

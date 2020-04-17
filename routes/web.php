@@ -27,6 +27,18 @@ Route::get('/polsek/index', function () {
     return view('pages.polsek.index');
 });
 
+Route::get('/admin/polsek/index', function () {
+    return view('pages.admin.polsek.index');
+});
+
+Route::get('/admin/polsek/create', function () {
+    return view('pages.admin.polsek.create');
+});
+
+Route::get('/admin/polsek/edit', function () {
+    return view('pages.admin.polsek.edit');
+});
+
 Route::get('/berita/berita-all', "FrontController@berita");
 
 Route::get('/inovasi/inovasi-all', "FrontController@inovasi");
