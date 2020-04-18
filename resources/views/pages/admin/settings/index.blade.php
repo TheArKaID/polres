@@ -32,6 +32,26 @@
         </div>
     </div>
 
+    <h6 class="bold mb-0 mt-5">Nama Polres</h6>
+    <div class="row">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" width="100%" collspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Polres Batang</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
  <h6 class="bold mb-0 mt-5">Logo Navbar</h6>
     <div class="row">
         <div class="card-body">

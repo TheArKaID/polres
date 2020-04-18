@@ -15,48 +15,53 @@
     </div>
     <div class="card shadow">
         <div class="card-body">
-            <form action="/admin/banner/prosestambah" method="POST" enctype="multipart/form-data">
+            <form action="/admin/settings/prosestambah" method="POST" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <label for="judul" class="bold">Favicon</label>
-                    <input type="file" class="form-control" name="gambar" placeholder="gambar">
+                    <label for="favicon" class="bold">Favicon</label>
+                    <input type="file" class="form-control" name="favicon" placeholder="favicon">
                     <p>*Format gambar .ico</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="judul" class="bold">Logo Navbar</label>
-                    <input type="file" class="form-control" name="gambar" placeholder="gambar">
+                    <label for="nama-polres" class="bold">Nama Polres</label>
+                    <input type="text" class="form-control" name="nama-polres" placeholder="Masukkan Nama Polres">
+                </div>
+
+                <div class="form-group">
+                    <label for="logo-navbar" class="bold">Logo Navbar</label>
+                    <input type="file" class="form-control" name="logo-navbar" placeholder="Logo Navbar">
                     <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="judul" class="bold">Logo Footer</label>
-                    <input type="file" class="form-control" name="gambar" placeholder="gambar">
+                    <label for="logo-footer" class="bold">Logo Footer</label>
+                    <input type="file" class="form-control" name="logo-footer" placeholder="Logo Footer">
                     <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="judul" class="bold">Alamat</label>
-                    <input type="text" class="form-control" name="judul" placeholder="Masukkan Alamat">
+                    <label for="alamat" class="bold">Alamat</label>
+                    <textarea name="alamat" rows="10"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="judul" class="bold">Background</label>
-                    <input type="file" class="form-control" name="gambar" placeholder="gambar">
+                    <label for="background" class="bold">Background</label>
+                    <input type="file" class="form-control" name="background" placeholder="background">
                     <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="judul" class="bold">Instagram</label>
-                    <input type="text" class="form-control" name="judul" placeholder="Masukkan URL Instagram">
+                    <label for="instagram" class="bold">Instagram</label>
+                    <input type="text" class="form-control" name="instagram" placeholder="Masukkan URL Instagram">
                 </div>
                 <div class="form-group">
-                    <label for="judul" class="bold">Facebook</label>
-                    <input type="text" class="form-control" name="judul" placeholder="Masukkan URL Facebook">
+                    <label for="facebook" class="bold">Facebook</label>
+                    <input type="text" class="form-control" name="facebook" placeholder="Masukkan URL Facebook">
                 </div>
                 <div class="form-group">
-                    <label for="judul" class="bold">Twitter</label>
-                    <input type="text" class="form-control" name="judul" placeholder="Masukkan URL Twitter">
+                    <label for="twitter" class="bold">Twitter</label>
+                    <input type="text" class="form-control" name="twitter" placeholder="Masukkan URL Twitter">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">
