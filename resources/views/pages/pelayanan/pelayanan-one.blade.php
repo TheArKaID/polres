@@ -10,7 +10,7 @@ Polres Batang
 
  <!-- bradcam_area_start -->
   <div class="bradcam_area breadcam_bg">
-      <h3>{{$pelayanan->judul}}</h3>
+      <h3>Pelayanan</h3>
   </div>
   <!-- bradcam_area_end -->
 

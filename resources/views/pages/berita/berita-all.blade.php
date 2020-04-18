@@ -51,7 +51,7 @@ Polres Batang
                                 </div>
 
                                 <div class="blog_details">
-                                    <a class="d-inline-block" href="single-blog.html">
+                                    <a class="d-inline-block" href="{{url('berita/'.$b->url)}}">
                                         <h2>{{$b->judul}}</h2>
                                     </a>
                                     {!!$b->deskripsi!!}

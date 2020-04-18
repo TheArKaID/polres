@@ -9,7 +9,7 @@ Polres Batang
 @section('content')
  <!-- bradcam_area_start -->
   <div class="bradcam_area breadcam_bg">
-      <h3>{{$inovasi->judul}}</h3>
+      <h3>Inovasi</h3>
   </div>
   <!-- bradcam_area_end -->
 

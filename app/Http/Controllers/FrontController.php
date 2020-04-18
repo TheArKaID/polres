@@ -102,6 +102,18 @@ class FrontController extends Controller
         ]);
     }
 
+    public function beritaOne($url)
+    {
+        $berita = Berita::where("url", $url)->first();
+        if($berita==null){
+            return redirect('/berita/berita-all');
+        }
+        
+        return view('pages.berita.berita-one', [
+            'berita' => $berita
+        ]);
+    }
+
     public function pengaduan()
     {
         $pengumuman = Pengumuman::all();

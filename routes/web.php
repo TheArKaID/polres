@@ -75,14 +75,8 @@ Route::get('/admin/personil/tambah', function () {
     return view('pages.admin.personil.create');
 });
 
-Route::get('/berita/berita-one', function () {
-    return view('pages.berita.berita-one');
-});
-
-
-
-
 Route::get('/berita/berita-all', "FrontController@berita");
+Route::get('/berita/{berita}', "FrontController@beritaOne");
 
 Route::get('/inovasi/inovasi-all', "FrontController@inovasi");
 Route::get('/inovasi/{inovasi}', "FrontController@inovasiOne");
