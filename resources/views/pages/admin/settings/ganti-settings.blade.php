@@ -41,6 +41,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="logo-admin" class="bold">Logo Polres di Admin</label>
+                    <input type="file" class="form-control" name="logo-admin" placeholder="Logo Polres di Admin">
+                    <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
+                </div>
+
+                <div class="form-group">
                     <label for="alamat" class="bold">Alamat</label>
                     <textarea name="alamat" rows="10"></textarea>
                 </div>

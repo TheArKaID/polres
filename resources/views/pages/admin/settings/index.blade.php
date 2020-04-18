@@ -92,6 +92,26 @@
         </div>
     </div>
 
+     <h6 class="bold mb-0 mt-5">Logo Polres di Admin</h6>
+    <div class="row">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" width="100%" collspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Logo Polres di Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <h6 class="bold mb-0 mt-5">Ganti Alamat</h6>
     <div class="row">
         <div class="card-body">
