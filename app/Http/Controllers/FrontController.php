@@ -31,7 +31,7 @@ class FrontController extends Controller
     public function inovasi()
     {
         $pengumuman = Pengumuman::all();
-        $inovasi = Inovasi::simplePaginate(4);
+        $inovasi = Inovasi::paginate(4);
         
         return view('pages.inovasi.inovasi-all', [
             'pengumuman' => $pengumuman,
