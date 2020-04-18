@@ -18,15 +18,14 @@
 
 <div class="container mt-5 pt-5 mb-5">
                             <div class="row center-kop">
-                                 <img class="mr-4" style="width: 60px" src="{{url('frontend/img/logo-polda-jateng.png')}}" alt="">
-                                        <h2 class="text-black">Kepolisian Resor <br> Kota Batang</h2>
+                                 <img class="mr-4" style="width: 100%" src="{{url('frontend/img/logo-polres-batang-black.png')}}" alt="">
                             </div>
 </div>
 
     @yield('content')
 
     <div class="container mt-4 mb-5" style="text-align: center">
-        <a class="navbar-brand btn btn-danger" style="" href="/"><i class="fas fa-arrow-left" style="font-size: 16px"></i> Kembali</a>
+        <a class="navbar-brand btn btn-light" style="" href="/"><i class="fas fa-arrow-left" style="font-size: 16px"></i> Kembali</a>
     </div>
 
     </body>
