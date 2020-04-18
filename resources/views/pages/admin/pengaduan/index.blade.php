@@ -36,7 +36,7 @@
                                 <td>{{$p->nama}}</td>
                                 <td>{{$p->email}}</td>
                                 <td>{{$p->notelpon}}</td>
-                                <td>{{$p->kategori}}</td>
+                                <td>{{$p->kategori->kategori}}</td>
                                 <td>{{$p->jeniskelamin}}</td>
                                 <td>{!!$p->penjelasan!!}</td>
                                 <td>{{$p->status}}</td>

@@ -11,4 +11,9 @@ class Pengaduan extends Model
     protected $fillable = [
         'nama', 'email', 'notelpon', 'kategori_id', 'jeniskelamin', 'penjelasan', 'status'
     ];
+    
+    public function kategori()
+    {
+        return $this->belongsTo(KategoriPengaduan::class);
+    }
 }
