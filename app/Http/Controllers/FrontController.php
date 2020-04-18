@@ -9,6 +9,7 @@ use App\Inovasi;
 use App\Galeri;
 use App\Pengumuman;
 use App\Berita;
+use App\KategoriPengaduan;
 
 class FrontController extends Controller
 {
@@ -117,9 +118,11 @@ class FrontController extends Controller
     public function pengaduan()
     {
         $pengumuman = Pengumuman::all();
+        $kategori = KategoriPengaduan::all();
 
         return view('pages.pengaduan.pengaduan', [
-            'pengumuman' => $pengumuman
+            'pengumuman' => $pengumuman,
+            'kategori' => $kategori
         ]);
     }
 }

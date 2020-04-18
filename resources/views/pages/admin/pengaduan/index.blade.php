@@ -4,29 +4,12 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <div class="row">
-        <div class="card-body">
-            <a href="pengaduan/tambahKategori" class="btn btn-primary" style="float:right">Tambah Kategori</a>
-            <table class="table">
-                <tr>
-                    <th>Kategori</th>
-                    <th>Action</th>
-                </tr>
-                @foreach ($kategori as $k)
-                    <tr>
-                        <td>{{$k->kategori}}</td>
-                        <td><a href="pengaduan/hapusKategori/{{$k->id}}" class="btn btn-danger">Hapus</a></td>
-                    </tr>
-                @endforeach
-            </table>
-        </div>
-    </div>
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Pengaduan</h1>
     </div>
 
-    <div class="row">
+    <div class="row" style="display:block">
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
@@ -72,6 +55,26 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="card-body">
+            <a href="pengaduan/tambahKategori" class="btn btn-primary mb-2" style="float:right">Tambah Kategori</a>
+            <table class="table table-sm table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Kategori</th>
+                        <th style="width: 50px">Action</th>
+                    </tr>
+                </thead>
+                @foreach ($kategori as $k)
+                    <tr>
+                        <td>{{$k->kategori}}</td>
+                        <td><a href="pengaduan/hapusKategori/{{$k->id}}" class="btn btn-danger">Hapus</a></td>
+                    </tr>
+                @endforeach
+            </table>
         </div>
     </div>
 </div>
