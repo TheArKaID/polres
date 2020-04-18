@@ -87,6 +87,7 @@ Route::get('/pelayanan/pelayanan-all', "FrontController@pelayanan");
 Route::get('/pelayanan/{pelayanan}', "FrontController@pelayananOne");
 
 Route::get('/pengaduan', "FrontController@pengaduan");
+Route::post('/pengaduan/lapor', "FrontController@laporPengaduan");
 Route::get('/pengaduan/cek-status', "FrontController@cekPengaduan");
 
 Auth::routes();

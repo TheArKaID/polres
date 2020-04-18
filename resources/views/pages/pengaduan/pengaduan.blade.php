@@ -18,7 +18,8 @@ Polres Batang
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
             <div class="comment-form" style="margin: auto;">
                 <h4>Layanan Pengaduan</h4>
-                <form class="form-contact comment_form" action="#" id="commentForm">
+                <form class="form-contact comment_form" action="/pengaduan/lapor" method="POST">
+                    {{ csrf_field() }}
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -41,19 +42,10 @@ Polres Batang
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <select class="form-control select2" name="category" required="">
-                                    <option value="">- Pilih Kategori</option>
-                                    <option value="14">Kecelakaan Lalu Lintas</option>
-                                    <option value="0">Lain Lain</option>
-                                    <option value="3">Miras</option>
-                                    <option value="6">Pemerkosaan</option>
-                                    <option value="5">Penculikan</option>
-                                    <option value="11">Pencurian</option>
-                                    <option value="1">Pencurian Ranmor</option>
-                                    <option value="9">Penganiayaan</option>
-                                    <option value="10">Penipuan/Penggelapan</option>
-                                    <option value="2">Perjudian</option>
-                                    <option value="12">Perkelahian/pengeroyokan</option>
-                                    <option value="13">Pungutan Liar</option>
+                                    <option selected hidden>- Pilih Kategori</option>
+                                    @foreach ($kategori as $k)
+                                        <option value="{{$k->id}}">{{$k->kategori}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -69,7 +61,7 @@ Polres Batang
                         <div class="col-12">
                             <div class="form-group">
                                 <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                    placeholder="Write Comment"></textarea>
+                                    placeholder="Write Comment" required></textarea>
                             </div>
                         </div>
                     </div>

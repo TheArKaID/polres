@@ -10,6 +10,7 @@ use App\Galeri;
 use App\Pengumuman;
 use App\Berita;
 use App\KategoriPengaduan;
+use App\Pengaduan;
 
 class FrontController extends Controller
 {
@@ -124,5 +125,20 @@ class FrontController extends Controller
             'pengumuman' => $pengumuman,
             'kategori' => $kategori
         ]);
+    }
+
+    public function laporPengaduan(Request $request)
+    {
+        $laporan = new Pengaduan;
+        $laporan->nama = $request['name'];
+        $laporan->email = $request['email'];
+        $laporan->notelpon = $request['phone'];
+        $laporan->kategori_id = $request['category'];
+        $laporan->jeniskelamin = $request['gender'];
+        $laporan->penjelasan = $request['comment'];
+        $laporan->status = "Menunggu";
+        $laporan->save();
+
+        return redirect('/pengaduan')->with("Berhasil", "Pengaduan Berhasil Dilaporkan!");
     }
 }
