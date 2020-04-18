@@ -58,7 +58,7 @@ Polres Batang
                                         <i class="fas fa-book fa-w-16 fa-3x"></i>
                                     </div>
                                     <div class="col-9">
-                                        <a style="color:black; font-weight:bold;" href="{{url('/pelayanan/pelayanan-sim')}}">{{$p->judul}}</a>
+                                        <a style="color:black; font-weight:bold;" href="{{url('pelayanan/'.$p->url)}}">{{$p->judul}}</a>
                                         <p>Klik Untuk Mengakses</p>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@ Polres Batang
                                 <span>Inovasi</span>
                                 <h3>{{$i->judul}}</h3>
                             </div>
-                            <a href="#" class="line-button">Selengkapnya</a>
+                            <a href="{{url('inovasi/'.$i->url)}}" class="line-button">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
