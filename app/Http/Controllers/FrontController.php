@@ -8,6 +8,7 @@ use App\Pelayanan;
 use App\Inovasi;
 use App\Galeri;
 use App\Pengumuman;
+use App\Berita;
 
 class FrontController extends Controller
 {
@@ -94,10 +95,10 @@ class FrontController extends Controller
 
     public function berita()
     {
-        $pengumuman = Pengumuman::all();
+        $berita = Berita::paginate(5);
 
         return view('pages.berita.berita-all', [
-            'pengumuman' => $pengumuman
+            'berita' => $berita
         ]);
     }
 
