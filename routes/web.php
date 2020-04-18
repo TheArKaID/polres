@@ -31,16 +31,8 @@ Route::get('/admin/polsek/edit', function () {
     return view('pages.admin.polsek.edit');
 });
 
-Route::get('/admin/settings/ubah-favicon', function () {
-    return view('pages.admin.settings.ganti-favicon');
-});
-
-Route::get('/admin/settings/ubah-navbar', function () {
-    return view('pages.admin.settings.ganti-navbar');
-});
-
-Route::get('/admin/settings/ubah-footer', function () {
-    return view('pages.admin.settings.ganti-footer');
+Route::get('/admin/settings/ubah', function () {
+    return view('pages.admin.settings.ganti-settings');
 });
 
 Route::get('/tupoksi', function () {
@@ -156,17 +148,5 @@ Route::group(['middleware' => ['auth']], function () {
     // Setting
     Route::get('/admin/settings/', function () {
         return view('pages.admin.settings.index');
-    });
-
-    Route::get('/admin/settings/ubah-alamat', function () {
-        return view('pages.admin.settings.ganti-alamat');
-    });
-
-    Route::get('/admin/settings/ubah-background', function () {
-        return view('pages.admin.settings.ganti-background');
-    });
-
-    Route::get('/admin/settings/ubah-medsos', function () {
-        return view('pages.admin.settings.ganti-medsos');
     });
 });

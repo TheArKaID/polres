@@ -7,6 +7,9 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Settings</h1>
+        <a href="{{url('/admin/settings/ubah')}}" class="btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-50"></i> Edit Settings
+        </a>
     </div>
 
  <h6 class="bold mb-0 mt-5">Favicon</h6>
@@ -17,21 +20,11 @@
                     <thead>
                         <tr>
                             <th>Favicon</th>
-                            <th style="width: 150px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><img></td>
-
-                            <td>
-                                 <a href="/admin/settings/ubah-favicon" class="btn btn-primary">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -47,21 +40,11 @@
                     <thead>
                         <tr>
                             <th>Logo Navbar</th>
-                            <th style="width: 150px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><img></td>
-
-                            <td>
-                                 <a href="/admin/settings/ubah-navbar" class="btn btn-primary">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -77,21 +60,11 @@
                     <thead>
                         <tr>
                             <th>Logo Footer</th>
-                            <th style="width: 150px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><img></td>
-
-                            <td>
-                                 <a href="/admin/settings/ubah-footer" class="btn btn-primary">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -107,21 +80,11 @@
                     <thead>
                         <tr>
                             <th>Alamat</th>
-                            <th style="width: 150px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><img></td>
-
-                            <td>
-                                 <a href="/admin/settings/ubah-alamat" class="btn btn-primary">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -137,21 +100,11 @@
                     <thead>
                         <tr>
                             <th>Background</th>
-                            <th style="width: 150px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Polisi siaga 1</td>
-
-                            <td>
-                                 <a href="/admin/settings/ubah-background" class="btn btn-primary">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -169,7 +122,6 @@
                             <th>Instagram</th>
                             <th>Facebook</th>
                             <th>Twitter</th>
-                            <th style="width: 150px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -177,14 +129,6 @@
                             <td>http://instagram.com</td>
                             <td>http://facebook.com</td>
                             <td>http://twitter.com</td>
-                            <td>
-                                  <a href="/admin/settings/ubah-medsos" class="btn btn-primary">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
