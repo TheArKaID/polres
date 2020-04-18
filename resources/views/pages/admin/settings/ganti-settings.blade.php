@@ -72,5 +72,8 @@
     </div>
 </div>
 <!-- /.container-fluid -->
-
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+<script>
+    CKEDITOR.replace('alamat');
+</script>
 @endsection
