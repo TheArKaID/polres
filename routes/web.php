@@ -75,6 +75,12 @@ Route::get('/admin/personil/tambah', function () {
     return view('pages.admin.personil.create');
 });
 
+Route::get('/berita/berita-one', function () {
+    return view('pages.berita.berita-one');
+});
+
+
+
 
 Route::get('/berita/berita-all', "FrontController@berita");
 
