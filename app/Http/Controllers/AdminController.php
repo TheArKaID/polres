@@ -421,4 +421,31 @@ class AdminController extends Controller
         
         return redirect('/admin/pengumuman')->with("Berhasil", "Pengumuman Berhasil Dihapus!");
     }
+
+    public function polsek()
+    {
+        $wilayah = \App\WilayahPolsek::all();
+
+        return view('pages.admin.polsek.index', [
+            'wilayah' => $wilayah
+        ]);
+    }
+
+    public function tambahWilayah()
+    {
+        return view('pages.admin.polsek.createwilayah');
+    }
+
+    public function prosesTambahWilayah(Request $request)
+    {
+        $this->validate($request, [
+            'wilayah' => 'required',
+        ]);
+
+        $wilayah = new \App\WilayahPolsek;
+        $wilayah->wilayah = $request["wilayah"];
+        $wilayah->save();
+
+        return redirect('/admin/polres')->with("Berhasil", "Wilayah Polsek Berhasil Ditambahkan!");
+    }
 }

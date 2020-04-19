@@ -19,18 +19,6 @@ Route::get('/polsek/index', function () {
     return view('pages.polsek.index');
 });
 
-Route::get('/admin/polsek/index', function () {
-    return view('pages.admin.polsek.index');
-});
-
-Route::get('/admin/polsek/create', function () {
-    return view('pages.admin.polsek.create');
-});
-
-Route::get('/admin/polsek/edit', function () {
-    return view('pages.admin.polsek.edit');
-});
-
 Route::get('/admin/settings/ubah', function () {
     return view('pages.admin.settings.ganti-settings');
 });
@@ -144,6 +132,17 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pengaduan/hapusKategori/{id}', "AdminController@hapusKategoriPengaduan");
     Route::get('/admin/pengaduan/ubah', function () {
         return view('pages.admin.pengaduan.reply');
+    });
+
+    // Polsek
+    Route::get('/admin/polsek/index', "AdminController@polsek");
+    Route::get('/admin/polsek/tambahwilayah', "AdminController@tambahWilayah");
+    Route::post('/admin/polsek/prosestambahwilayah', "AdminController@prosesTambahWilayah");
+    Route::get('/admin/polsek/create', function () {
+        return view('pages.admin.polsek.create');
+    });
+    Route::get('/admin/polsek/edit', function () {
+        return view('pages.admin.polsek.edit');
     });
 
     // Setting

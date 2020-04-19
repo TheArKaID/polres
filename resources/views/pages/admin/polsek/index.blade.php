@@ -86,10 +86,29 @@
                                     </form>
                                 </td>
                             </tr>
-
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card-body">
+            <a href="tambahwilayah" class="btn btn-primary mb-2" style="float:right">Tambah Wilayah</a>
+            <table class="table table-sm table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Wilayah</th>
+                        <th style="width: 50px">Action</th>
+                    </tr>
+                </thead>
+                @foreach ($wilayah as $w)
+                    <tr>
+                        <td>{{$w->wilayah}}</td>
+                        <td><a href="polres/hapuswilayah/{{$w->id}}" class="btn btn-danger">Hapus</a></td>
+                    </tr>
+                @endforeach
+            </table>
         </div>
     </div>
 </div>
