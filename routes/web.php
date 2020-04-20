@@ -23,25 +23,12 @@ Route::get('/admin/settings/ubah', function () {
     return view('pages.admin.settings.ganti-settings');
 });
 
-
 Route::get('/personil/detail', function () {
     return view('pages.personil.detail');
 });
 
 Route::get('/personil', function () {
     return view('pages.personil.index');
-});
-
-Route::get('/admin/personil', function () {
-    return view('pages.admin.personil.index');
-});
-
-Route::get('/admin/personil/ubah', function () {
-    return view('pages.admin.personil.edit');
-});
-
-Route::get('/admin/personil/tambah', function () {
-    return view('pages.admin.personil.create');
 });
 
 Route::get('/berita/berita-all', "FrontController@berita");
@@ -142,5 +129,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/tupoksi/ubah/{tupoksi}', "AdminController@editTupoksi");
     Route::post('/admin/tupoksi/prosesedit', "AdminController@prosesEditTupoksi");
     Route::get('/admin/tupoksi/hapus/{id}', "AdminController@prosesHapusTupoksi");
+
+    // Personil
+    Route::get('/admin/personil', "AdminController@personil");
+    Route::get('/admin/personil/tambah', "AdminController@tambahPersonil");
+    Route::post('/admin/personil/prosestambah', "AdminController@prosesTambahPersonil");
+    
+    Route::get('/admin/personil/ubah', function () {
+        return view('pages.admin.personil.edit');
+    });
 
 });

@@ -12,6 +12,7 @@ use App\Berita;
 use App\Pengaduan;
 use App\Pengumuman;
 use App\Tupoksi;
+use App\Personil;
 
 class AdminController extends Controller
 {
@@ -531,5 +532,42 @@ class AdminController extends Controller
         $tupoksi->delete();
         
         return redirect('/admin/tupoksi')->with("Berhasil", "tupoksi Berhasil Dihapus!");
+    }
+
+    public function personil()
+    {
+        return view('pages.admin.personil.index');
+    }
+
+    public function tambahPersonil()
+    {
+        return view('pages.admin.personil.create');
+    }
+
+    public function prosesTambahPersonil(Request $request)
+    {
+        $this->validate($request, [
+            'nama' => 'required',
+            'deskripsi' => 'required',
+            'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
+        ]);
+
+        $url = Str::of($request["nama"])->slug('-');
+
+        $personil = new Personil;
+        $personil->nama = $request["nama"];
+        $personil->deskripsi = $request["deskripsi"];
+        $personil->url = $url;
+        $personil->save();
+
+        $file = $request->file("gambar");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $name = "personil-".$personil->id.".".$ext;
+        $file->move('frontend/img/personil', $name);
+
+        $personil->gambar = $name;
+        $personil->save();
+        
+        return redirect('/admin/personil')->with("Berhasil", "Personil Berhasil Ditambahkan!");
     }
 }

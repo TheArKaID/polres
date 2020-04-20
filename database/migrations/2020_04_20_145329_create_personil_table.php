@@ -17,7 +17,7 @@ class CreatePersonilTable extends Migration
             $table->id();
             $table->string('nama');
             $table->text("deskripsi");
-            $table->string('gambar');
+            $table->string('gambar')->nullable();
             $table->string('url');
             $table->timestamps();
         });

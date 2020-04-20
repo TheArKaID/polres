@@ -3,22 +3,17 @@
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Tambah Personil</h1>
     </div>
-        <div class="alert alert-danger">
-            <ul>
-
-            </ul>
-        </div>
     <div class="card shadow">
         <div class="card-body">
             <form action="/admin/personil/prosestambah" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="judul" class="bold">Nama Personil</label>
-                    <input type="text" class="form-control" name="judul" placeholder="Nama Personil">
+                    <label for="nama" class="bold">Nama Personil</label>
+                    <input type="text" class="form-control" name="nama" placeholder="Nama Personil">
                 </div>
                 <div class="form-group">
                     <label for="deskripsi" class="bold">Deskripsi</label>
