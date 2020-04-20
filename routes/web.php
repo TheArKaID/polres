@@ -140,9 +140,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     // Tupoksi
-    Route::get('/admin/tupoksi', function () {
-        return view('pages.admin.tupoksi.index');
-    });
+    Route::get('/admin/tupoksi', "AdminController@tupoksi");
 
     Route::get('/admin/tupoksi/ubah', function () {
         return view('pages.admin.tupoksi.edit');

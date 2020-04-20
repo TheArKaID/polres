@@ -141,4 +141,12 @@ class FrontController extends Controller
 
         return redirect('/pengaduan')->with("Berhasil", "Pengaduan Berhasil Dilaporkan!");
     }
+
+    public function tupoksi($key = null)
+    {
+        if($key==null)
+            return view('pages.polsek.index');
+        else
+            return view('pages.admin.polsek.index');
+    }
 }

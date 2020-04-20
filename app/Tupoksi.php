@@ -9,6 +9,6 @@ class Tupoksi extends Model
     protected $table = 'tupoksi';
     
     protected $fillable = [
-        'tupoksi', 'deskripsi', 'gambar'
+        'tupoksi', 'deskripsi', 'gambar', 'url',
     ];
 }

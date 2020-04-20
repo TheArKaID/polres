@@ -463,6 +463,13 @@ class AdminController extends Controller
         return view('pages.admin.tupoksi.create');
     }
 
+    public function tupoksi()
+    {
+        $tupoksi = Tupoksi::all();
+        return view('pages.admin.tupoksi.index', [
+            'tupoksi' => $tupoksi
+        ]);
+    }
     public function prosesTambahTupoksi(Request $request)
     {
         $this->validate($request, [

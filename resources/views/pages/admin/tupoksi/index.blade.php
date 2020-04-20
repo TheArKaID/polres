@@ -26,22 +26,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <img src="" alt="" style="width: 200px" class="img-thumbnail" />
-                            </td>
-                            <td>
-                                <a href="/admin/tupoksi/ubah" class="btn btn-info">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </a>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
+                        @php
+                            $no = 0;
+                        @endphp
+                        @foreach ($tupoksi as $t)
+                            <tr>
+                                <td>{{++$no}}</td>
+                                <td>{{$t->tupoksi}}</td>
+                                <td>{{$t->deskripsi}}</td>
+                                <td>
+                                    <img src="{{asset('frontend/img/tupoksi/'.$t->gambar)}}" alt="" style="width: 200px" class="img-thumbnail" />
+                                </td>
+                                <td>
+                                    <a href="/admin/tupoksi/ubah" class="btn btn-info">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
