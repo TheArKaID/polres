@@ -11,6 +11,7 @@ use App\Galeri;
 use App\Berita;
 use App\Pengaduan;
 use App\Pengumuman;
+use App\Tupoksi;
 
 class AdminController extends Controller
 {
@@ -455,5 +456,37 @@ class AdminController extends Controller
         $wilayah->delete();
         
         return redirect('/admin/polsek')->with("Berhasil", "Wilayah Polsek Berhasil Dihapus!");
+    }
+
+    public function tambahTupoksi()
+    {
+        return view('pages.admin.tupoksi.create');
+    }
+
+    public function prosesTambahTupoksi(Request $request)
+    {
+        $this->validate($request, [
+            'tupoksi' => 'required',
+            'deskripsi' => 'required',
+            'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
+        ]);
+
+        $url = Str::of($request["tupoksi"])->slug('-');
+
+        $tupoksi = new Tupoksi;
+        $tupoksi->tupoksi = $request["tupoksi"];
+        $tupoksi->deskripsi = $request["deskripsi"];
+        $tupoksi->url = $url;
+        $tupoksi->save();
+
+        $file = $request->file("gambar");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $name = "tupoksi-".$tupoksi->id.".".$ext;
+        $file->move('frontend/img/tupoksi', $name);
+
+        $tupoksi->gambar = $name;
+        $tupoksi->save();
+        
+        return redirect('/admin/tupoksi')->with("Berhasil", "Tupoksi Berhasil Ditambahkan!");
     }
 }

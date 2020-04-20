@@ -31,18 +31,6 @@ Route::get('/tupoksi/detail', function () {
     return view('pages.tupoksi.detail');
 });
 
-Route::get('/admin/tupoksi', function () {
-    return view('pages.admin.tupoksi.index');
-});
-
-Route::get('/admin/tupoksi/ubah', function () {
-    return view('pages.admin.tupoksi.edit');
-});
-
-Route::get('/admin/tupoksi/tambah', function () {
-    return view('pages.admin.tupoksi.create');
-});
-
 Route::get('/personil/detail', function () {
     return view('pages.personil.detail');
 });
@@ -150,4 +138,17 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/settings/', function () {
         return view('pages.admin.settings.index');
     });
+
+    // Tupoksi
+    Route::get('/admin/tupoksi', function () {
+        return view('pages.admin.tupoksi.index');
+    });
+
+    Route::get('/admin/tupoksi/ubah', function () {
+        return view('pages.admin.tupoksi.edit');
+    });
+
+    Route::get('/admin/tupoksi/tambah', "AdminController@tambahTupoksi");
+    Route::post('/admin/tupoksi/prosestambah', "AdminController@prosesTambahTupoksi");
+
 });
