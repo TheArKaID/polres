@@ -523,4 +523,13 @@ class AdminController extends Controller
 
         return redirect('/admin/tupoksi')->with("Berhasil", "tupoksi Berhasil Diubah!");
     }
+
+    public function prosesHapusTupoksi($id)
+    {
+        $tupoksi = Tupoksi::find($id);
+        unlink('frontend/img/tupoksi/'.$tupoksi->gambar);
+        $tupoksi->delete();
+        
+        return redirect('/admin/tupoksi')->with("Berhasil", "tupoksi Berhasil Dihapus!");
+    }
 }
