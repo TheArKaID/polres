@@ -12,6 +12,7 @@ use App\Berita;
 use App\KategoriPengaduan;
 use App\Pengaduan;
 use App\Tupoksi;
+use App\Personil;
 
 class FrontController extends Controller
 {
@@ -161,5 +162,13 @@ class FrontController extends Controller
             return view('pages.tupoksi.detail', ['tupoksi' => $tupoksi]);
         else
             return view('pages.admin.tupoksi.edit', ['tupoksi' => $tupoksi, 'key' => $key]);
+    }
+
+    public function personil()
+    {
+        $personil = Personil::all();
+        return view('pages.personil.index', [
+            'personil' => $personil
+        ]);
     }
 }

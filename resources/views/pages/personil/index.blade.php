@@ -26,25 +26,25 @@ Polres Batang
                         </h2>
                         <ul class="blog-info-link mt-3 mb-4">
                         </ul>
-
-                        <div class="row bg-light mb-5">
-
-                            <div class="col-lg-3 my-auto py-5" style="border-right: 1px solid black">
-                                <div class="row d-flex justify-content-center ">
-                                    <img style="width: 50%"
-                                        src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
+                        @foreach ($personil as $p)
+                            <div class="row bg-light mb-5">
+                                <div class="col-lg-3 my-auto py-5" style="border-right: 1px solid black">
+                                    <div class="row d-flex justify-content-center ">
+                                        <img style="width: 50%"
+                                            src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
+                                    </div>
+                                </div>
+                                <div class="px-5 py-5 col-lg-9 bg-light my-auto">
+                                    <div class="row">
+                                        <a href="">{{$p->nama}}</a>
+                                    </div>
+                                    <div class="row">
+                                        <p class="mb-0 mt-2">{{ \Illuminate\Support\Str::limit($p->deskripsi, 60, $end='...') }}</p><br>
+                                        <a href="personil/detail">Selengkapnya ></a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="px-5 py-5 col-lg-9 bg-light my-auto">
-                                <div class="row">
-                                    <a href="">Bapak Ketua Satgaslantas</a>
-                                </div>
-                                <div class="row">
-                                    <p class="mb-0 mt-2">Bapak. Ketua satgaslantas sudah tujuh tahun berkiprah....</p><br>
-                                    <a href="personil/detail">Selengkapnya ></a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

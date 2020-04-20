@@ -27,9 +27,6 @@ Route::get('/personil/detail', function () {
     return view('pages.personil.detail');
 });
 
-Route::get('/personil', function () {
-    return view('pages.personil.index');
-});
 
 Route::get('/berita/berita-all', "FrontController@berita");
 Route::get('/berita/{berita}', "FrontController@beritaOne");
@@ -48,6 +45,8 @@ Route::get('/tupoksi/detail/{tupoksi}/{key?}/{act?}', "FrontController@tupoksiOn
 Route::get('/pengaduan', "FrontController@pengaduan");
 Route::post('/pengaduan/lapor', "FrontController@laporPengaduan");
 Route::get('/pengaduan/cek-status', "FrontController@cekPengaduan");
+
+Route::get('/personil', "FrontController@personil");
 
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
