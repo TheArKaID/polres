@@ -2272,6 +2272,12 @@ h2 {
     font-size: 30px
 }
 
+a.text-h3 {
+    font-size: 24px;
+    opacity: unset !important;
+    visibility: unset !important;
+}
+
 h3 {
     font-size: 24px
 }
