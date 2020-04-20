@@ -20,26 +20,22 @@ Polres Batang
         <div class="row">
             <div class="col-lg-8 posts-list">
                 <div class="single-post">
-
                     <div class="blog_details">
-                        <h2>Daftar Personil
+                        <h2>Data Personil
                         </h2>
                         <ul class="blog-info-link mt-5 mb-4">
                             <div class="row d-flex justify-content-center">
-                                <img style="width:20%;" src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
+                                <img style="width:20%;" src="{{asset('frontend/img/personil/'.$personil->gambar)}}">
                             </div>
                             <div class="row px-4 d-flex justify-content-center">
                                 <div class="col-lg-12">
                                     <div class="row mt-5 d-flex justify-content-center">
-                                        <h4>Bapak Ketua Satgaslantas</h4>
+                                        <h4>{{$personil->nama}}</h4>
                                     </div>
                                     <div class="row d-flex justify-content-center">
-                                        <p>Bapak. Ketua satgaslantas sudah tujuh tahun berkiprah</p>
+                                        <p>{{$personil->deskripsi}}</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row d-flex justify-content-center">
-                                <p>Di Publikasikan Tanggal - 16 September 2016</p>
                             </div>
                         </ul>
                     </div>

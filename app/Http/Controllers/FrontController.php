@@ -171,4 +171,12 @@ class FrontController extends Controller
             'personil' => $personil
         ]);
     }
+
+    public function personilOne($url)
+    {
+        $personil = Personil::where('url', $url)->first();
+        return view('pages.personil.detail', [
+            'personil' => $personil
+        ]);
+    }
 }

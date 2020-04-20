@@ -23,11 +23,6 @@ Route::get('/admin/settings/ubah', function () {
     return view('pages.admin.settings.ganti-settings');
 });
 
-Route::get('/personil/detail', function () {
-    return view('pages.personil.detail');
-});
-
-
 Route::get('/berita/berita-all', "FrontController@berita");
 Route::get('/berita/{berita}', "FrontController@beritaOne");
 
@@ -47,6 +42,7 @@ Route::post('/pengaduan/lapor', "FrontController@laporPengaduan");
 Route::get('/pengaduan/cek-status', "FrontController@cekPengaduan");
 
 Route::get('/personil', "FrontController@personil");
+Route::get('/personil/detail/{personil}', "FrontController@personilOne");
 
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {

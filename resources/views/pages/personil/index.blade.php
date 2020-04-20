@@ -40,7 +40,7 @@ Polres Batang
                                     </div>
                                     <div class="row">
                                         <p class="mb-0 mt-2">{{ \Illuminate\Support\Str::limit($p->deskripsi, 60, $end='...') }}</p><br>
-                                        <a href="personil/detail">Selengkapnya ></a>
+                                        <a href="personil/detail/{{$p->url}}">Selengkapnya ></a>
                                     </div>
                                 </div>
                             </div>
