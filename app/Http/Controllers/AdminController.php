@@ -536,7 +536,10 @@ class AdminController extends Controller
 
     public function personil()
     {
-        return view('pages.admin.personil.index');
+        $personil = Personil::all();
+        return view('pages.admin.personil.index', [
+            'personil' => $personil
+        ]);
     }
 
     public function tambahPersonil()
