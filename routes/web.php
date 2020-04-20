@@ -134,9 +134,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/personil', "AdminController@personil");
     Route::get('/admin/personil/tambah', "AdminController@tambahPersonil");
     Route::post('/admin/personil/prosestambah', "AdminController@prosesTambahPersonil");
-    
-    Route::get('/admin/personil/ubah', function () {
-        return view('pages.admin.personil.edit');
-    });
+    Route::get('/admin/personil/ubah/{personil}', "AdminController@editPersonil");
+    Route::post('/admin/personil/prosesedit', "AdminController@prosesEditPersonil");
 
 });

@@ -573,4 +573,30 @@ class AdminController extends Controller
         
         return redirect('/admin/personil')->with("Berhasil", "Personil Berhasil Ditambahkan!");
     }
+
+    public function editPersonil(Personil $personil)
+    {
+        return view('pages.admin.personil.edit', [
+            'personil' => $personil
+        ]);
+    }
+
+    public function prosesEditPersonil(Request $request)
+    {
+        $this->validate($request,[
+            'nama' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        $input=$request->all();
+        
+        $personil = Personil::find($input['id']);
+        
+        $url = Str::of($input["nama"])->slug('-');
+        $personil->url = $url;
+
+        $personil->update($input);
+
+        return redirect('/admin/personil')->with("Berhasil", "Personil Berhasil Diubah!");
+    }
 }

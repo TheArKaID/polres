@@ -38,7 +38,7 @@
                                     <img src="{{asset('frontend/img/personil/'.$p->gambar)}}" alt="" style="width: 200px" class="img-thumbnail" />
                                 </td>
                                 <td>
-                                    <a href="/admin/personil/ubah" class="btn btn-info">
+                                    <a href="/admin/personil/ubah/{{$p->id}}" class="btn btn-info">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >
