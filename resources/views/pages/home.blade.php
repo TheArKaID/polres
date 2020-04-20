@@ -156,7 +156,7 @@ Polres Batang
                     <div class="single_instagram popup">
                         <img src="{{url('frontend/img/galeri/'.$g->gambar)}}" alt="">
                         <div class="ovrelay">
-                            <a href="#">
+                            <a target="_blank" href="{{url('frontend/img/galeri/'.$g->gambar)}}">
                                 <i class="fa fa-camera"></i>
                             </a>
                         </div>
