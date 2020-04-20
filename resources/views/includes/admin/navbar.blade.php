@@ -17,7 +17,7 @@
         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
         </span>
-          <img class="img-profile rounded-circle" src="https://www.pngitem.com/pimgs/m/247-2472306_admin-anonymous-person-icon-hd-png-download.png">
+          <i class="fas fa-user fa-2x" style="color: black"></i>
         </a>
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
