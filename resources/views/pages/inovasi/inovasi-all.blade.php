@@ -33,6 +33,8 @@ Polres Batang
             </div>
         @endforeach
     </div>
-    {{ $inovasi->links() }}
+    <div class="row d-flex justify-content-center">
+        {{ $inovasi->links() }}
+    </div>
     <!-- features_room_end -->
 @endsection

@@ -61,7 +61,9 @@ Polres Batang
                                 </div>
                             </article>
                         @endforeach
-                        {{$berita->links()}}
+                        <div class="row d-flex justify-content-center">
+                            {{$berita->links()}}
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
