@@ -446,6 +446,14 @@ class AdminController extends Controller
         $wilayah->wilayah = $request["wilayah"];
         $wilayah->save();
 
-        return redirect('/admin/polres')->with("Berhasil", "Wilayah Polsek Berhasil Ditambahkan!");
+        return redirect('/admin/polsek')->with("Berhasil", "Wilayah Polsek Berhasil Ditambahkan!");
+    }
+
+    public function hapusWilayah($id)
+    {
+        $wilayah = \App\WilayahPolsek::find($id);
+        $wilayah->delete();
+        
+        return redirect('/admin/polsek')->with("Berhasil", "Wilayah Polsek Berhasil Dihapus!");
     }
 }

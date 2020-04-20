@@ -135,9 +135,10 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     // Polsek
-    Route::get('/admin/polsek/index', "AdminController@polsek");
+    Route::get('/admin/polsek/', "AdminController@polsek");
     Route::get('/admin/polsek/tambahwilayah', "AdminController@tambahWilayah");
     Route::post('/admin/polsek/prosestambahwilayah', "AdminController@prosesTambahWilayah");
+    Route::get('/admin/polsek/hapuswilayah/{id}', "AdminController@hapusWilayah");
     Route::get('/admin/polsek/create', function () {
         return view('pages.admin.polsek.create');
     });

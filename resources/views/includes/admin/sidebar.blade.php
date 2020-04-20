@@ -68,7 +68,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-      <a class="nav-link" href="{{url('/admin/polsek/index')}}">
+      <a class="nav-link" href="{{url('/admin/polsek')}}">
 <i class="fas fa-home"></i>
         <span>Polsek</span></a>
     </li>

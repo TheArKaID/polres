@@ -12,7 +12,7 @@
         </a>
     </div>
 
-    <div class="row">
+    <div class="row" style="display:block">
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
@@ -105,7 +105,7 @@
                 @foreach ($wilayah as $w)
                     <tr>
                         <td>{{$w->wilayah}}</td>
-                        <td><a href="polres/hapuswilayah/{{$w->id}}" class="btn btn-danger">Hapus</a></td>
+                        <td><a href="hapuswilayah/{{$w->id}}" class="btn btn-danger btn-sm">Hapus</a></td>
                     </tr>
                 @endforeach
             </table>
