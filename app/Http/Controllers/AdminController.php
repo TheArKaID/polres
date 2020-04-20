@@ -470,6 +470,7 @@ class AdminController extends Controller
             'tupoksi' => $tupoksi
         ]);
     }
+    
     public function prosesTambahTupoksi(Request $request)
     {
         $this->validate($request, [
@@ -495,5 +496,31 @@ class AdminController extends Controller
         $tupoksi->save();
         
         return redirect('/admin/tupoksi')->with("Berhasil", "Tupoksi Berhasil Ditambahkan!");
+    }
+
+    public function editTupoksi(Tupoksi $tupoksi)
+    {
+        return view('pages.admin.tupoksi.edit', [
+            'tupoksi' => $tupoksi
+        ]);
+    }
+
+    public function prosesEditTupoksi(Request $request)
+    {
+        $this->validate($request,[
+            'tupoksi' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        $input=$request->all();
+        
+        $tupoksi = Tupoksi::find($input['id']);
+        
+        $url = Str::of($input["tupoksi"])->slug('-');
+        $tupoksi->url = $url;
+
+        $tupoksi->update($input);
+
+        return redirect('/admin/tupoksi')->with("Berhasil", "tupoksi Berhasil Diubah!");
     }
 }

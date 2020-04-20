@@ -141,12 +141,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Tupoksi
     Route::get('/admin/tupoksi', "AdminController@tupoksi");
-
-    Route::get('/admin/tupoksi/ubah', function () {
-        return view('pages.admin.tupoksi.edit');
-    });
-
     Route::get('/admin/tupoksi/tambah', "AdminController@tambahTupoksi");
     Route::post('/admin/tupoksi/prosestambah', "AdminController@prosesTambahTupoksi");
+    Route::get('/admin/tupoksi/ubah/{tupoksi}', "AdminController@editTupoksi");
+    Route::post('/admin/tupoksi/prosesedit', "AdminController@prosesEditTupoksi");
+
 
 });
