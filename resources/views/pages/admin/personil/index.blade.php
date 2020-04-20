@@ -41,7 +41,7 @@
                                     <a href="/admin/personil/ubah/{{$p->id}}" class="btn btn-info">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" onclick="hapus('{{$p->id}}')">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </td>
@@ -59,14 +59,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Hapus Banner</h5>
+                <h5 class="modal-title" id="deleteModalLabel">Hapus Personil</h5>
                 <button type="button" class="close" data-dismiss="modal"
                     aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Apakah anda yakin menghapus banner ini?
+                Apakah anda yakin menghapus Personil ini?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary"
@@ -80,7 +80,7 @@
 <script>
     function hapus(id) {
         var deleteButton = document.getElementById('deleteButton');
-        deleteButton.href = "/admin/banner/hapus/"+id;
+        deleteButton.href = "/admin/personil/hapus/"+id;
     }
 </script>
 @endsection

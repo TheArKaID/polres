@@ -599,4 +599,13 @@ class AdminController extends Controller
 
         return redirect('/admin/personil')->with("Berhasil", "Personil Berhasil Diubah!");
     }
+
+    public function prosesHapusPersonil($id)
+    {
+        $personil = Personil::find($id);
+        unlink('frontend/img/personil/'.$personil->gambar);
+        $personil->delete();
+        
+        return redirect('/admin/personil')->with("Berhasil", "Personil Berhasil Dihapus!");
+    }
 }

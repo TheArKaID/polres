@@ -136,5 +136,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin/personil/prosestambah', "AdminController@prosesTambahPersonil");
     Route::get('/admin/personil/ubah/{personil}', "AdminController@editPersonil");
     Route::post('/admin/personil/prosesedit', "AdminController@prosesEditPersonil");
+    Route::get('/admin/personil/hapus/{id}', "AdminController@prosesHapusPersonil");
 
 });
