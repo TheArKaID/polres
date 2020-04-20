@@ -38,7 +38,7 @@
                                     <img src="{{asset('frontend/img/tupoksi/'.$t->gambar)}}" alt="" style="width: 200px" class="img-thumbnail" />
                                 </td>
                                 <td>
-                                    <a href="/admin/tupoksi/ubah/{{$t->id}}" class="btn btn-info">
+                                    <a href="{{isset($key) ? ''.$t->url.'/'.$key : '/admin/tupoksi/ubah/'.$t->id}}" class="btn btn-info">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" onclick="hapus('{{$t->id}}')">

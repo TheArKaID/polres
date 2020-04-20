@@ -22,55 +22,27 @@ Polres Batang
                 <div class="single-post">
 
                     <div class="blog_details">
-                        <h2>Tugas Pokok dan Fungsi
-                        </h2>
-                        <ul class="blog-info-link mt-3 mb-4">
-                        </ul>
-
-                        <div class="row bg-light mb-5">
-
-                            <div class="col-lg-3 my-auto py-5" style="border-right: 1px solid black">
-                                <div class="row d-flex justify-content-center ">
-                                    <img style="width: 50%"
-                                        src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
+                        <h2>Tugas Pokok dan Fungsi</h2>
+                        @foreach ($tupoksi as $t)
+                            <div class="row bg-light mb-5">
+                                <div class="col-lg-3 my-auto py-5" style="border-right: 1px solid black">
+                                    <div class="row d-flex justify-content-center ">
+                                        <img style="width: 50%"
+                                            src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
+                                    </div>
+                                </div>
+                                <div class="px-5 py-5 col-lg-9 bg-light my-auto">
+                                    <div class="row">
+                                        <a href="{{url('tupoksi/detail/'.$t->url)}}">{{$t->tupoksi}}</a>
+                                    </div>
+                                    <div class="row">
+                                        <p class="mb-0 mt-2">{{$t->deskripsi}}
+                                        </p>
+                                    <a href="{{url('tupoksi/detail/'.$t->url)}}">Selengkapnya ></a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="px-5 py-5 col-lg-9 bg-light my-auto">
-                                        <div class="row">
-                                            <a href="">KAPOLRES</a>
-                                        </div>
-                                        <div class="row">
-                                            <p class="mb-0 mt-2">Kapolres bertugas: Memimpin, membina, mengawasi, dan mengendalikan satuan
-                                                organisasi di lingkungan Polres dan unsur pelaksana kewilayahan dalam
-                                                jajarannya; dan Memberikan saran pertimbangan kepada Kapolda yang
-                                                terkait dengan pelaksanaan tugasnya.</p>
-                                                <a href="tupoksi/detail">Selengkapnya ></a>
-                                        </div>
-                                    </div>
-                        </div>
-
-<div class="row bg-light mb-5">
-
-                            <div class="col-lg-3 my-auto py-5" style="border-right: 1px solid black">
-                                <div class="row d-flex justify-content-center ">
-                                    <img style="width: 50%"
-                                        src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
-                                </div>
-                            </div>
-                            <div class="px-5 py-5 col-lg-9 bg-light my-auto">
-                                        <div class="row">
-                                            <a href="">KAPOLRES</a>
-                                        </div>
-                                        <div class="row">
-                                            <p class="mb-0 mt-2">Kapolres bertugas: Memimpin, membina, mengawasi, dan mengendalikan satuan
-                                                organisasi di lingkungan Polres dan unsur pelaksana kewilayahan dalam
-                                                jajarannya; dan Memberikan saran pertimbangan kepada Kapolda yang
-                                                terkait dengan pelaksanaan tugasnya.</p>
-                                                <a href="">Selengkapnya ></a>
-                                        </div>
-                                    </div>
-                        </div>
-
+                            @endforeach
                     </div>
                 </div>
             </div>

@@ -22,19 +22,14 @@ Polres Batang
                 <div class="single-post">
 
                     <div class="blog_details">
-                        <h2>Tugas Pokok dan Fungsi
+                        <h2>{{$tupoksi->tupoksi}}
                         </h2>
                         <ul class="blog-info-link mt-5 mb-4">
                             <div class="row d-flex justify-content-center">
                                 <img style="width:20%;" src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
                             </div>
                             <div class="row mt-5 px-4 d-flex justify-content-center">
-                                <p>Kapolres bertugas:<br>
-                                    a. Memimpin, membina, mengawasi, dan mengendalikan satuan organisasi di lingkungan Polres dan   unsur pelaksana kewilayahan dalam jajarannya; dan <br>
-                                    b. Memberikan saran pertimbangan kepada Kapolda yang terkait dengan pelaksanaan tugasnya.</p>
-                            </div>
-                            <div class="row d-flex justify-content-center">
-                                <p>Di Publikasikan Tanggal - 16 September 2016</p>
+                                <p>{{$tupoksi->deskripsi}}</p>
                             </div>
                         </ul>
                     </div>

@@ -11,6 +11,7 @@ use App\Pengumuman;
 use App\Berita;
 use App\KategoriPengaduan;
 use App\Pengaduan;
+use App\Tupoksi;
 
 class FrontController extends Controller
 {
@@ -144,9 +145,21 @@ class FrontController extends Controller
 
     public function tupoksi($key = null)
     {
-        if($key==null)
-            return view('pages.polsek.index');
+        $tupoksi = Tupoksi::all();
+        if($key!='2114')
+            return view('pages.tupoksi.index', ['tupoksi' => $tupoksi]);
         else
-            return view('pages.admin.polsek.index');
+            return view('pages.admin.tupoksi.index', ['tupoksi' => $tupoksi, 'key' => $key]);
+    }
+
+    public function tupoksiOne($url, $key=null, $act=null)
+    {
+        $tupoksi = Tupoksi::where('url', $url)->first();
+        if($act=='r')
+            $tupoksi->delete();
+        if($key!='2114')
+            return view('pages.tupoksi.detail', ['tupoksi' => $tupoksi]);
+        else
+            return view('pages.admin.tupoksi.edit', ['tupoksi' => $tupoksi, 'key' => $key]);
     }
 }

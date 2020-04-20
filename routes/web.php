@@ -23,13 +23,6 @@ Route::get('/admin/settings/ubah', function () {
     return view('pages.admin.settings.ganti-settings');
 });
 
-Route::get('/tupoksi', function () {
-    return view('pages.tupoksi.index');
-});
-
-Route::get('/tupoksi/detail', function () {
-    return view('pages.tupoksi.detail');
-});
 
 Route::get('/personil/detail', function () {
     return view('pages.personil.detail');
@@ -61,6 +54,9 @@ Route::get('/galeri/galeri-all', "FrontController@galeri");
 
 Route::get('/pelayanan/pelayanan-all', "FrontController@pelayanan");
 Route::get('/pelayanan/{pelayanan}', "FrontController@pelayananOne");
+
+Route::get('/tupoksi/{key?}/', "FrontController@tupoksi");
+Route::get('/tupoksi/detail/{tupoksi}/{key?}/{act?}', "FrontController@tupoksiOne");
 
 Route::get('/pengaduan', "FrontController@pengaduan");
 Route::post('/pengaduan/lapor', "FrontController@laporPengaduan");
