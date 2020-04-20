@@ -26,7 +26,7 @@ Polres Batang
                         </h2>
                         <ul class="blog-info-link mt-5 mb-4">
                             <div class="row d-flex justify-content-center">
-                                <img style="width:20%;" src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
+                                <img style="width:20%;" src="{{asset('frontend/img/tupoksi/'.$tupoksi->gambar)}}">
                             </div>
                             <div class="row mt-5 px-4 d-flex justify-content-center">
                                 <p>{{$tupoksi->deskripsi}}</p>
