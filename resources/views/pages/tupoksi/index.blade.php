@@ -28,7 +28,7 @@ Polres Batang
                                 <div class="col-lg-3 my-auto py-5" style="border-right: 1px solid black">
                                     <div class="row d-flex justify-content-center ">
                                         <img style="width: 50%"
-                                            src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
+                                            src="{{url('frontend/img/tupoksi/'.$t->gambar)}}">
                                     </div>
                                 </div>
                                 <div class="px-5 py-5 col-lg-9 bg-light my-auto">
