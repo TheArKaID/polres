@@ -19,10 +19,6 @@ Route::get('/polsek/index', function () {
     return view('pages.polsek.index');
 });
 
-Route::get('/admin/settings/ubah', function () {
-    return view('pages.admin.settings.ganti-settings');
-});
-
 Route::get('/berita/berita-all', "FrontController@berita");
 Route::get('/berita/{berita}', "FrontController@beritaOne");
 
@@ -113,9 +109,9 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     // Setting
-    Route::get('/admin/settings/', function () {
-        return view('pages.admin.settings.index');
-    });
+    Route::get('/admin/settings/', "AdminController@setting");
+    Route::get('/admin/settings/ubah', "AdminController@editSetting");
+    Route::post('/admin/settings/prosesedit', "AdminController@prosesEditSetting");
 
     // Tupoksi
     Route::get('/admin/tupoksi', "AdminController@tupoksi");

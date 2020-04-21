@@ -13,6 +13,7 @@ use App\Pengaduan;
 use App\Pengumuman;
 use App\Tupoksi;
 use App\Personil;
+use App\Setting;
 
 class AdminController extends Controller
 {
@@ -607,5 +608,58 @@ class AdminController extends Controller
         $personil->delete();
         
         return redirect('/admin/personil')->with("Berhasil", "Personil Berhasil Dihapus!");
+    }
+
+    public function setting()
+    {
+        return view('pages.admin.settings.index');
+    }
+
+    public function editSetting()
+    {
+        return view('pages.admin.settings.edit');
+    }
+
+    public function prosesEditSetting(Request $request)
+    {
+        $this->validate($request, [
+            'namapolres' => 'required',
+            'jargon' => 'required',
+            'notelpon' => 'required',
+            'alamat' => 'required',
+            'logo' => 'required|mimes:jpeg,jpg,png|max:5120',
+            'favicon' => 'required|mimes:ico|max:5120',
+            'background' => 'required|mimes:jpeg,jpg,png|max:5120',
+        ]);
+
+        $file = $request->file("logo");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $logo = "logo.".$ext;
+        $file->move('frontend/img/setting', $logo);
+        
+        $file = $request->file("favicon");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $favicon = "favicon.".$ext;
+        $file->move('frontend/img/setting', $favicon);
+        
+        $file = $request->file("background");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $background = "background.".$ext;
+        $file->move('frontend/img/setting', $background);
+        
+        $setting = Setting::first();
+        $setting->namapolres = $request["namapolres"];
+        $setting->jargon = $request["jargon"];
+        $setting->notelpon = $request["notelpon"];
+        $setting->alamat = $request["alamat"];
+        $setting->logo = $logo;
+        $setting->favicon = $favicon;
+        $setting->background = $background;
+        $setting->facebook = $request["facebook"];
+        $setting->instagram = $request["instagram"];
+        $setting->twitter = $request["twitter"];
+        $setting->save();
+
+        return redirect('/admin/settings')->with("Berhasil", "Setting Berhasil Ditambahkan!");
     }
 }
