@@ -13,7 +13,7 @@
     </div>
 
     <div class="row" style="display:block">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>

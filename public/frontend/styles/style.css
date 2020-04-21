@@ -227,7 +227,7 @@ h3 {
 
 .submenu-right {
     position: absolute !important;
-    top: -7px;
+    top: -42px;
     right: auto;
     left: 100%;
     background: #fff;
@@ -497,6 +497,18 @@ h3 {
 }
 
 @media (max-width: 767px) {
+    .submenu-right {
+        position: unset !important;
+        /* top: -42px;
+        right: auto;
+        left: 100%; */
+        background: #fff;
+        width: 100%;
+        color: black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
+        text-align: left;
+    }
+
     .features_room .rooms_here .single_rooms .room_thumb img {
         height: 100% !important;
     }

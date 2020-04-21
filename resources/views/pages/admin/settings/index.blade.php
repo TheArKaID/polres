@@ -14,7 +14,7 @@
 
  <h6 class="bold mb-0 mt-5">Favicon</h6>
     <div class="row">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
@@ -34,7 +34,7 @@
 
     <h6 class="bold mb-0 mt-5">Nama Polres</h6>
     <div class="row">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
@@ -54,7 +54,7 @@
 
  <h6 class="bold mb-0 mt-5">Logo Navbar</h6>
     <div class="row">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
@@ -74,7 +74,7 @@
 
      <h6 class="bold mb-0 mt-5">Logo Footer</h6>
     <div class="row">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
@@ -94,7 +94,7 @@
 
      <h6 class="bold mb-0 mt-5">Logo Polres di Admin</h6>
     <div class="row">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
@@ -114,7 +114,7 @@
 
     <h6 class="bold mb-0 mt-5">Ganti Alamat</h6>
     <div class="row">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
@@ -134,7 +134,7 @@
 
     <h6 class="bold mb-0 mt-5">Background Header</h6>
     <div class="row">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
@@ -154,7 +154,7 @@
 
     <h6 class="bold mb-0 mt-5">Media Sosial</h6>
     <div class="row">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
