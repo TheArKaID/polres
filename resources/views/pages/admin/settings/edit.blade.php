@@ -49,31 +49,34 @@
 
                 <div class="form-group">
                     <label for="favicon" class="bold">Favicon</label>
-                    <input type="file" class="form-control" name="favicon" placeholder="favicon" required>
+                    <input type="file" class="form-control" name="favicon" placeholder="favicon">
                     <p>*Format gambar .ico</p>
                     <p>*Tambahkan untuk Mengganti, tidak diisi berarti tida mengubah Favicon</p>
                 </div>
 
                 <div class="form-group">
                     <label for="background" class="bold">Background</label>
-                    <input type="file" class="form-control" name="background" placeholder="background" required>
+                    <input type="file" class="form-control" name="background" placeholder="background">
                     <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
                     <p>*Tambahkan untuk Mengganti, tidak diisi berarti tida mengubah Background</p>
                 </div>
 
                 <div class="form-group">
                     <label for="instagram" class="bold">Instagram</label>
-                    <input type="text" class="form-control" name="instagram" placeholder="Masukkan URL Instagram (https://www.instagram.com/polres/)" value="{{$setting->instagram}}" >
+                    <input type="text" class="form-control" name="instagram" placeholder="Username Instagram" value="{{$setting->instagram}}" >
+                    <p>*Username bisa dilihat setelah url yang mengarah ke profile</p>
                 </div>
 
                 <div class="form-group">
                     <label for="facebook" class="bold">Facebook</label>
-                    <input type="text" class="form-control" name="facebook" placeholder="Masukkan URL Facebook (https://web.facebook.com/polres)" value="{{$setting->facebook}}" >
+                    <input type="text" class="form-control" name="facebook" placeholder="Username Facebook" value="{{$setting->facebook}}" >
+                    <p>*Username bisa dilihat setelah url yang mengarah ke profile</p>
                 </div>
 
                 <div class="form-group">
                     <label for="twitter" class="bold">Twitter</label>
-                    <input type="text" class="form-control" name="twitter" placeholder="Masukkan URL Twitter (https://twitter.com/polres)" value="{{$setting->twitter}}" >
+                    <input type="text" class="form-control" name="twitter" placeholder="Username Twitter" value="{{$setting->twitter}}" >
+                    <p>*Username bisa dilihat setelah url yang mengarah ke profile</p>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">
