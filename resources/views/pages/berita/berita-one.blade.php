@@ -8,7 +8,7 @@ Polres Batang
 
 @section('content')
  <!-- bradcam_area_start -->
-  <div class="bradcam_area breadcam_bg">
+  <div class="bradcam_area" style="background-image: url('http://polres.web/frontend/img/setting/{{settings()->background}}')">
       <h3>
           Berita
     </h3>
