@@ -27,7 +27,6 @@
                             <th>Akun Facebook</th>
                             <th>Akun Twitter</th>
                             <th>Akun Instagram</th>
-                            <th>Lokasi</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -48,10 +47,6 @@
                                 <td>RuangHalalIndonesia</td>
                                 <td>RuangHalalIndonesia</td>
                                 <td>RuangHalalIndonesia</td>
-                                <td><iframe style="width: 100%;"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.768407239798!2d109.72771801477279!3d-6.918267495001245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7024995fccab67%3A0x8f4f99463cfb2ab4!2sPolres%20Batang!5e0!3m2!1sid!2sid!4v1587120204846!5m2!1sid!2sid"
-                                width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""
-                                aria-hidden="false" tabindex="0"></iframe></td>
                                 <td>
                                     <a href="{{url('/admin/polsek/edit')}}" class="btn btn-info">
                                         <i class="fas fa-pencil-alt"></i>
