@@ -36,12 +36,12 @@
 
                 <div class="form-group">
                     <label for="alamat" class="bold">Alamat</label>
-                    <textarea name="alamat" rows="10" required></textarea>
+                    <textarea name="alamat" rows="10" required>{{$setting->alamat}}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="logo" class="bold">Logo</label>
-                    <input type="file" class="form-control" name="logo" placeholder="Logo" required>
+                    <input type="file" class="form-control" name="logo" placeholder="Logo">
                     <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
                     <p>*ukuran logo 315 x 120 mm</p>
                     <p>*Tambahkan untuk Mengganti, tidak diisi berarti tida mengubah Logo</p>
