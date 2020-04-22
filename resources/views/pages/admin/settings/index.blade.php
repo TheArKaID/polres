@@ -12,7 +12,6 @@
         </a>
     </div>
 
- <h6 class="bold mb-0 mt-5">Favicon</h6>
     <div class="row">
         <div class="card-body" style="overflow: auto">
             <div class="table-responsive">

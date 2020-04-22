@@ -5,7 +5,8 @@
                  <div class="col-xl-5 col-md-6 col-lg-5">
                     <div class="footer_widget">
                         <ul>
-                            <img src="../frontend/img/logo-polres-batang.png" style="width: 70%">
+                            <img src="{{asset('frontend/img/setting/'.settings()->logo)}}" style="width: 70%">
+                            <p class="footer_text">"{{settings()->jargon}}"</p>
                         </ul>
                     </div>
                 </div>
@@ -14,12 +15,11 @@
                         <h3 class="footer_title">
                             alamat
                         </h3>
-                        <p class="footer_text"> Jl. Gajah Mada No.200, Dracik Barat, Proyonanggan Sel., Kec. Batang,
-                            Kabupaten Batang, Jawa Tengah 51211 <br>
-                            (0285) 391074
+                        <p class="footer_text" style="color: white">{!!settings()->alamat!!}<br>
+                            {{ settings()->notelpon }}
                         </p>
-                        <a href="https://www.google.com/maps/place/Polres+Batang/@-6.9182675,109.7299067,15z/data=!4m5!3m4!1s0x0:0x8f4f99463cfb2ab4!8m2!3d-6.9182675!4d109.7299067"
-                            target="_blank" class="line-button">Get Direction</a>
+                        {{-- <a href="https://www.google.com/maps/place/Polres+Batang/@-6.9182675,109.7299067,15z/data=!4m5!3m4!1s0x0:0x8f4f99463cfb2ab4!8m2!3d-6.9182675!4d109.7299067"
+                            target="_blank" class="line-button">Get Direction</a> --}}
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 col-lg-3">
@@ -27,12 +27,22 @@
                         <h3 class="footer_title">
                             Social Media
                         </h3>
-                        <p class="footer_text"><i class="fab fa-instagram"></i>
-                            RuangHalalIndonesia</p>
-                        <p class="footer_text"><i class="fab fa-twitter"></i>
-                            RuangHalalIndonesia</p>
-                        <p class="footer_text"><i class="fab fa-facebook"></i>
-                            RuangHalalIndonesia</p>
+
+                        {!! settings()->instagram!=NULL||!empty(settings()->instagram) 
+                            ? "<a href='".settings()->instagram."' style='color: #BABABA; text-decoration: none' class='footer_text'>
+                                <i class='fab fa-instagram'></i>".settings()->namapolres."</a><br>"
+                            : ""!!}
+                        
+                        {!! settings()->twitter!=NULL||!empty(settings()->twitter) 
+                            ? "<a href='".settings()->twitter."' style='color: #BABABA; text-decoration: none' class='footer_text'>
+                                <i class='fab fa-twitter'></i>".settings()->namapolres."</a><br>"
+                            : ""!!}
+                        
+                        {!! settings()->facebook!=NULL||!empty(settings()->facebook) 
+                            ? "<a href='".settings()->facebook."' style='color: #BABABA; text-decoration: none' class='footer_text'>
+                                <i class='fab fa-facebook'></i>".settings()->namapolres."</a><br>"
+                            : ""!!}
+                            
                     </div>
                 </div>
             </div>

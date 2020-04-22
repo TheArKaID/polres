@@ -50,7 +50,7 @@
                      <div class="col-xl-2 col-lg-2">
                          <div class="logo-img">
                              <a href="{{url('/')}}">
-                                 <img class="logo-navbar" src="{{url('frontend/img/logo-polres-batang.png')}}" alt="">
+                                 <img class="logo-navbar" src="{{asset('frontend/img/setting/'.settings()->logo)}}" alt="">
                              </a>
                          </div>
                      </div>
