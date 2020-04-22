@@ -11,7 +11,11 @@
             <i class="fas fa-pencil-alt fa-sm text-white-50"></i> Edit Settings
         </a>
     </div>
-
+    @if (session('Berhasil'))
+        <div class="alert alert-success">
+            {{session('Berhasil')}}
+        </div>
+    @endif
     <div class="row">
         <div class="card-body" style="overflow: auto">
             <div class="table-responsive">

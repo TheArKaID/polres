@@ -678,6 +678,6 @@ class AdminController extends Controller
         $setting->twitter = $request["twitter"];
         $setting->save();
 
-        return redirect('/admin/settings')->with("Berhasil", "Setting Berhasil Ditambahkan!");
+        return redirect('/admin/settings')->with("Berhasil", "Setting Berhasil Diperbarui!");
     }
 }
