@@ -19,6 +19,11 @@ class AdminController extends Controller
 {
     public function admin()
     {
+        return runDashboard();
+    }
+
+    function runDashboard()
+    {
         return view('pages.admin.dashboard');
     }
     
@@ -638,29 +643,36 @@ class AdminController extends Controller
             'background' => 'mimes:jpeg,jpg,png|max:5120',
         ]);
 
-        $file = $request->file("logo");
-        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
-        $logo = "logo.".$ext;
-        $file->move('frontend/img/setting', $logo);
-        
-        $file = $request->file("favicon");
-        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
-        $favicon = "favicon.".$ext;
-        $file->move('frontend/img/setting', $favicon);
-        
-        $file = $request->file("background");
-        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
-        $background = "background.".$ext;
-        $file->move('frontend/img/setting', $background);
-        
         $setting = Setting::first();
+
+        if($request->file('logo')!=NULL){
+            $file = $request->file("logo");
+            $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+            $logo = "logo.".$ext;
+            $file->move('frontend/img/setting', $logo);
+            $setting->logo = $logo;
+        }
+        
+        if($request->file('favicon')!=NULL){
+            $file = $request->file("favicon");
+            $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+            $favicon = "favicon.".$ext;
+            $file->move('frontend/img/setting', $favicon);
+            $setting->favicon = $favicon;
+        }
+        
+        if($request->file('background')!=NULL){
+            $file = $request->file("background");
+            $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+            $background = "background.".$ext;
+            $file->move('frontend/img/setting', $background);
+            $setting->background = $background;
+        }
+        
         $setting->namapolres = $request["namapolres"];
         $setting->jargon = $request["jargon"];
         $setting->notelpon = $request["notelpon"];
         $setting->alamat = $request["alamat"];
-        $setting->logo = $logo;
-        $setting->favicon = $favicon;
-        $setting->background = $background;
         $setting->facebook = $request["facebook"];
         $setting->instagram = $request["instagram"];
         $setting->twitter = $request["twitter"];
