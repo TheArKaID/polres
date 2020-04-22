@@ -43,6 +43,7 @@
                     <label for="logo" class="bold">Logo</label>
                     <input type="file" class="form-control" name="logo" placeholder="Logo" required>
                     <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
+                    <p>*ukuran logo 315 x 120 mm</p>
                     <p>*Tambahkan untuk Mengganti, tidak diisi berarti tida mengubah Logo</p>
                 </div>
 
