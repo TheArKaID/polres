@@ -620,7 +620,10 @@ class AdminController extends Controller
 
     public function editSetting()
     {
-        return view('pages.admin.settings.edit');
+        $setting = Setting::first();
+        return view('pages.admin.settings.edit', [
+            'setting' => $setting
+        ]);
     }
 
     public function prosesEditSetting(Request $request)
@@ -630,9 +633,9 @@ class AdminController extends Controller
             'jargon' => 'required',
             'notelpon' => 'required',
             'alamat' => 'required',
-            'logo' => 'required|mimes:jpeg,jpg,png|max:5120',
-            'favicon' => 'required|mimes:ico|max:5120',
-            'background' => 'required|mimes:jpeg,jpg,png|max:5120',
+            'logo' => 'mimes:jpeg,jpg,png|max:5120',
+            'favicon' => 'mimes:ico|max:5120',
+            'background' => 'mimes:jpeg,jpg,png|max:5120',
         ]);
 
         $file = $request->file("logo");

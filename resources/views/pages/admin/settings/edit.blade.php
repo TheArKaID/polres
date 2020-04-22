@@ -21,17 +21,17 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="polres" class="bold">Nama Polres</label>
-                    <input type="text" class="form-control" name="namapolres" placeholder="Masukkan Nama Polres (255)" maxlength="255" required>
+                    <input type="text" class="form-control" name="namapolres" placeholder="Masukkan Nama Polres (255)" maxlength="255" value="{{$setting->namapolres}}" required>
                 </div>
 
                 <div class="form-group">
                     <label for="jargon" class="bold">Jargon</label>
-                    <input type="text" class="form-control" name="jargon" placeholder="Masukkan Jargon Polres (255)" maxlength="255" required>
+                    <input type="text" class="form-control" name="jargon" placeholder="Masukkan Jargon Polres (255)" maxlength="255" value="{{$setting->jargon}}" required>
                 </div>
 
                 <div class="form-group">
                     <label for="notelpon" class="bold">No. Telefon</label>
-                    <input type="number" class="form-control" name="notelpon" placeholder="Masukkan No Telfon Polres" maxlength="255" required>
+                    <input type="number" class="form-control" name="notelpon" placeholder="Masukkan No Telfon Polres" maxlength="255" value="{{$setting->notelpon}}" required>
                 </div>
 
                 <div class="form-group">
@@ -43,33 +43,36 @@
                     <label for="logo" class="bold">Logo</label>
                     <input type="file" class="form-control" name="logo" placeholder="Logo" required>
                     <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
+                    <p>*Tambahkan untuk Mengganti, tidak diisi berarti tida mengubah Logo</p>
                 </div>
 
                 <div class="form-group">
                     <label for="favicon" class="bold">Favicon</label>
                     <input type="file" class="form-control" name="favicon" placeholder="favicon" required>
                     <p>*Format gambar .ico</p>
+                    <p>*Tambahkan untuk Mengganti, tidak diisi berarti tida mengubah Favicon</p>
                 </div>
 
                 <div class="form-group">
                     <label for="background" class="bold">Background</label>
                     <input type="file" class="form-control" name="background" placeholder="background" required>
                     <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
+                    <p>*Tambahkan untuk Mengganti, tidak diisi berarti tida mengubah Background</p>
                 </div>
 
                 <div class="form-group">
                     <label for="instagram" class="bold">Instagram</label>
-                    <input type="text" class="form-control" name="instagram" placeholder="Masukkan URL Instagram (https://www.instagram.com/polres/)">
+                    <input type="text" class="form-control" name="instagram" placeholder="Masukkan URL Instagram (https://www.instagram.com/polres/)" value="{{$setting->instagram}}" >
                 </div>
 
                 <div class="form-group">
                     <label for="facebook" class="bold">Facebook</label>
-                    <input type="text" class="form-control" name="facebook" placeholder="Masukkan URL Facebook (https://web.facebook.com/polres)">
+                    <input type="text" class="form-control" name="facebook" placeholder="Masukkan URL Facebook (https://web.facebook.com/polres)" value="{{$setting->facebook}}" >
                 </div>
 
                 <div class="form-group">
                     <label for="twitter" class="bold">Twitter</label>
-                    <input type="text" class="form-control" name="twitter" placeholder="Masukkan URL Twitter (https://twitter.com/polres)">
+                    <input type="text" class="form-control" name="twitter" placeholder="Masukkan URL Twitter (https://twitter.com/polres)" value="{{$setting->twitter}}" >
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">
