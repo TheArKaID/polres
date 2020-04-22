@@ -28,21 +28,21 @@
                             Social Media
                         </h3>
 
-                        {!! settings()->instagram!=NULL||!empty(settings()->instagram) 
-                            ? "<a href='".settings()->instagram."' style='color: #BABABA; text-decoration: none' class='footer_text'>
-                                <i class='fab fa-instagram'></i>".settings()->namapolres."</a><br>"
+                        {!! settings()->instagram!=NULL||!empty(settings()->instagram)
+                            ? "<a href='https://instagram.com/".settings()->instagram."' style='color: #BABABA; text-decoration: none' class='footer_text'>
+                                <i class='fab fa-instagram mr-2'></i>".settings()->instagram."</a><br>"
                             : ""!!}
-                        
-                        {!! settings()->twitter!=NULL||!empty(settings()->twitter) 
-                            ? "<a href='".settings()->twitter."' style='color: #BABABA; text-decoration: none' class='footer_text'>
-                                <i class='fab fa-twitter'></i>".settings()->namapolres."</a><br>"
+
+                        {!! settings()->twitter!=NULL||!empty(settings()->twitter)
+                            ? "<a href='https://twitter.com/".settings()->twitter."' style='color: #BABABA; text-decoration: none' class='footer_text'>
+                                <i class='fab fa-twitter mr-2'></i>".settings()->twitter."</a><br>"
                             : ""!!}
-                        
-                        {!! settings()->facebook!=NULL||!empty(settings()->facebook) 
-                            ? "<a href='".settings()->facebook."' style='color: #BABABA; text-decoration: none' class='footer_text'>
-                                <i class='fab fa-facebook'></i>".settings()->namapolres."</a><br>"
+
+                        {!! settings()->facebook!=NULL||!empty(settings()->facebook)
+                            ? "<a href='https://facebook.com/".settings()->facebook."' style='color: #BABABA; text-decoration: none' class='footer_text'>
+                                <i class='fab fa-facebook mr-2'></i>".settings()->facebook."</a><br>"
                             : ""!!}
-                            
+
                     </div>
                 </div>
             </div>
