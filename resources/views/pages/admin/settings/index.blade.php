@@ -17,193 +17,77 @@
         <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" collspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Favicon</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img></td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th width="150px">Nama Polres</th>
+                        <td>{{$setting->namapolres}}</td>
+                    </tr>
+                    <tr>
+                        <th width="150px">Jargon</th>
+                        <td>{{$setting->jargon}}</td>
+                    </tr>
+                    <tr>
+                        <th width="150px">No. Telefon</th>
+                        <td>{{$setting->notelpon}}</td>
+                    </tr>
+                    <tr>
+                        <th width="150px">Alamat</th>
+                        <td>{!!$setting->alamat!!}</td>
+                    </tr>
+                    <tr>
+                        <th width="150px">Logo</th>
+                        <td><img src="{{asset('frontend/img/setting/'.$setting->logo)}}" style="width:50%"></td>
+                    </tr>
+                    <tr>
+                        <th width="150px">Favicon</th>
+                        <td><img src="{{asset('frontend/img/setting/'.$setting->favicon)}}" style="width:50%"></td>
+                    </tr>
+                    <tr>
+                        <th width="150px">Background</th>
+                        <td><img src="{{asset('frontend/img/setting/'.$setting->background)}}" style="width:50%"></td>
+                    </tr>
+                    <tr>
+                        <th width="150px">Instagram</th>
+                        <td>{{$setting->instagram}}</td>
+                    </tr>
+                    <tr>
+                        <th width="150px">Facebook</th>
+                        <td>{{$setting->facebook}}</td>
+                    </tr>
+                    <tr>
+                        <th width="150px">Twitter</th>
+                        <td>{{$setting->twitter}}</td>
+                    </tr>
                 </table>
             </div>
         </div>
     </div>
-
-    <h6 class="bold mb-0 mt-5">Nama Polres</h6>
-    <div class="row">
-        <div class="card-body" style="overflow: auto">
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" collspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Polres Batang</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img></td>
-                        </tr>
-                    </tbody>
-                </table>
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Hapus Pengumuman</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Apakah anda yakin menghapus settings ini?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">Close</button>
+                    <a id="deleteButton" href="#" type="button" class="btn btn-danger">Delete</a>
+                </div>
             </div>
         </div>
     </div>
-
- <h6 class="bold mb-0 mt-5">Logo Navbar</h6>
-    <div class="row">
-        <div class="card-body" style="overflow: auto">
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" collspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Logo Navbar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-     <h6 class="bold mb-0 mt-5">Logo Footer</h6>
-    <div class="row">
-        <div class="card-body" style="overflow: auto">
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" collspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Logo Footer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-     <h6 class="bold mb-0 mt-5">Logo Polres di Admin</h6>
-    <div class="row">
-        <div class="card-body" style="overflow: auto">
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" collspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Logo Polres di Admin</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <h6 class="bold mb-0 mt-5">Ganti Alamat</h6>
-    <div class="row">
-        <div class="card-body" style="overflow: auto">
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" collspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Alamat</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <h6 class="bold mb-0 mt-5">Background Header</h6>
-    <div class="row">
-        <div class="card-body" style="overflow: auto">
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" collspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Background</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Polisi siaga 1</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <h6 class="bold mb-0 mt-5">Media Sosial</h6>
-    <div class="row">
-        <div class="card-body" style="overflow: auto">
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" collspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Instagram</th>
-                            <th>Facebook</th>
-                            <th>Twitter</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>http://instagram.com</td>
-                            <td>http://facebook.com</td>
-                            <td>http://twitter.com</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Hapus Pengumuman</h5>
-                <button type="button" class="close" data-dismiss="modal"
-                    aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Apakah anda yakin menghapus settings ini?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                    data-dismiss="modal">Close</button>
-                <a id="deleteButton" href="#" type="button" class="btn btn-danger">Delete</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /.container-fluid -->
-<script>
-    function hapus(id) {
-        var deleteButton = document.getElementById('deleteButton');
-        deleteButton.href = "/admin/banner/hapus/"+id;
-    }
-</script>
+    <!-- /.container-fluid -->
+    <script>
+        function hapus(id) {
+            var deleteButton = document.getElementById('deleteButton');
+            deleteButton.href = "/admin/banner/hapus/"+id;
+        }
+    </script>
 @endsection

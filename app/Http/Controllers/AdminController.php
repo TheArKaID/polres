@@ -612,7 +612,10 @@ class AdminController extends Controller
 
     public function setting()
     {
-        return view('pages.admin.settings.index');
+        $setting = Setting::first();
+        return view('pages.admin.settings.index', [
+            'setting' => $setting
+        ]);
     }
 
     public function editSetting()
