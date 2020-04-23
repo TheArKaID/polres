@@ -150,7 +150,12 @@ class FrontController extends Controller
 
     public function prosesCekPengaduan(Request $request)
     {
-        
+        $pengaduan = Pengaduan::where('kode', $request['kode'])->first();
+        if($pengaduan==NULL)
+            return redirect("/pengaduan/cek-status")->withErrors("Gagal", "Kode yang anda masukkan Tidak Valid");
+        return view("pages.pengaduan.hasil", [
+            'pengaduan' => $pengaduan
+        ]);
     }
 
     public function tupoksi($key = null)
