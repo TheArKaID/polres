@@ -9,7 +9,7 @@ class Pengaduan extends Model
     protected $table = 'pengaduan';
     
     protected $fillable = [
-        'nama', 'email', 'notelpon', 'kategori_id', 'jeniskelamin', 'penjelasan', 'status'
+        'nama', 'email', 'notelpon', 'kategori_id', 'jeniskelamin', 'penjelasan', 'status', 'kode'
     ];
     
     public function kategori()
