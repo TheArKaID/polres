@@ -24,7 +24,7 @@ Polres Batang
                         <div class="room_heading d-flex justify-content-between align-items-center">
                             <div class="room_heading_inner">
                                 <span>Inovasi</span>
-                                <h3>{{$i->judul}}</h3>
+                                <h3><a href="{{url('inovasi/'.$i->url)}}" style="opacity: unset; visibility: unset;">{{$i->judul}}</a></h3>
                             </div>
                             <a href="{{url('inovasi/'.$i->url)}}" class="line-button">Selengkapnya</a>
                         </div>
