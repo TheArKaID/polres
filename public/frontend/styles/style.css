@@ -739,7 +739,7 @@ h3 {
 
 @media (max-width: 767px) {
     .header-area .main-header-area .logo-img img {
-        width: 60%;
+        /* width: 30%; */
     }
 }
 
