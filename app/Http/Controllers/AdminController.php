@@ -15,6 +15,7 @@ use App\Tupoksi;
 use App\Personil;
 use App\Setting;
 use App\Polsek;
+use App\WilayahPolsek;
 
 class AdminController extends Controller
 {
@@ -434,7 +435,7 @@ class AdminController extends Controller
     public function polsek()
     {
         $polsek = Polsek::all();
-        $wilayah = \App\WilayahPolsek::all();
+        $wilayah = WilayahPolsek::all();
 
         return view('pages.admin.polsek.index', [
             'polsek' => $polsek,
@@ -444,7 +445,10 @@ class AdminController extends Controller
 
     public function tambahPolsek()
     {
-        return view('pages.admin.polsek.create');
+        $wilayah = WilayahPolsek::all();
+        return view('pages.admin.polsek.create', [
+            'wilayah' => $wilayah
+        ]);
     }
 
     public function prosesTambahPolsek(Request $request)
@@ -453,6 +457,7 @@ class AdminController extends Controller
             'namapolsek' => 'required',
             'kapolsek' => 'required',
             'alamat' => 'required',
+            'wilayah' => 'required',
             'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
         ]);
 
@@ -462,7 +467,7 @@ class AdminController extends Controller
         $polsek->namapolsek = $request["namapolsek"];
         $polsek->kapolsek = $request["kapolsek"];
         $polsek->alamat = $request["alamat"];
-        
+        $polsek->wilayah_id = $request['wilayah'];
         $polsek->notelpon = $request["notelpon"]!=NULL ? $request["notelpon"] : "";
         $polsek->email = $request["email"]!=NULL ? $request["email"] : "";
         $polsek->facebook = $request["facebook"]!=NULL ? $request["facebook"] : "";
@@ -539,7 +544,7 @@ class AdminController extends Controller
             'wilayah' => 'required',
         ]);
 
-        $wilayah = new \App\WilayahPolsek;
+        $wilayah = new WilayahPolsek;
         $wilayah->wilayah = $request["wilayah"];
         $wilayah->save();
 

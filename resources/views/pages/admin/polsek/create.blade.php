@@ -38,7 +38,15 @@
                     <label for="email" class="bold">Email</label>
                     <input type="text" class="form-control" name="email" placeholder="email" value="">
                 </div>
-
+                <div class="form-group">
+                    <label for="wilayah">Wilayah</label>
+                    <select name="wilayah" class="form-control" required>
+                        <option disabled hidden selected>Pilih Wilayah</option>
+                        @foreach ($wilayah as $w)
+                            <option value="{{$w->id}}">{{$w->wilayah}}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="facebook" class="bold">Facebook</label>
                     <input type="text" class="form-control" name="facebook" placeholder="facebook" value="">
