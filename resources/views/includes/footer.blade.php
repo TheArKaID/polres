@@ -4,10 +4,23 @@
             <div class="row">
                  <div class="col-xl-5 col-md-6 col-lg-5">
                     <div class="footer_widget">
-                        <ul>
-                            <img src="{{asset('frontend/img/setting/'.settings()->logo)}}" style="width: 70%">
-                            <p class="footer_text">"{{settings()->jargon}}"</p>
-                        </ul>
+                        <div class="logo-img">
+                            <div class="row align-items-center">
+                                <div class="col-5">
+                                    <a href="{{url('/')}}">
+                                        <img class="logo-navbar" src="{{asset('frontend/img/setting/'.settings()->logo)}}" alt="">
+                                    </div>
+                                </a>
+                                    <div class="col-7">
+                                        <div class="row" style="text-align: left;">
+                                            <h5 style="color: white" >Polres <br>{{settings()->namapolres}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <p class="footer_text">"{{settings()->jargon}}"</p>
+                                </div>
+                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 col-lg-4">

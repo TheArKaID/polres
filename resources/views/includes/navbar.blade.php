@@ -49,11 +49,11 @@
                      </div>
                      <div class="col-xl-2 col-lg-2">
                          <div class="logo-img">
-                             <a href="{{url('/')}}">
-                                <div class="row align-items-center">
-
-                                    <div class="col-5">
+                             <div class="row align-items-center">
+                                 <div class="col-5">
+                                    <a href="{{url('/')}}">
                                         <img class="logo-navbar" src="{{asset('frontend/img/setting/'.settings()->logo)}}" alt="">
+                                    </a>
                                     </div>
                                     <div class="col-7">
                                         <div class="row" style="text-align: left;">
@@ -61,7 +61,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                </a>
                          </div>
                      </div>
                      <div class="col-xl-5 col-lg-4 d-none d-lg-block">
