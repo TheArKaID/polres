@@ -9,7 +9,7 @@ class Polsek extends Model
     protected $table = 'polsek';
     
     protected $fillable = [
-        'namapolsek', 'kapolsek', 'alamat', 'notelpon', 'email', 'wilayah_id', 'facebook', 'twitter', 'instagram'
+        'namapolsek', 'kapolsek', 'fotokapolsek', 'alamat', 'notelpon', 'email', 'wilayah_id', 'keterangan', 'url', 'facebook', 'twitter', 'instagram'
     ];
     
     public function wilayah()
