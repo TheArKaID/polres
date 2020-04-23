@@ -43,7 +43,7 @@
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
                                     <form class="d-inline">
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" onclick="hapus('{{$b->id}}')">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                         <!-- Modal -->
@@ -64,7 +64,7 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                             data-dismiss="modal">Close</button>
-                                                        <a href="" type="button" class="btn btn-danger">Delete</a>
+                                                        <a href="" id="deleteButton" type="button" class="btn btn-danger">Delete</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -83,4 +83,10 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+<script>
+    function hapus(id) {
+        var deleteButton = document.getElementById('deleteButton');
+        deleteButton.href = "/admin/berita/hapus/"+id;
+    }
+</script>
 @endsection

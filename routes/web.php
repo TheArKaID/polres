@@ -86,6 +86,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin/berita/prosestambah', "AdminController@prosesTambahBerita");
     Route::get('/admin/berita/ubah/{berita}', "AdminController@editBerita");
     Route::post('/admin/berita/prosesedit', "AdminController@prosesEditBerita");
+    Route::get('/admin/berita/hapus/{id}', "AdminController@prosesHapusBerita");
 
     // Pengaduan
     Route::get('/admin/pengaduan/', "AdminController@pengaduan");

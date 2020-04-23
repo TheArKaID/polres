@@ -360,6 +360,15 @@ class AdminController extends Controller
         return redirect('/admin/berita')->with("Berhasil", "Berita Berhasil Diubah!");
     }
 
+    public function prosesHapusBerita($id)
+    {
+        $berita = Berita::find($id);
+        unlink('frontend/img/berita/'.$berita->gambar);
+        $berita->delete();
+        
+        return redirect('/admin/berita')->with("Berhasil", "Berita Berhasil Dihapus!");
+    }
+
     public function pengaduan()
     {
         $pengaduan = Pengaduan::all();
@@ -555,7 +564,7 @@ class AdminController extends Controller
     {
         $wilayah = WilayahPolsek::find($id);
         $polsek = Polsek::where('wilayah_id', $wilayah->id);
-        
+
         $polsek->delete();
         $wilayah->delete();
         
