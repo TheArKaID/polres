@@ -60,8 +60,9 @@ class FrontController extends Controller
     public function galeri()
     {
         $pengumuman = Pengumuman::all();
-
+        $galeri = Galeri::all();
         return view('pages.galeri.galeri-all', [
+            'galeri' => $galeri,
             'pengumuman' => $pengumuman
         ]);
     }
