@@ -554,7 +554,9 @@ class AdminController extends Controller
     public function hapusWilayah($id)
     {
         $wilayah = WilayahPolsek::find($id);
-        $polsek = Polsek::where('wilayah_id', $wilayah->id)->delete();
+        $polsek = Polsek::where('wilayah_id', $wilayah->id);
+        
+        $polsek->delete();
         $wilayah->delete();
         
         return redirect('/admin/polsek')->with("Berhasil", "Wilayah Polsek Berhasil Dihapus!");

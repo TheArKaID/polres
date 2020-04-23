@@ -18,24 +18,25 @@
                                              <li><a href="{{url('/berita/berita-all')}}">berita</a></li>
                                          </ul>
                                      </li>
+
                                      <li class="mr-4"><a href="#">polsek <i class="ti-angle-down"></i></a>
-                                         <ul class="submenu">
-                                             <li><a>Batang Barat <i class="ti-angle-right"></i></a>
-                                                 <ul class="submenu">
-                                                     <li class="submenu-right"><a class="py-2 pl-2"
-                                                             style="background: white; color: black"
-                                                             href="{{url('/polsek/index')}}">Polsek Sukamaju</a></li>
-                                                 </ul>
-                                             </li>
-                                             <li><a>Batang Barat <i class="ti-angle-right"></i></a>
-                                                 <ul class="submenu">
-                                                     <li class="submenu-right"><a class="py-2 pl-2"
-                                                             style="background: white; color: black"
-                                                             href="{{url('/polsek/index')}}">Polsek Sukamaju</a></li>
-                                                 </ul>
-                                             </li>
-                                         </ul>
-                                     </li>
+                                        <ul class="submenu">
+                                            @foreach (wilayahPolsek() as $wp)
+                                                <li><a>{{$wp->wilayah}}{!!polsek()->contains('wilayah_id', $wp->id) ? "<i class='ti-angle-right'></i>" : ""!!}</a>
+                                                    <ul class="submenu">
+                                                        @foreach (polsek() as $pol)
+                                                            @if ($pol->wilayah_id==$wp->id)
+                                                                <li class="submenu-right"><a class="py-2 pl-2"
+                                                                    style="background: white; color: black"
+                                                                    href="{{url('/polsek/index')}}">{{$pol->namapolsek}}</a></li>
+                                                            @endif
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+
                                      <li class="mr-4"><a href="#">pelayanan <i class="ti-angle-down"></i></a>
                                          <ul class="submenu">
                                              <li><a href="{{url('/pelayanan/pelayanan-all')}}">Semua Pelayanan</a></li>
