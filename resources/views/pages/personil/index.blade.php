@@ -36,7 +36,7 @@ Polres Batang
                                 </div>
                                 <div class="px-5 py-5 col-lg-9 bg-light my-auto">
                                     <div class="row">
-                                        <a href="">{{$p->nama}}</a>
+                                        <a href="{{url('personil/detail/'.$p->url)}}">{{$p->nama}}</a>
                                     </div>
                                     <div class="row">
                                         <p class="mb-0 mt-2">{{ \Illuminate\Support\Str::limit($p->deskripsi, 60, $end='...') }}</p><br>
