@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', "FrontController@index");
 
-Route::get('/polsek/index', function () {
-    return view('pages.polsek.index');
-});
+Route::get('/polsek/{polsek}', "FrontController@polsekOne");
 
 Route::get('/berita/berita-all', "FrontController@berita");
 Route::get('/berita/{berita}', "FrontController@beritaOne");

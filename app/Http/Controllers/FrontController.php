@@ -13,6 +13,7 @@ use App\KategoriPengaduan;
 use App\Pengaduan;
 use App\Tupoksi;
 use App\Personil;
+use App\Polsek;
 
 class FrontController extends Controller
 {
@@ -177,6 +178,16 @@ class FrontController extends Controller
         $personil = Personil::where('url', $url)->first();
         return view('pages.personil.detail', [
             'personil' => $personil
+        ]);
+    }
+
+    public function polsekOne($url)
+    {
+        $polsek = Polsek::where('url', $url)->first();
+        if($polsek==NULL)
+            return redirect('/');
+        return view('pages.polsek.index', [
+            'polsek' => $polsek
         ]);
     }
 }

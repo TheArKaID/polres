@@ -21,55 +21,56 @@ Polres Batang
             <div class="col-lg-8 posts-list">
                 <div class="single-post">
                     <div class="feature-img">
-                        <img class="img-fluid" src="{{url('frontend/img/inovasi/polisi-3.jpg')}}" alt="">
+                        <img class="img-fluid" src="{{url('frontend/img/polsek/'.$polsek->gambar)}}" alt="">
                     </div>
                     <div class="blog_details">
-                        <h2>Kepolisian Sektor Tegalsari
+                        <h2>{{$polsek->namapolsek}}
                         </h2>
                         <ul class="blog-info-link mt-3 mb-4">
-                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+                            <li><i class="fa fa-user"></i>Polsek</li>
                         </ul>
                         <div class="row bg-light">
 
                             <div class="col-lg-4 bg-primary py-4">
                                 <div class="row d-flex justify-content-center">
-                                    <img style="width: 50%"
-                                        src="https://polrestabessurabaya.com/images/polsek/Screenshot_37.jpg">
+                                    <img class="img-fluid" src="{{url('frontend/img/polsek/'.$polsek->fotokapolsek)}}" alt="">
                                 </div>
                                 <div class="row d-flex justify-content-center mt-2">
-                                    <h6 style="text-align:center; color: yellow">Kompol Argya Satriya Bhawana, S.H.,
-                                        S.I.K.</h6>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <p class="mb-0 text-white">Kapolsek Tegalsari</p>
+                                    <h6 style="text-align:center; color: yellow">{{$polsek->kapolsek}}</h6>
                                 </div>
                             </div>
                             <div class="pl-5 py-5 col-8 bg-light my-auto">
                                 <div class="my-auto">
-                                    <div class="row">
-                                        <div class="col-lg-1">
-                                            <i class="fas fa-map-marker-alt"></i>
+                                    @if ($polsek->alamat!=NULL||!empty($polsek->alamat))
+                                        <div class="row">
+                                            <div class="col-lg-1">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                {{$polsek->alamat}}
+                                            </div>
                                         </div>
-                                        <div class="col-lg-11">
-                                            Jl. Basuki Rahmat 40, Surabaya - 68485
+                                    @endif
+                                    @if ($polsek->notelpon!=NULL||!empty($polsek->notelpon))
+                                        <div class="row">
+                                            <div class="col-lg-1">
+                                                <i class="fas fa-phone"></i>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                {{$polsek->notelpon}}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1">
-                                            <i class="fas fa-phone"></i>
+                                    @endif
+                                    @if ($polsek->email!=NULL||!empty($polsek->email))
+                                        <div class="row">
+                                            <div class="col-lg-1">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div class="col-lg-11">
+                                                {{$polsek->email}}
+                                            </div>
                                         </div>
-                                        <div class="col-lg-11">
-                                            031 - 5341052
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1">
-                                            <i class="fas fa-envelope"></i>
-                                        </div>
-                                        <div class="col-lg-11">
-                                            polrestabessurabaya@gmail.com
-                                        </div>
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -78,23 +79,30 @@ Polres Batang
                                 <h4>Keterangan</h4>
                             </div>
                             <div class="row">
-
-                                <p>Jumlah penduduk : 93.465 jiwa <br>
-                                    Luas wilayah : 4,29 km2 <br><br>
-
-                                    Kelurahan <br>
-                                    1. Kelurahan Kedungdoro <br>
-                                    2. Kelurahan Keputran <br>
-                                    3. Kelurahan Tegalsari <br>
-                                    4. Kelurahan Dr. Sutomo <br>
-                                    5. Kelurahan Wonorejo <br><br>
-
-                                    Akun Facebook : Polsek Tegalsari Polrestabes Surabaya<br>
-                                    Akun Twitter : @Tegalsaripolice<br>
-                                    Akun Instagram : @polsek_tegalsari_sby<br>
-                                </p>
+                                {!!$polsek->keterangan!!}
                             </div>
                         </div>
+                        
+                        <div class="col my-5">
+                            <div class="row">
+                                {!! $polsek->instagram!=NULL||!empty($polsek->instagram)
+                                    ? "<a href='https://instagram.com/".$polsek->instagram."' style='color: #BABABA; text-decoration: none' class='footer_text'>
+                                        <i class='fab fa-instagram mr-2'></i>".$polsek->instagram."</a><br>"
+                                    : ""!!}
+
+                                {!! $polsek->twitter!=NULL||!empty($polsek->twitter)
+                                    ? "<a href='https://twitter.com/".$polsek->twitter."' style='color: #BABABA; text-decoration: none' class='footer_text'>
+                                        <i class='fab fa-twitter mr-2'></i>".$polsek->twitter."</a><br>"
+                                    : ""!!}
+
+                                {!! $polsek->facebook!=NULL||!empty($polsek->facebook)
+                                    ? "<a href='https://facebook.com/".$polsek->facebook."' style='color: #BABABA; text-decoration: none' class='footer_text'>
+                                        <i class='fab fa-facebook mr-2'></i>".$polsek->facebook."</a><br>"
+                                    : ""!!}
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

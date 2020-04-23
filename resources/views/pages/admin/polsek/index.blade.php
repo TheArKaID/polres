@@ -19,12 +19,15 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Judul</th>
+                            <th>Nama Polsek</th>
+                            <th>Nama Kapolsek</th>
+                            <th>Foto Kapolsek</th>
                             <th>Alamat</th>
                             <th>Foto</th>
                             <th>Telepon</th>
                             <th>Email</th>
                             <th>Wilayah</th>
+                            <th>Keterangan</th>
                             <th>Facebook</th>
                             <th>Twitter</th>
                             <th>Instagram</th>
@@ -39,6 +42,11 @@
                             <tr>
                                 <td>{{++$no}}</td>
                                 <td>{{$p->namapolsek}}</td>
+                                <td>{{$p->kapolsek}}</td>
+                                <td>
+                                    <img src="{{asset('frontend/img/polsek/'.$p->fotokapolsek)}}" alt="" style="width: 150px; max-width: none;"
+                                    class="img-thumbnail" />
+                                </td>
                                 <td>{!!$p->alamat!!}</td>
                                 <td>
                                     <img src="{{asset('frontend/img/polsek/'.$p->gambar)}}" alt="" style="width: 150px; max-width: none;"
@@ -47,6 +55,7 @@
                                 <td>{{$p->notelpon}}</td>
                                 <td>{{$p->email}}</td>
                                 <td>{{$p->wilayah->wilayah}}</td>
+                                <td>{!!$p->keterangan!!}</td>
                                 <td>{{$p->facebook}}</td>
                                 <td>{{$p->twitter}}</td>
                                 <td>{{$p->instagram}}</td>

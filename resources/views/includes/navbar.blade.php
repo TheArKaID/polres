@@ -28,7 +28,7 @@
                                                             @if ($pol->wilayah_id==$wp->id)
                                                                 <li class="submenu-right"><a class="py-2 pl-2"
                                                                     style="background: white; color: black"
-                                                                    href="{{url('/polsek/index')}}">{{$pol->namapolsek}}</a></li>
+                                                                    href="{{url('polsek/'.$pol->url)}}">{{$pol->namapolsek}}</a></li>
                                                             @endif
                                                         @endforeach
                                                     </ul>
