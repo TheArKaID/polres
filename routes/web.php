@@ -34,6 +34,7 @@ Route::get('/tupoksi/detail/{tupoksi}/{key?}/{act?}', "FrontController@tupoksiOn
 Route::get('/pengaduan', "FrontController@pengaduan");
 Route::post('/pengaduan/lapor', "FrontController@laporPengaduan");
 Route::get('/pengaduan/cek-status', "FrontController@cekPengaduan");
+Route::post('/pengaduan/prosescekstatus', "FrontController@prosesCekPengaduan");
 
 Route::get('/personil', "FrontController@personil");
 Route::get('/personil/detail/{personil}', "FrontController@personilOne");

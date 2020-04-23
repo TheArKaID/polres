@@ -18,17 +18,17 @@ Polres Batang
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
             <div class="comment-form" style="margin: auto;">
                 <h4>Masukkan Kode</h4>
-                <form class="form-contact comment_form" action="#" id="commentForm">
+                <form class="form-contact comment_form" action="pengaduan/prosescekstatus" id="commentForm">
+                    {{ csrf_field() }}
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control " name="name" required=""
-                                    placeholder="Nama Lengkap Anda">
+                                <input type="text" class="form-control " name="name" required placeholder="Koe Pengaduan">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-warning px-5 py-3 text-white">Send Message</button>
+                        <button type="submit" class="btn btn-warning px-5 py-3 text-white">Periksa</button>
                     </div>
                 </form>
             </div>

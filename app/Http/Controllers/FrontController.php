@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Banner;
 use App\Pelayanan;
 use App\Inovasi;
@@ -90,15 +91,6 @@ class FrontController extends Controller
         ]);
     }
 
-    public function cekPengaduan()
-    {
-        $pengumuman = Pengumuman::all();
-
-        return view('pages.pengaduan.cek-status', [
-            'pengumuman' => $pengumuman
-        ]);
-    }
-
     public function berita()
     {
         $berita = Berita::paginate(5);
@@ -141,9 +133,24 @@ class FrontController extends Controller
         $laporan->jeniskelamin = $request['gender'];
         $laporan->penjelasan = $request['comment'];
         $laporan->status = "Menunggu";
+        $laporan->kode = Str::upper(Str::random(10));
         $laporan->save();
 
         return redirect('/pengaduan')->with("Berhasil", "Pengaduan Berhasil Dilaporkan!");
+    }
+    
+    public function cekPengaduan()
+    {
+        $pengumuman = Pengumuman::all();
+
+        return view('pages.pengaduan.cek-status', [
+            'pengumuman' => $pengumuman
+        ]);
+    }
+
+    public function prosesCekPengaduan(Request $request)
+    {
+        
     }
 
     public function tupoksi($key = null)
