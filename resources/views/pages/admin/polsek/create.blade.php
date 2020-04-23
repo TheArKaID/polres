@@ -48,18 +48,18 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="facebook" class="bold">Facebook</label>
-                    <input type="text" class="form-control" name="facebook" placeholder="facebook" value="">
+                    <label for="facebook" class="bold">User Facebook</label>
+                    <input type="text" class="form-control" name="facebook" placeholder="User Facebook" value="">
                 </div>
 
                 <div class="form-group">
-                    <label for="twitter" class="bold">Twitter</label>
-                    <input type="text" class="form-control" name="twitter" placeholder="twitter" value="">
+                    <label for="twitter" class="bold">User Twitter</label>
+                    <input type="text" class="form-control" name="twitter" placeholder="User Twitter" value="">
                 </div>
 
                 <div class="form-group">
-                    <label for="instagram" class="bold">Instagram</label>
-                    <input type="text" class="form-control" name="instagram" placeholder="instagram" value="">
+                    <label for="instagram" class="bold">User Instagram</label>
+                    <input type="text" class="form-control" name="instagram" placeholder="User Instagram" value="">
                 </div>
 
                 <div class="form-group">

@@ -25,9 +25,9 @@
                             <th>Telepon</th>
                             <th>Email</th>
                             <th>Wilayah</th>
-                            <th>Akun Facebook</th>
-                            <th>Akun Twitter</th>
-                            <th>Akun Instagram</th>
+                            <th>Facebook</th>
+                            <th>Twitter</th>
+                            <th>Instagram</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -108,6 +108,7 @@
                     </tr>
                 @endforeach
             </table>
+            <p>*Menghapus Wilayah akan menghapus seluruh Polsek di wilayah Tersebut</p>
         </div>
     </div>
 </div>
