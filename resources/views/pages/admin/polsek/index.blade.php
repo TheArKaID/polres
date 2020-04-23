@@ -89,7 +89,7 @@
 
     <div class="row">
         <div class="card-body">
-            <a href="tambahwilayah" class="btn btn-primary mb-2" style="float:right">Tambah Wilayah</a>
+            <a href="polsek/tambahwilayah" class="btn btn-primary mb-2" style="float:right">Tambah Wilayah</a>
             <table class="table table-sm table-bordered">
                 <thead class="thead-dark">
                     <tr>
@@ -100,7 +100,7 @@
                 @foreach ($wilayah as $w)
                     <tr>
                         <td>{{$w->wilayah}}</td>
-                        <td><a href="hapuswilayah/{{$w->id}}" class="btn btn-danger btn-sm">Hapus</a></td>
+                        <td><a href="polsek/hapuswilayah/{{$w->id}}" class="btn btn-danger btn-sm">Hapus</a></td>
                     </tr>
                 @endforeach
             </table>
