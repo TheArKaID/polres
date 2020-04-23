@@ -20,8 +20,8 @@
                         <tr>
                             <th>No</th>
                             <th>Judul</th>
-                            <th>Foto</th>
                             <th>Alamat</th>
+                            <th>Foto</th>
                             <th>Telepon</th>
                             <th>Email</th>
                             <th>Akun Facebook</th>
@@ -32,27 +32,28 @@
                     </thead>
                     <tbody>
                         @php
-
+                        $no=0;
                         @endphp
+                        @foreach ($polsek as $p)
                             <tr>
-                                <td>1</td>
-                                <td>Polsek Tegalsari</td>
+                                <td>{{++$no}}</td>
+                                <td>{{$p->namapolsek}}</td>
+                                <td>{!!$p->alamat!!}</td>
                                 <td>
-                                    <img src="" alt="" style="width: 150px"
+                                    <img src="{{asset('frontend/img/polsek/'.$p->gambar)}}" alt="" style="width: 150px"
                                     class="img-thumbnail" />
                                 </td>
-                                <td>AAAAAAAAAAAAAAA</td>
-                                <td>082222222</td>
-                                <td>polisi@google.com</td>
-                                <td>RuangHalalIndonesia</td>
-                                <td>RuangHalalIndonesia</td>
-                                <td>RuangHalalIndonesia</td>
+                                <td>{{$p->notelpon}}</td>
+                                <td>{{$p->email}}</td>
+                                <td>{{$p->facebook}}</td>
+                                <td>{{$p->twitter}}</td>
+                                <td>{{$p->instagram}}</td>
                                 <td>
-                                    <a href="{{url('/admin/polsek/edit')}}" class="btn btn-info">
+                                    <a href="{{url('/admin/polsek/edit/'.$p->id)}}" class="btn btn-info">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
                                     <form class="d-inline">
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" onclick="hapus('{{$p->id}}')">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                         <!-- Modal -->
@@ -73,7 +74,7 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                             data-dismiss="modal">Close</button>
-                                                        <a href="" type="button" class="btn btn-danger">Delete</a>
+                                                        <a href="" id="deleteButton" type="button" class="btn btn-danger">Delete</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -81,6 +82,7 @@
                                     </form>
                                 </td>
                             </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -108,4 +110,10 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+<script>
+    function hapus(id) {
+        var deleteButton = document.getElementById('deleteButton');
+        deleteButton.href = "/admin/polsek/hapus/"+id;
+    }
+</script>
 @endsection

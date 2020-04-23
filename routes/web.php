@@ -98,15 +98,14 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Polsek
     Route::get('/admin/polsek/', "AdminController@polsek");
+    Route::get('/admin/polsek/create', "AdminController@tambahPolsek");
+    Route::post('/admin/polsek/prosestambah', "AdminController@prosesTambahPolsek");
+    Route::get('/admin/polsek/edit/{polsek}', "AdminController@editPolsek");
+    Route::post('/admin/polsek/prosesedit', "AdminController@prosesEditPolsek");
+    Route::get('/admin/polsek/hapus/{id}', "AdminController@prosesHapusPolsek");
     Route::get('/admin/polsek/tambahwilayah', "AdminController@tambahWilayah");
     Route::post('/admin/polsek/prosestambahwilayah', "AdminController@prosesTambahWilayah");
     Route::get('/admin/polsek/hapuswilayah/{id}', "AdminController@hapusWilayah");
-    Route::get('/admin/polsek/create', function () {
-        return view('pages.admin.polsek.create');
-    });
-    Route::get('/admin/polsek/edit', function () {
-        return view('pages.admin.polsek.edit');
-    });
 
     // Setting
     Route::get('/admin/settings/', "AdminController@setting");

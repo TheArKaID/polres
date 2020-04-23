@@ -6,46 +6,60 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Tambah Polsek</h1>
+        <h1 class="h3 mb-0 text-gray-800">Edit Polsek</h1>
 
     </div>
 
     <div class="card shadow">
         <div class="card-body">
-            <form action="/admin/berita/prosestambah" method="POST" enctype="multipart/form-data">
+            <form action="/admin/polsek/prosesedit" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <input type="hidden" name="id" value="{{$polsek->id}}">
+                <div class="form-group">
+                    <label for="namapolsek" class="bold">Nama Polsek</label>
+                    <input type="text" class="form-control" name="namapolsek" placeholder="Nama Polsek" value="{{$polsek->namapolsek}}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="kapolsek" class="bold">Nama Kapolsek</label>
+                    <input type="text" class="form-control" name="kapolsek" placeholder="Nama Kapolsek" value="{{$polsek->kapolsek}}" required>
+                </div>
 
                 <div class="form-group">
-                    <label for="judul" class="bold">Judul</label>
-                    <input type="text" class="form-control" name="judul" placeholder="Judul" value="">
+                    <label for="alamat" class="bold">Alamat</label>
+                    <textarea name="alamat" rows="10" required>{{$polsek->alamat}}</textarea>
                 </div>
+
+                <div class="form-group">
+                    <label for="notelpon" class="bold">No. Telepon</label>
+                    <input type="text" class="form-control" name="notelpon" placeholder="notelpon" value="{{$polsek->notelpon}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="bold">Email</label>
+                    <input type="text" class="form-control" name="email" placeholder="email" value="{{$polsek->email}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="facebook" class="bold">Facebook</label>
+                    <input type="text" class="form-control" name="facebook" placeholder="facebook" value="{{$polsek->facebook}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="twitter" class="bold">Twitter</label>
+                    <input type="text" class="form-control" name="twitter" placeholder="twitter" value="{{$polsek->twitter}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="instagram" class="bold">Instagram</label>
+                    <input type="text" class="form-control" name="instagram" placeholder="instagram" value="{{$polsek->instagram}}">
+                </div>
+
                 <div class="form-group">
                     <label for="gambar" class="bold">Gambar</label>
                     <input type="file" class="form-control" name="gambar" placeholder="gambar" class="form-control">
-                                    <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
-                </div>
-                <div class="form-group">
-                    <label for="alamat" class="bold">Alamat</label>
-                    <textarea name="alamat" rows="10"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="telepon" class="bold">Telepon</label>
-                    <input type="number" class="form-control" name="telepon" placeholder="Telepon" value="">
-                </div>
-                <div class="form-group">
-                    <label for="email" class="bold">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Email" value="">
-                </div>
-                <div class="form-group">
-                    <label for="facebook" class="bold">Akun Facebook</label>
-                    <input type="text" class="form-control" name="facebook" placeholder="Facebook" value="">
-                </div>
-                <div class="form-group">
-                    <label for="twitter" class="bold">Akun Twitter</label>
-                    <input type="text" class="form-control" name="twitter" placeholder="Twitter" value="">
-                </div>
-                <div class="form-group">
-                    <label for="instagram" class="bold">Akun Instagram</label>
-                    <input type="text" class="form-control" name="instagram" placeholder="Instagram" value="">
+                    <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
+                    <p>*Tambahkan gambar untuk mengganti</p>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     Simpan
