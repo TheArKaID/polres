@@ -26,8 +26,14 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="fotokapolsek" class="bold">Foto Kapolsek</label>
+                    <input type="file" class="form-control" name="fotokapolsek" placeholder="fotokapolsek" class="form-control">
+                    <p>*Format gambar .jpg .jpeg .png dan maksimal ukuran 5mb</p>
+                </div>
+
+                <div class="form-group">
                     <label for="alamat" class="bold">Alamat</label>
-                    <textarea name="alamat" rows="10" required>{{$polsek->alamat}}</textarea>
+                    <textarea name="alamat" rows="10" class="form-control" required>{{$polsek->alamat}}</textarea>
                 </div>
 
                 <div class="form-group">
@@ -38,6 +44,20 @@
                 <div class="form-group">
                     <label for="email" class="bold">Email</label>
                     <input type="text" class="form-control" name="email" placeholder="email" value="{{$polsek->email}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="wilayah">Wilayah</label>
+                    <select name="wilayah" class="form-control" required>
+                        @foreach ($wilayah as $w)
+                            <option value="{{$w->id}}" {{$w->id==$polsek->wilayah_id ? "selected" : ""}}>{{$w->wilayah}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="keterangan" class="bold">Keterangan</label>
+                    <textarea name="keterangan" rows="10" class="form-control" required>{{$polsek->keterangan}}</textarea>
                 </div>
 
                 <div class="form-group">
@@ -71,7 +91,7 @@
 </div>
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script>
-    CKEDITOR.replace('alamat');
+    CKEDITOR.replace('keterangan');
 </script>
 <!-- /.container-fluid -->
 

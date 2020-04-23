@@ -467,7 +467,8 @@ class AdminController extends Controller
             'kapolsek' => 'required',
             'alamat' => 'required',
             'wilayah' => 'required',
-            'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
+            'gambar' => 'required|mimes:jpeg,jpg,png|max:5120',
+            'fotokapolsek' => 'required|mimes:jpeg,jpg,png|max:5120'
         ]);
 
         $url = Str::of($request["namapolsek"])->slug('-');
@@ -477,13 +478,15 @@ class AdminController extends Controller
         $polsek->kapolsek = $request["kapolsek"];
         $polsek->alamat = $request["alamat"];
         $polsek->wilayah_id = $request['wilayah'];
+        $polsek->keterangan = $request['keterangan'];
         $polsek->notelpon = $request["notelpon"]!=NULL ? $request["notelpon"] : "";
         $polsek->email = $request["email"]!=NULL ? $request["email"] : "";
         $polsek->facebook = $request["facebook"]!=NULL ? $request["facebook"] : "";
         $polsek->instagram = $request["instagram"]!=NULL ? $request["instagram"] : "";
         $polsek->twitter = $request["twitter"]!=NULL ? $request["twitter"] : "";
 
-        $polsek->gambar = $request["gambar"];
+        $polsek->gambar = "";
+        $polsek->fotokapolsek = "";
         $polsek->url = $url;
         $polsek->save();
 
@@ -491,8 +494,14 @@ class AdminController extends Controller
         $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
         $name = "polsek-".$polsek->id.".".$ext;
         $file->move('frontend/img/polsek', $name);
-
         $polsek->gambar = $name;
+        
+        $file = $request->file("fotokapolsek");
+        $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+        $fotokapolsek = "kapolsek-".$polsek->id.".".$ext;
+        $file->move('frontend/img/polsek', $fotokapolsek);
+        $polsek->fotokapolsek = $fotokapolsek;
+
         $polsek->save();
         
         return redirect('/admin/polsek')->with("Berhasil", "Polsek Berhasil Ditambahkan!");
@@ -500,8 +509,10 @@ class AdminController extends Controller
 
     public function editPolsek(Polsek $polsek)
     {
+        $wilayah = WilayahPolsek::all();
         return view('pages.admin.polsek.edit', [
-            'polsek' => $polsek
+            'polsek' => $polsek,
+            'wilayah' => $wilayah
         ]);
     }
 
@@ -511,7 +522,8 @@ class AdminController extends Controller
             'namapolsek' => 'required',
             'alamat' => 'required',
             'kapolsek' => 'required',
-            'gambar' => 'mimes:jpeg,jpg,png|max:5120'
+            'gambar' => 'mimes:jpeg,jpg,png|max:5120',
+            'fotokapolsek' => 'mimes:jpeg,jpg,png|max:5120'
         ]);
 
         $input=$request->all();
@@ -527,6 +539,14 @@ class AdminController extends Controller
             $name = "polsek-".$polsek->id.".".$ext;
             $file->move('frontend/img/polsek', $name);
             $polsek->gambar = $name;
+        }
+        
+        if($request->file("fotokapolsek")!=NULL){
+            $file = $request->file("fotokapolsek");
+            $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
+            $name = "kapolsek-".$polsek->id.".".$ext;
+            $file->move('frontend/img/polsek', $name);
+            $polsek->fotokapolsek = $name;
         }
         $polsek->update($input);
 
