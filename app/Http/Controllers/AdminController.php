@@ -21,12 +21,27 @@ class AdminController extends Controller
 {
     public function admin()
     {
-        return runDashboard();
+        return $this->dashboard();
     }
 
-    function runDashboard()
+    function dashboard()
     {
-        return view('pages.admin.dashboard');
+        $banner = Banner::all()->count();
+        $pelayanan = Pelayanan::all()->count();
+        $inovasi = Inovasi::all()->count();
+        $galeri = Galeri::all()->count();
+        $berita = Berita::all()->count();
+        $pengaduan = Pengaduan::all()->count();
+
+        runDashboard();
+        return view('pages.admin.dashboard', [
+            'banner' => $banner,
+            'pelayanan' => $pelayanan,
+            'inovasi' => $inovasi,
+            'galeri' => $galeri,
+            'berita' => $berita,
+            'pengaduan' => $pengaduan
+        ]);
     }
     
     public function banner()
