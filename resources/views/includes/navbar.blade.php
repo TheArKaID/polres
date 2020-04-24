@@ -1,4 +1,10 @@
  <!-- header-start -->
+ @php
+     $berandaactive = Request::is('/') ? 'active' : '';
+     $profileactive = Request::is('tupoksi*')||Request::is('personil*')||Request::is('galeri*')||Request::is('berita*')||Request::is('inovasi*') ? 'active' : '';
+     $polsekactive = Request::is('polsek*') ? 'active' : '';
+     $pelayananactive = Request::is('pelayanan*')||Request::is('pengaduan*') ? 'active' : '';
+ @endphp
  <header>
      <div class="header-area ">
          <div id="sticky-header" class="main-header-area">
@@ -8,8 +14,8 @@
                          <div class="main-menu  d-none d-lg-block">
                              <nav>
                                  <ul id="navigation">
-                                     <li class="mr-4"><a class="active" href="{{url('/')}}">beranda</a></li>
-                                     <li class="mr-4"><a href="#">profil <i class="ti-angle-down"></i></a>
+                                     <li class="mr-4"><a class="{{$berandaactive}}" href="{{url('/')}}">beranda</a></li>
+                                     <li class="mr-4"><a class="{{$profileactive}}" href="#">profil <i class="ti-angle-down"></i></a>
                                          <ul class="submenu">
                                              <li><a href="{{url('/tupoksi')}}">Tupoksi</a></li>
                                              <li><a href="{{url('/personil')}}">Personil</a></li>
@@ -19,7 +25,7 @@
                                          </ul>
                                      </li>
 
-                                     <li class="mr-4"><a href="#">polsek <i class="ti-angle-down"></i></a>
+                                     <li class="mr-4"><a class="{{$polsekactive}}" href="#">Polsek <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
                                             @foreach (wilayahPolsek() as $wp)
                                                 <li><a>{{$wp->wilayah}}{!!polsek()->contains('wilayah_id', $wp->id) ? "<i class='ti-angle-right'></i>" : ""!!}</a>
@@ -37,7 +43,7 @@
                                         </ul>
                                     </li>
 
-                                     <li class="mr-4"><a href="#">pelayanan <i class="ti-angle-down"></i></a>
+                                     <li class="mr-4"><a class="{{$pelayananactive}}" href="#">pelayanan <i class="ti-angle-down"></i></a>
                                          <ul class="submenu">
                                              <li><a href="{{url('/pelayanan/pelayanan-all')}}">Semua Pelayanan</a></li>
                                              <li><a href="{{url('/pengaduan')}}">Pengaduan</a></li>
