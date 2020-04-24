@@ -15,6 +15,7 @@ use App\Pengaduan;
 use App\Tupoksi;
 use App\Personil;
 use App\Polsek;
+use App\Comment;
 
 class FrontController extends Controller
 {
@@ -103,13 +104,35 @@ class FrontController extends Controller
     public function beritaOne($url)
     {
         $berita = Berita::where("url", $url)->first();
+        
         if($berita==null){
             return redirect('/berita/berita-all');
         }
         
+        $komentar = Comment::where('berita_id', $berita->id)->orderBy('id', 'desc')->get();
+        
         return view('pages.berita.berita-one', [
-            'berita' => $berita
+            'berita' => $berita,
+            'komentar' => $komentar
         ]);
+    }
+
+    public function beritaKomentar(Request $request)
+    {
+        $this->validate($request, [
+            'nama' => 'required',
+            'email' => 'required',
+            'komentar' => 'required',
+        ]);
+
+        $komentar = new Comment;
+        $komentar->nama = $request['nama'];
+        $komentar->email = $request['email'];
+        $komentar->komentar = $request['komentar'];
+        $komentar->berita_id = $request['berita_id'];
+        $komentar->save();
+
+        return redirect()->back()->with('Berhasil', "Berhasil Mengomentari");
     }
 
     public function pengaduan()

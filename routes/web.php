@@ -19,6 +19,7 @@ Route::get('/polsek/{polsek}', "FrontController@polsekOne");
 
 Route::get('/berita/berita-all', "FrontController@berita");
 Route::get('/berita/{berita}', "FrontController@beritaOne");
+Route::post('/berita/komentar', "FrontController@beritaKomentar");
 
 Route::get('/inovasi/inovasi-all', "FrontController@inovasi");
 Route::get('/inovasi/{inovasi}', "FrontController@inovasiOne");
