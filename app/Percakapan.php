@@ -9,6 +9,6 @@ class Percakapan extends Model
     protected $table = 'percakapan';
     
     protected $fillable = [
-        'pengaduan_id', 'pesan'
+        'pengaduan_id', 'pesan', 'isadmin'
     ];
 }
