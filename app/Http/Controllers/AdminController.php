@@ -16,6 +16,7 @@ use App\Personil;
 use App\Setting;
 use App\Polsek;
 use App\WilayahPolsek;
+use App\Percakapan;
 
 class AdminController extends Controller
 {
@@ -400,6 +401,15 @@ class AdminController extends Controller
         return view('pages.admin.pengaduan.balas', [
             'pengaduan' => $pengaduan
         ]);
+    }
+
+    public function prosesBalasPengaduan(Request $request)
+    {
+        $percakapan = new Percakapan;
+        $percakapan->pengaduan_id = $request->pengaduanid;
+        $percakapan->pesan = $request->pesan;
+        $percakapan->isadmin = 1;
+        $percakapan->save();
     }
 
     public function tambahKategoriPengaduan()
