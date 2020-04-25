@@ -23,9 +23,9 @@
                     <div class="form-group">
                         <label for="status" class="bold">Status Kasus</label>
                         <select class="form-control" name="gender" required="">
-                            <option value="M" {{$pengaduan->status=='M' ? 'selected' : ''}} hidden>Menunggu</option>
-                            <option value="P" {{$pengaduan->status=='P' ? 'selected' : ''}}>Proses</option>
-                            <option value="S" {{$pengaduan->status=='S' ? 'selected' : ''}}>Selesai</option>
+                            <option value="Menunggu" {{$pengaduan->status=='Menunggu' ? 'selected' : ''}} hidden>Menunggu</option>
+                            <option value="Proses" {{$pengaduan->status=='Proses' ? 'selected' : ''}}>Proses</option>
+                            <option value="Selesai" {{$pengaduan->status=='Selesai' ? 'selected' : ''}}>Selesai</option>
                         </select>
                     </div>
                 </div>
