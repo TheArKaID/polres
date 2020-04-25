@@ -93,7 +93,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pengaduan/tambahKategori', "AdminController@tambahKategoriPengaduan");
     Route::post('/admin/pengaduan/prosestambahkategori', "AdminController@prosesTambahKategoriPengaduan");
     Route::get('/admin/pengaduan/hapusKategori/{id}', "AdminController@hapusKategoriPengaduan");
-    Route::get('/admin/pengaduan/ubah', function () {
+    Route::get('/admin/pengaduan/ubah/{id}', function () {
         return view('pages.admin.pengaduan.reply');
     });
 
@@ -128,5 +128,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/personil/ubah/{personil}', "AdminController@editPersonil");
     Route::post('/admin/personil/prosesedit', "AdminController@prosesEditPersonil");
     Route::get('/admin/personil/hapus/{id}', "AdminController@prosesHapusPersonil");
-
 });

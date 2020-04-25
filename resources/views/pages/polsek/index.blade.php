@@ -10,7 +10,7 @@ Polres Batang
 
 <!-- bradcam_area_start -->
 <div class="bradcam_area" style="background-image: url('/frontend/img/setting/{{settings()->background}}')">
-    <h3>Polsek Sukamaju</h3>
+<h3>Polsek {{$polsek->namapolsek}}</h3>
 </div>
 <!-- bradcam_area_end -->
 
@@ -24,7 +24,7 @@ Polres Batang
                         <img class="img-fluid" src="{{url('frontend/img/polsek/'.$polsek->gambar)}}" alt="">
                     </div>
                     <div class="blog_details">
-                        <h2>{{$polsek->namapolsek}}
+                        <h2>Polsek {{$polsek->namapolsek}}
                         </h2>
                         <ul class="blog-info-link mt-3 mb-4">
                             <li><i class="fa fa-user"></i>Polsek</li>
@@ -82,7 +82,7 @@ Polres Batang
                                 {!!$polsek->keterangan!!}
                             </div>
                         </div>
-                        
+
                         <div class="col my-5">
                             <div class="row">
                                 {!! $polsek->instagram!=NULL||!empty($polsek->instagram)
@@ -90,16 +90,18 @@ Polres Batang
                                         <i class='fab fa-instagram mr-2'></i>".$polsek->instagram."</a><br>"
                                     : ""!!}
 
-                                {!! $polsek->twitter!=NULL||!empty($polsek->twitter)
+                            </div>
+                            <div class="row">
+{!! $polsek->twitter!=NULL||!empty($polsek->twitter)
                                     ? "<a href='https://twitter.com/".$polsek->twitter."' style='color: #BABABA; text-decoration: none' class='footer_text'>
                                         <i class='fab fa-twitter mr-2'></i>".$polsek->twitter."</a><br>"
                                     : ""!!}
-
-                                {!! $polsek->facebook!=NULL||!empty($polsek->facebook)
+                            </div>
+                            <div class="row">
+{!! $polsek->facebook!=NULL||!empty($polsek->facebook)
                                     ? "<a href='https://facebook.com/".$polsek->facebook."' style='color: #BABABA; text-decoration: none' class='footer_text'>
                                         <i class='fab fa-facebook mr-2'></i>".$polsek->facebook."</a><br>"
                                     : ""!!}
-
                             </div>
                         </div>
 
