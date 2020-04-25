@@ -96,9 +96,11 @@
                     p.style.width = "100%";
                     p.style.borderRadius = "5px 5px 0px 5px";
                 
-                p.innerHTML = pesan;
-                div.appendChild(p);
-                document.getElementById('areapesan').appendChild(div);
+                var areapesan = document.getElementById('areapesan');
+                    p.innerHTML = pesan;
+                    div.appendChild(p);
+                    areapesan.appendChild(div)
+                    div.scrollIntoView();
                 
                 document.getElementById('pesan').value = "";
             };
