@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-2 pl-0">
                     {{ csrf_field() }}
-                    <input type="button" class="btn btn-primary btn-block" onclick="balas()" value="Kirim">
+                    <input type="button" id="btnKirim" class="btn btn-primary btn-block" onclick="balas()" value="Kirim">
                 </div>
             </div>
         </div>
@@ -74,6 +74,10 @@
 <!-- /.container-fluid -->
 <script>
     function balas() {
+        var btnKirim = document.getElementById("btnKirim");
+            btnKirim.disabled = true;
+            btnKirim.value = "Mengirim...";
+
         var pesan = document.getElementById('pesan').value;
         var token = document.getElementsByName('_token')[0].value;
         var pengaduanid = {{$pengaduan->id}};
@@ -102,6 +106,8 @@
                     areapesan.appendChild(div)
                     div.scrollIntoView();
                 
+                btnKirim.disabled = false;
+                btnKirim.value = "Kirim"
                 document.getElementById('pesan').value = "";
             };
         r.send(params);
