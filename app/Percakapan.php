@@ -11,4 +11,9 @@ class Percakapan extends Model
     protected $fillable = [
         'pengaduan_id', 'pesan', 'isadmin'
     ];
+
+    public function pengaduan()
+    {
+        return $this->belongsTo(Pengaduan::class);
+    }
 }

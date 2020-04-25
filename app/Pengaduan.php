@@ -16,4 +16,9 @@ class Pengaduan extends Model
     {
         return $this->belongsTo(KategoriPengaduan::class);
     }
+
+    public function percakapan()
+    {
+        return $this->hasMany(Percakapan::class);
+    }
 }
