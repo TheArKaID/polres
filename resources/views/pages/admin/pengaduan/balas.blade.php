@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="bg-dark" style="overflow: auto; width: 100%; height: 500px;">
+            <div class="bg-dark" style="overflow: auto; width: 100%; height: 500px;" id="areapesan">
                 @foreach ($pengaduan->percakapan as $pesan)
                     @if ($pesan->isadmin==1)
                         <div class="row m-3" style="width: 70%; float: right;">
@@ -84,6 +84,22 @@
         r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         r.onreadystatechange = function () {
             if (r.readyState != 4 || r.status != 200) return;
+                var div = document.createElement("div");
+                    div.classList.add("row");
+                    div.classList.add("m-3")
+                    div.style.width = "70%";
+                    div.style.float = "right";
+                var p = document.createElement("p");
+                    p.classList.add("p-4");
+                    p.classList.add("text-dark")
+                    p.style.background = "#7befb2";
+                    p.style.width = "100%";
+                    p.style.borderRadius = "5px 5px 0px 5px";
+                
+                p.innerHTML = pesan;
+                div.appendChild(p);
+                document.getElementById('areapesan').appendChild(div);
+                
                 document.getElementById('pesan').value = "";
             };
         r.send(params);
