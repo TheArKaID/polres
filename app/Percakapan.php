@@ -9,7 +9,7 @@ class Percakapan extends Model
     protected $table = 'percakapan';
     
     protected $fillable = [
-        'pengaduan_id', 'pesan', 'isadmin'
+        'pengaduan_id', 'pesan', 'isadmin', 'isseen'
     ];
 
     public function pengaduan()

@@ -42,7 +42,7 @@
                                 <td>{{$p->status}}</td>
                                 <td>
                                     <a href="{{url('/admin/pengaduan/balas/'.$p->id)}}" class="btn btn-primary">
-                                        <i class="fas fa-comments"></i>
+                                        <i class="fas fa-comments" {!!count($p->percakapan->where('isseen', '==', '0'))!=0 ? "style='color: greenyellow'" : ""!!}></i>
                                     </a>
                                 </td>
                             </tr>
