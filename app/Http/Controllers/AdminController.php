@@ -389,7 +389,7 @@ class AdminController extends Controller
     {
         $pengaduan = Pengaduan::all();
         $kategori = \App\KategoriPengaduan::all();
-
+        
         return view('pages.admin.pengaduan.index', [
             "pengaduan" => $pengaduan,
             'kategori' => $kategori
@@ -398,6 +398,8 @@ class AdminController extends Controller
 
     public function balasPengaduan(Pengaduan $pengaduan)
     {
+        $pengaduan->isseen = 1;
+        $pengaduan->save();
         return view('pages.admin.pengaduan.balas', [
             'pengaduan' => $pengaduan
         ]);
