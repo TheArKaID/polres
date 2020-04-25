@@ -157,6 +157,7 @@ class FrontController extends Controller
         $laporan->penjelasan = $request['comment'];
         $laporan->status = "Menunggu";
         $laporan->kode = Str::upper(Str::random(10));
+        $laporan->isseen = 0;
         $laporan->save();
 
         return redirect('/pengaduan')->with("Berhasil", "Pengaduan Berhasil Dilaporkan!");
