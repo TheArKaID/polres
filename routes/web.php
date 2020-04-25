@@ -93,9 +93,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pengaduan/tambahKategori', "AdminController@tambahKategoriPengaduan");
     Route::post('/admin/pengaduan/prosestambahkategori', "AdminController@prosesTambahKategoriPengaduan");
     Route::get('/admin/pengaduan/hapusKategori/{id}', "AdminController@hapusKategoriPengaduan");
-    Route::get('/admin/pengaduan/ubah/{id}', function () {
-        return view('pages.admin.pengaduan.reply');
-    });
+    Route::get('/admin/pengaduan/balas/{pengaduan}', "AdminController@balasPengaduan");
 
     // Polsek
     Route::get('/admin/polsek/', "AdminController@polsek");

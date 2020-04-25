@@ -395,6 +395,13 @@ class AdminController extends Controller
         ]);
     }
 
+    public function balasPengaduan(Pengaduan $pengaduan)
+    {
+        return view('pages.admin.pengaduan.balas', [
+            'pengaduan' => $pengaduan
+        ]);
+    }
+
     public function tambahKategoriPengaduan()
     {
         return view('pages.admin.pengaduan.createkategori');

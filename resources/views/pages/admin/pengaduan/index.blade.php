@@ -43,7 +43,7 @@
 
 
                                 <td>
-                                    <a href="{{url('/admin/pengaduan/ubah/'.$p->id)}}" class="btn btn-primary">
+                                    <a href="{{url('/admin/pengaduan/balas/'.$p->id)}}" class="btn btn-primary">
                                         <i class="fas fa-comments"></i>
                                     </a>
                                 </td>
