@@ -22,4 +22,9 @@
     {
         return \App\WilayahPolsek::all();
     }
+
+    function isPengaduanSeen()
+    {
+        return \App\Pengaduan::where('isseen', 0)->get();
+    }
 ?>

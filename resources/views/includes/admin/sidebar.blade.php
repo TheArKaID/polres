@@ -63,7 +63,9 @@
   <li class="nav-item {{ Request::is('admin/pengaduan*') ? 'active' : '' }}">
     <a class="nav-link" href="{{url('/admin/pengaduan')}}">
       <i class="fas fa-fw fa-comments"></i>
-      <span>Pengaduan</span></a>
+      <span>Pengaduan</span>
+      {!! count(isPengaduanSeen())!=0 ? "<span style='color: dodgerblue'> (".count(isPengaduanSeen()).")" : ""!!}
+    </a>
   </li>
 
   <!-- Nav Item - Dashboard -->
