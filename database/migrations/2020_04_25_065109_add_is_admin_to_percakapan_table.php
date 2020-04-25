@@ -14,7 +14,7 @@ class AddIsAdminToPercakapanTable extends Migration
     public function up()
     {
         Schema::table('percakapan', function (Blueprint $table) {
-            $table->integer('isadmin');
+            $table->integer('isadmin')->after('pengaduan_id');
         });
     }
 
