@@ -400,6 +400,14 @@ class AdminController extends Controller
     {
         $pengaduan->isseen = 1;
         $pengaduan->save();
+
+        $percakapan = Percakapan::where('isseen', 0)->where('pengaduan_id', $pengaduan->id)->get();
+        
+        foreach ($percakapan as $p) {
+            $p = Percakapan::find($p->id);
+            $p->isseen = 1;
+            $p->save();
+        }
         return view('pages.admin.pengaduan.balas', [
             'pengaduan' => $pengaduan
         ]);
@@ -411,6 +419,7 @@ class AdminController extends Controller
         $percakapan->pengaduan_id = $request->pengaduanid;
         $percakapan->pesan = $request->pesan;
         $percakapan->isadmin = 1;
+        $percakapan->issen = 1;
         $percakapan->save();
     }
 
