@@ -190,7 +190,7 @@ class FrontController extends Controller
         $percakapan->pengaduan_id = $request->pengaduanid;
         $percakapan->pesan = $request->pesan;
         $percakapan->isadmin = 0;
-        $percakapan->isseen = 1;
+        $percakapan->isseen = 0;
         $percakapan->save();
     }
 
