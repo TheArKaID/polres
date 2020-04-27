@@ -41,48 +41,29 @@ Polres Batang
                 <table class="table table-bordered" width="100%" collspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>No</th>
                             <th>Nama</th>
                             <th>Kategori</th>
-                            <th>Pengaduan</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Paijo</td>
-                            <td>Curanmor</td>
-                            <td>kok motor saya hilang?</td>
-                            <td>Proses</td>
-                        </tr>
+                            @php
+                                $no=1;
+                            @endphp
+                            @foreach ($pengaduan as $p)
+                            <tr>
+                                <td>{{$no++}}</td>
+                                <td>{{substr($p->nama, 0, 1)}}*********</td>
+                                <td>{{$p->kategori->kategori}}</td>
+                                <td>{{$p->status}}</td>
+                            </tr>
+                            @endforeach
 
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
-    <nav class="blog-pagination justify-content-center d-flex">
-        <ul class="pagination">
-            <li class="page-item">
-                <a href="#" class="page-link" aria-label="Previous">
-                    <i class="ti-angle-left"></i>
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">1</a>
-            </li>
-            <li class="page-item active">
-                <a href="#" class="page-link">2</a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link" aria-label="Next">
-                    <i class="ti-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
 </section>
 @endsection

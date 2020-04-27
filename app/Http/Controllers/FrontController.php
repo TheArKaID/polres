@@ -166,9 +166,11 @@ class FrontController extends Controller
     public function cekPengaduan()
     {
         $pengumuman = Pengumuman::all();
+        $pengaduan = Pengaduan::orderBy('id', 'desc')->take(5)->get();
 
         return view('pages.pengaduan.cek-status', [
-            'pengumuman' => $pengumuman
+            'pengumuman' => $pengumuman,
+            'pengaduan' => $pengaduan
         ]);
     }
 
