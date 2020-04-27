@@ -182,6 +182,16 @@ class FrontController extends Controller
         ]);
     }
 
+    public function prosesBalasPengaduan(Request $request)
+    {
+        $percakapan = new \App\Percakapan;
+        $percakapan->pengaduan_id = $request->pengaduanid;
+        $percakapan->pesan = $request->pesan;
+        $percakapan->isadmin = 1;
+        $percakapan->isseen = 1;
+        $percakapan->save();
+    }
+
     public function tupoksi($key = null)
     {
         $tupoksi = Tupoksi::all();

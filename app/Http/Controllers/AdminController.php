@@ -419,7 +419,7 @@ class AdminController extends Controller
         $percakapan->pengaduan_id = $request->pengaduanid;
         $percakapan->pesan = $request->pesan;
         $percakapan->isadmin = 1;
-        $percakapan->issen = 1;
+        $percakapan->isseen = 1;
         $percakapan->save();
     }
 
