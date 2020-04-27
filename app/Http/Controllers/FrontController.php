@@ -187,7 +187,7 @@ class FrontController extends Controller
         $percakapan = new \App\Percakapan;
         $percakapan->pengaduan_id = $request->pengaduanid;
         $percakapan->pesan = $request->pesan;
-        $percakapan->isadmin = 1;
+        $percakapan->isadmin = 0;
         $percakapan->isseen = 1;
         $percakapan->save();
     }

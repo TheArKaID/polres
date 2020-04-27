@@ -25,6 +25,12 @@ Polres Batang
                                 <div>{{$pengaduan->nama}}</div>
                             </div>
                         </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="status" class="bold">Status Kasus</label>
+                                <div>{{$pengaduan->status}}</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -56,12 +62,21 @@ Polres Batang
                     <div class="row mt-2">
                         <div class="col-10 pr-0">
                             <div class="form-group">
-                                <textarea id="pesan" rows="1" class="d-block w-100 form-control" style="border-radius: 0px 0px 5px 5px;"></textarea>
+                                @if ($pengaduan->status=="Selesai")
+                                    <textarea rows="1" class="d-block w-100 form-control" style="border-radius: 0px 0px 5px 5px;" disabled></textarea>
+                                @else
+                                    <textarea id="pesan" rows="1" class="d-block w-100 form-control" style="border-radius: 0px 0px 5px 5px;"></textarea>
+                                @endif
                             </div>
                         </div>
                         <div class="col-2 pl-0">
-                            {{ csrf_field() }}
-                            <input type="button" id="btnKirim" class="btn btn-primary btn-block" onclick="balas()" value="Kirim">
+                            @if ($pengaduan->status=="Selesai")
+                                <input type="button" class="btn btn-primary btn-block" value="Ended" disabled>
+                            @else
+                                {{ csrf_field() }}
+                                <input type="button" id="btnKirim" class="btn btn-primary btn-block" onclick="balas()" value="Kirim">    
+                            @endif
+                            
                         </div>
                     </div>
                 </div>
