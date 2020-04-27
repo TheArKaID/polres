@@ -22,7 +22,7 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="status" class="bold">Status Kasus</label>
-                        <select class="form-control" name="gender" required="">
+                        <select class="form-control" name="gender" onchange="setStatus(this)" required>
                             <option value="Menunggu" {{$pengaduan->status=='Menunggu' ? 'selected' : ''}} hidden>Menunggu</option>
                             <option value="Proses" {{$pengaduan->status=='Proses' ? 'selected' : ''}}>Proses</option>
                             <option value="Selesai" {{$pengaduan->status=='Selesai' ? 'selected' : ''}}>Selesai</option>
@@ -109,6 +109,23 @@
                 btnKirim.disabled = false;
                 btnKirim.value = "Kirim"
                 document.getElementById('pesan').value = "";
+            };
+        r.send(params);
+    }
+
+    function setStatus(status) {
+        var value = status[status.selectedIndex].value;
+        var pengaduanid = {{$pengaduan->id}};
+        var token = document.getElementsByName('_token')[0].value;
+
+        var params = "value="+value+"&id="+pengaduanid;
+        var r = new XMLHttpRequest();
+        r.open("POST", "/admin/pengaduan/setstatus", true);
+        r.setRequestHeader('X-CSRF-TOKEN', token);
+        r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        r.onreadystatechange = function () {
+            if (r.readyState != 4 || r.status != 200) return;
+                console.log(r.responseText);
             };
         r.send(params);
     }

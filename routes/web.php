@@ -96,6 +96,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pengaduan/hapusKategori/{id}', "AdminController@hapusKategoriPengaduan");
     Route::get('/admin/pengaduan/balas/{pengaduan}', "AdminController@balasPengaduan");
     Route::post('/admin/pengaduan/balas', "AdminController@prosesBalasPengaduan");
+    Route::post('/admin/pengaduan/setstatus', "AdminController@prosesStatusPengaduan");
 
     // Polsek
     Route::get('/admin/polsek/', "AdminController@polsek");

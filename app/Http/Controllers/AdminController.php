@@ -423,6 +423,13 @@ class AdminController extends Controller
         $percakapan->save();
     }
 
+    public function prosesStatusPengaduan(Request $request)
+    {
+        $pengaduan = Pengaduan::find($request->id);
+        $pengaduan->status = $request->value;
+        $pengaduan->save();
+    }
+
     public function tambahKategoriPengaduan()
     {
         return view('pages.admin.pengaduan.createkategori');
