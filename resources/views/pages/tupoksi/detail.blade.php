@@ -20,7 +20,6 @@ Polres Batang
         <div class="row">
             <div class="col-lg-8 posts-list">
                 <div class="single-post">
-
                     <div class="blog_details">
                         <h2>{{$tupoksi->tupoksi}}
                         </h2>
@@ -38,18 +37,14 @@ Polres Batang
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget search_widget">
-                        <form action="#" style="text-align: center;">
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Search Keyword'
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
-                                    <div class="input-group-append">
-                                        <button class="btn" type="button"><i class="ti-search"></i></button>
-                                    </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <input type="text" name="search" id="search" class="form-control" placeholder='Search Keyword' value="{{isset($keyword) ? $keyword : ''}}" onchange="setSearch(this)" required></form>
+                                <div class="input-group-append">
+                                    <a id="btnSearch" class="btn" href="#" aria-disabled="true"><i class="ti-search"></i></a>
                                 </div>
                             </div>
-                            <button class="btn btn-warning text-white px-5" type="submit">Search</button>
-                        </form>
+                        </div>
                     </aside>
                 </div>
             </div>
@@ -57,5 +52,26 @@ Polres Batang
     </div>
 </section>
 <!--================ Blog Area end =================-->
+<script>
+    function setSearch(that) {
+        var value = that.value;
+        if(value!=""){
+            document.getElementById("btnSearch").href = "../../search/"+value;
+        } else{
+        document.getElementById("btnSearch").href = "#";
+        }
+    }
 
+    function enterSearch() {
+        var value = document.getElementById("search").value;
+        if(value!=""){
+            window.location.href="../../search/"+value;
+        }
+    }
+    document.getElementById("search").onkeydown = function () {
+        if (event.keyCode === 13) {
+            enterSearch();
+        }
+    };
+</script>
 @endsection
