@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', "FrontController@index");
+Route::get('/search/{search}', "FrontController@search");
 
 Route::get('/polsek/{polsek}', "FrontController@polsekOne");
 
