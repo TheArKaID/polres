@@ -36,6 +36,31 @@ class FrontController extends Controller
         ]);
     }
 
+    public function search($search)
+    {
+        $banner = Banner::all();
+        $pelayanan = Pelayanan::where('judul', 'like', '%'.$search.'%')
+            ->orWhere('deskripsi', 'like', '%'.$search.'%')->get();
+        $inovasi = Inovasi::where('judul', 'like', '%'.$search.'%')
+            ->orWhere('deskripsi', 'like', '%'.$search.'%')->get();
+        $berita = Berita::where('judul', 'like', '%'.$search.'%')
+            ->orWhere('deskripsi', 'like', '%'.$search.'%')->get();
+        $tupoksi = Tupoksi::where('tupoksi', 'like', '%'.$search.'%')
+            ->orWhere('deskripsi', 'like', '%'.$search.'%')->get();
+        $personil = Personil::where('nama', 'like', '%'.$search.'%')
+            ->orWhere('deskripsi', 'like', '%'.$search.'%')->get();
+
+        return view("pages.search", [
+            "banner" => $banner,
+            "keyword" => $search,
+            'pelayanan' => $pelayanan,
+            'inovasi' => $inovasi,
+            'berita' => $berita,
+            'tupoksi' => $tupoksi,
+            'personil' => $personil
+        ]);
+    }
+
     public function inovasi()
     {
         $pengumuman = Pengumuman::all();

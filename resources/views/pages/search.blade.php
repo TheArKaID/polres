@@ -44,7 +44,7 @@ Pencarian
                 <div class="col-md-12">
                     <div class="form-group">
                         <div class="input-group mb-3">
-                            <input type="text" name="search" class="form-control" placeholder='Search Keyword' value="{{$keyword}}" onchange="setSearch(this)">
+                            <input type="text" name="search" id="search" class="form-control" placeholder='Search Keyword' value="{{$keyword}}" onchange="setSearch(this)">
                             <div class="input-group-append">
                                 <a id="btnSearch" class="btn" href="{{$keyword}}"><i class="ti-search"></i></a>
                             </div>
@@ -154,5 +154,15 @@ Pencarian
             var value = that.value;
             document.getElementById("btnSearch").href = ""+value;
         }
+
+        function enterSearch() {
+            var value = document.getElementById("search").value;
+            window.location.href=value;
+        }
+        document.getElementById("search").onkeydown = function () {
+            if (event.keyCode === 13) {
+                enterSearch();
+            }
+        };
     </script>
 @endsection
