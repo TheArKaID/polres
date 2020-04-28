@@ -47,8 +47,7 @@ class FrontController extends Controller
             ->orWhere('deskripsi', 'like', '%'.$search.'%')->get();
         $tupoksi = Tupoksi::where('tupoksi', 'like', '%'.$search.'%')
             ->orWhere('deskripsi', 'like', '%'.$search.'%')->get();
-        $personil = Personil::where('nama', 'like', '%'.$search.'%')
-            ->orWhere('deskripsi', 'like', '%'.$search.'%')->get();
+        $personil = Personil::where('nama', 'like', '%'.$search.'%')->get();
 
         return view("pages.search", [
             "banner" => $banner,
