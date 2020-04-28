@@ -36,6 +36,7 @@ Route::get('/pengaduan', "FrontController@pengaduan");
 Route::post('/pengaduan/lapor', "FrontController@laporPengaduan");
 Route::get('/pengaduan/cek-status', "FrontController@cekPengaduan");
 Route::post('/pengaduan/prosescekstatus', "FrontController@prosesCekPengaduan");
+Route::get('/pengaduan/prosescekstatus', "FrontController@prosesCekPengaduan");
 Route::post('/pengaduan/balas', "FrontController@prosesBalasPengaduan");
 
 Route::get('/personil', "FrontController@personil");
