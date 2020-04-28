@@ -16,7 +16,7 @@ Polres Batang
 <section class="blog_area single-post-area section-padding pt-0">
     <div class="container mb-100">
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
-            <div class="card shadow">
+            <div class="card shadow" style="width: 100%">
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
