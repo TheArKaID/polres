@@ -29,11 +29,11 @@
                                         <ul class="submenu">
                                             @foreach (wilayahPolsek() as $wp)
                                                 <li><a>{{$wp->wilayah}}{!!polsek()->contains('wilayah_id', $wp->id) ? "<i class='ti-angle-right'></i>" : ""!!}</a>
-                                                    <ul class="submenu">
+                                                    <ul class="submenu" style="background-color: transparent;height: 0px;">
                                                         @foreach (polsek() as $pol)
                                                             @if ($pol->wilayah_id==$wp->id)
-                                                                <li class="submenu-right"><a class="py-2 pl-2"
-                                                                    style="background: white; color: black"
+                                                                <li class="submenu-right" style="position: relative !important;"><a class="py-2 pl-2"
+                                                                    style="background: white; color: black;"
                                                                     href="{{url('polsek/'.$pol->url)}}">{{$pol->namapolsek}}</a></li>
                                                             @endif
                                                         @endforeach
