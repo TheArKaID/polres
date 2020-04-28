@@ -62,7 +62,7 @@ Polres Batang
                     <div class="row mt-2">
                         <div class="col-10 pr-0">
                             <div class="form-group">
-                                @if ($pengaduan->status=="Selesai")
+                                @if (($pengaduan->status=="Selesai") || ($pengaduan->status=="Menunggu"))
                                     <textarea rows="1" class="d-block w-100 form-control" style="border-radius: 0px 0px 5px 5px;" disabled></textarea>
                                 @else
                                     <textarea id="pesan" rows="1" class="d-block w-100 form-control" style="border-radius: 0px 0px 5px 5px;"></textarea>
@@ -72,9 +72,13 @@ Polres Batang
                         <div class="col-2 pl-0">
                             @if ($pengaduan->status=="Selesai")
                                 <input type="button" class="btn btn-primary btn-block" value="Ended" disabled>
-                            @else
-                                {{ csrf_field() }}
-                                <input type="button" id="btnKirim" class="btn btn-primary btn-block" onclick="balas()" value="Kirim">    
+                            @else 
+                                @if ($pengaduan->status=="Menunggu")
+                                    <input type="button" class="btn btn-primary btn-block" value="Waiting" disabled>
+                                @else
+                                    {{ csrf_field() }}
+                                    <input type="button" id="btnKirim" class="btn btn-primary btn-block" onclick="balas()" value="Kirim">    
+                                @endif
                             @endif
                             
                         </div>
