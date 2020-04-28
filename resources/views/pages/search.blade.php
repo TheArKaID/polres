@@ -152,12 +152,18 @@ Pencarian
     <script>
         function setSearch(that) {
             var value = that.value;
-            document.getElementById("btnSearch").href = ""+value;
+            if(value!=""){
+                document.getElementById("btnSearch").href = "../../search/"+value;
+            } else{
+            document.getElementById("btnSearch").href = "#";
+            }
         }
-
+    
         function enterSearch() {
             var value = document.getElementById("search").value;
-            window.location.href=value;
+            if(value!=""){
+                window.location.href="../../search/"+value;
+            }
         }
         document.getElementById("search").onkeydown = function () {
             if (event.keyCode === 13) {
