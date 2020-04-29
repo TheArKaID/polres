@@ -61,7 +61,7 @@ class AdminController extends Controller
     public function prosesTambahBanner(Request $request)
     {
         $this->validate($request, [
-            'juduls' => 'required',
+            'judul' => 'required',
             'deskripsi' => 'required',
             'gambar' => 'required|mimes:jpeg,jpg,png|max:5120'
         ]);

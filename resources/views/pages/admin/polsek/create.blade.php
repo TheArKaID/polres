@@ -21,12 +21,12 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="namapolsek" class="bold">Nama Polsek</label>
-                    <input type="text" class="form-control" name="namapolsek" placeholder="Nama Polsek" value="" required>
+                    <input type="text" class="form-control" name="namapolsek" placeholder="Nama Polsek" value="{{old('namapolsek')}}" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="kapolsek" class="bold">Nama Kapolsek</label>
-                    <input type="text" class="form-control" name="kapolsek" placeholder="Nama Kapolsek" value="" required>
+                    <input type="text" class="form-control" name="kapolsek" placeholder="Nama Kapolsek" value="{{old('kapolsek')}}" required>
                 </div>
 
                 <div class="form-group">
@@ -37,17 +37,17 @@
 
                 <div class="form-group">
                     <label for="alamat" class="bold">Alamat</label>
-                    <textarea name="alamat" rows="10" class="form-control" required></textarea>
+                    <textarea name="alamat" rows="10" class="form-control" required>{{old('alamat')}}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="notelpon" class="bold">No. Telepon</label>
-                    <input type="text" class="form-control" name="notelpon" placeholder="notelpon" value="">
+                    <input type="text" class="form-control" name="notelpon" placeholder="notelpon" value="{{old('notelpon')}}">
                 </div>
 
                 <div class="form-group">
                     <label for="email" class="bold">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="email" value="">
+                    <input type="text" class="form-control" name="email" placeholder="email" value="{{old('email')}}">
                 </div>
                 
                 <div class="form-group">
@@ -62,22 +62,22 @@
                 
                 <div class="form-group">
                     <label for="keterangan" class="bold">Keterangan</label>
-                    <textarea name="keterangan" rows="10" class="form-control" required></textarea>
+                    <textarea name="keterangan" rows="10" class="form-control" required>{{old('keterangan')}}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="facebook" class="bold">User Facebook</label>
-                    <input type="text" class="form-control" name="facebook" placeholder="User Facebook" value="">
+                    <input type="text" class="form-control" name="facebook" placeholder="User Facebook" value="{{old('facebook')}}">
                 </div>
 
                 <div class="form-group">
                     <label for="twitter" class="bold">User Twitter</label>
-                    <input type="text" class="form-control" name="twitter" placeholder="User Twitter" value="">
+                    <input type="text" class="form-control" name="twitter" placeholder="User Twitter" value="{{old('twitter')}}">
                 </div>
 
                 <div class="form-group">
                     <label for="instagram" class="bold">User Instagram</label>
-                    <input type="text" class="form-control" name="instagram" placeholder="User Instagram" value="">
+                    <input type="text" class="form-control" name="instagram" placeholder="User Instagram" value="{{old('instagram')}}">
                 </div>
 
                 <div class="form-group">

@@ -20,11 +20,11 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="judul" class="bold">Judul</label>
-                    <input type="text" class="form-control" name="judul" placeholder="Judul" value="">
+                    <input type="text" class="form-control" name="judul" placeholder="Judul" value="{{old('judul')}}">
                 </div>
                 <div class="form-group">
                     <label for="deskripsi" class="bold">Deskripsi</label>
-                    <textarea name="deskripsi" rows="10"></textarea>
+                    <textarea name="deskripsi" rows="10">{{old('deskripsi')}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="gambar" class="bold">Gambar</label>

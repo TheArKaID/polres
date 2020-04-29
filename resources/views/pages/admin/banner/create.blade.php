@@ -21,11 +21,11 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="judul" class="bold">Judul</label>
-                    <input type="text" class="form-control" name="judul" placeholder="Judul (Maks 15 Karakter)" maxlength="15">
+                    <input type="text" class="form-control" name="judul" placeholder="Judul (Maks 15 Karakter)" maxlength="15" value="{{old('judul')}}">
                 </div>
                 <div class="form-group">
                     <label for="deskripsi" class="bold">Deskripsi</label>
-                    <textarea class="form-control" name="deskripsi" placeholder="Deskripsi (Maks 200 Karakter)" maxlength="200"></textarea>
+                    <textarea class="form-control" name="deskripsi" placeholder="Deskripsi (Maks 200 Karakter)" maxlength="200">{{old('deskripsi')}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="gambar" class="bold">Gambar</label>

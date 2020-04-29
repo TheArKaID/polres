@@ -20,7 +20,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="pengumuman" class="bold">Pengumuman</label>
-                    <input type="text" class="form-control" name="pengumuman" placeholder="Masukkan Pengumuman (255)" maxlength="255" required>
+                    <input type="text" class="form-control" name="pengumuman" placeholder="Masukkan Pengumuman (255)" maxlength="255" value="{{old('pengumuman')}}" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     Simpan
