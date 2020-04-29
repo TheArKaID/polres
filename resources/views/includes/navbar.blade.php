@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="col-7">
                                         <div class="row" style="text-align: left;">
-                                            <h5 style="color: white" >Polres <br>{{settings()->namapolres}}</h5>
+                                            <h5 style="color: white" ><br>{{settings()->namapolres}}</h5>
                                         </div>
                                     </div>
                                 </div>

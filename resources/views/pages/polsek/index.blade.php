@@ -10,7 +10,7 @@
 
 <!-- bradcam_area_start -->
 <div class="bradcam_area" style="background-image: url('/frontend/img/setting/{{settings()->background}}')">
-<h3>Polsek {{$polsek->namapolsek}}</h3>
+<h3>{{$polsek->namapolsek}}</h3>
 </div>
 <!-- bradcam_area_end -->
 
@@ -24,7 +24,7 @@
                         <img class="img-fluid" src="{{url('frontend/img/polsek/'.$polsek->gambar)}}" alt="">
                     </div>
                     <div class="blog_details">
-                        <h2>Polsek {{$polsek->namapolsek}}</h2>
+                        <h2>{{$polsek->namapolsek}}</h2>
                         <ul class="blog-info-link mt-3 mb-4">
                             <li><i class="fa fa-user"></i>Polsek</li>
                         </ul>

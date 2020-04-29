@@ -22,6 +22,7 @@
                 <div class="form-group">
                     <label for="polres" class="bold">Nama Polres</label>
                     <input type="text" class="form-control" name="namapolres" placeholder="Masukkan Nama Polres (255)" maxlength="255" value="{{$setting->namapolres}}" required>
+                    <p>*Masukkan Full Nama Kepolisian Resort. Misal, <b>Kepolisian Resort Indonesia Raya</b></p>
                 </div>
 
                 <div class="form-group">
@@ -31,7 +32,7 @@
 
                 <div class="form-group">
                     <label for="notelpon" class="bold">No. Telefon</label>
-                    <input type="number" class="form-control" name="notelpon" placeholder="Masukkan No Telfon Polres" maxlength="255" value="{{$setting->notelpon}}" required>
+                    <input type="number" class="form-control" name="notelpon" placeholder="Masukkan No Telfon Polres (021) XXXXXXXX" maxlength="255" value="{{$setting->notelpon}}" required>
                 </div>
 
                 <div class="form-group">
@@ -64,19 +65,19 @@
                 <div class="form-group">
                     <label for="instagram" class="bold">Instagram</label>
                     <input type="text" class="form-control" name="instagram" placeholder="Username Instagram" value="{{$setting->instagram}}" >
-                    <p>*Username bisa dilihat setelah url yang mengarah ke profile</p>
+                    <p>Username Instagram berada setelah url Instagram. Misal, <i>https://www.instagram.com/<b>divisihumaspolri</b></i></p>
                 </div>
 
                 <div class="form-group">
                     <label for="facebook" class="bold">Facebook</label>
                     <input type="text" class="form-control" name="facebook" placeholder="Username Facebook" value="{{$setting->facebook}}" >
-                    <p>*Username bisa dilihat setelah url yang mengarah ke profile</p>
+                    <p>Username Facebook berada setelah url Facebook. Misal, <i>https://facebook.com/<b>DivHumasPolri</b></i></p>
                 </div>
 
                 <div class="form-group">
                     <label for="twitter" class="bold">Twitter</label>
                     <input type="text" class="form-control" name="twitter" placeholder="Username Twitter" value="{{$setting->twitter}}" >
-                    <p>*Username bisa dilihat setelah url yang mengarah ke profile</p>
+                    <p>Username Twitter berada setelah url Twitter. Misal, <i>https://twitter.com/<b>DivHumas_Polri</b></i></p>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">
