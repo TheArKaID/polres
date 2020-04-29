@@ -19,6 +19,7 @@ Polres Batang
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
+                        @if ($berita->first()!=NULL)
                         @php
                             $bulans = [
                                 '01' => 'Jan',
@@ -64,6 +65,13 @@ Polres Batang
                         <div class="row d-flex justify-content-center">
                             {{$berita->links()}}
                         </div>
+                        @else
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3><i>Maaf, tidak ada Berita saat ini</i></h3>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-lg-4">

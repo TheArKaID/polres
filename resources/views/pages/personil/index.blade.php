@@ -26,25 +26,33 @@ Polres Batang
                         </h2>
                         <ul class="blog-info-link mt-3 mb-4">
                         </ul>
-                        @foreach ($personil as $p)
-                            <div class="row bg-light mb-5">
-                                <div class="col-lg-3 my-auto py-5" style="border-right: 1px solid black">
-                                    <div class="row d-flex justify-content-center ">
-                                        <img style="width: 50%"
-                                            src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
+                        @if ($personil->first()!=NULL)
+                            @foreach ($personil as $p)
+                                <div class="row bg-light mb-5">
+                                    <div class="col-lg-3 my-auto py-5" style="border-right: 1px solid black">
+                                        <div class="row d-flex justify-content-center ">
+                                            <img style="width: 50%"
+                                                src="https://polrestabessurabaya.com/images/tupoksi/3d3e5ac227fd2a23b5a4de91453b90f2.png">
+                                        </div>
+                                    </div>
+                                    <div class="px-5 py-5 col-lg-9 bg-light my-auto">
+                                        <div class="row">
+                                            <a href="{{url('personil/detail/'.$p->url)}}">{{$p->nama}}</a>
+                                        </div>
+                                        <div class="row">
+                                            <p class="mb-0 mt-2">{{ \Illuminate\Support\Str::limit($p->deskripsi, 60, $end='...') }}</p><br>
+                                            <a href="personil/detail/{{$p->url}}">Selengkapnya ></a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="px-5 py-5 col-lg-9 bg-light my-auto">
-                                    <div class="row">
-                                        <a href="{{url('personil/detail/'.$p->url)}}">{{$p->nama}}</a>
-                                    </div>
-                                    <div class="row">
-                                        <p class="mb-0 mt-2">{{ \Illuminate\Support\Str::limit($p->deskripsi, 60, $end='...') }}</p><br>
-                                        <a href="personil/detail/{{$p->url}}">Selengkapnya ></a>
-                                    </div>
+                            @endforeach
+                        @else
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3><i>Maaf, tidak ada Personil saat ini</i></h3>
                                 </div>
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

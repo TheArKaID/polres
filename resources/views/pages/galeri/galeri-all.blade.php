@@ -18,16 +18,24 @@ Polres Batang
     <div class="instragram_area">
         <div class="row">
             <div class="center-content">
-                @foreach ($galeri as $g)
-                    <div class="single_instagram popup">
-                        <img src="{{url('frontend/img/galeri/'.$g->gambar)}}" alt="">
-                        <div class="ovrelay">
-                            <a href="#">
-                                <i class="fa fa-camera"></i>
-                            </a>
+                @if ($galeri->first()!=NULL)
+                    @foreach ($galeri as $g)
+                        <div class="single_instagram popup">
+                            <img src="{{url('frontend/img/galeri/'.$g->gambar)}}" alt="">
+                            <div class="ovrelay">
+                                <a href="#">
+                                    <i class="fa fa-camera"></i>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><i>Maaf, tidak ada Galeri saat ini</i></h3>
                         </div>
                     </div>
-                @endforeach
+                @endif
             </div>
         </div>
     </div>
