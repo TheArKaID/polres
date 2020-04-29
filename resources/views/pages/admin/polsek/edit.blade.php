@@ -9,7 +9,13 @@
         <h1 class="h3 mb-0 text-gray-800">Edit Polsek</h1>
 
     </div>
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
     <div class="card shadow">
         <div class="card-body">
             <form action="/admin/polsek/prosesedit" method="POST" enctype="multipart/form-data">

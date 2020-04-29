@@ -11,7 +11,18 @@
             <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Polsek
         </a>
     </div>
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
+    @if (session()->has('Berhasil'))
+        <div class="alert alert-success">
+            {{session()->get('Berhasil')}}
+        </div>
+    @endif
     <div class="row" style="display:block">
         <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
