@@ -27,4 +27,10 @@
     {
         return \App\Pengaduan::where('isseen', 0)->get();
     }
+
+    function pengumuman()
+    {
+        return \App\Pengumuman::all();
+        
+    }
 ?>

@@ -25,14 +25,12 @@ class FrontController extends Controller
         $pelayanan = Pelayanan::all();
         $inovasi = Inovasi::all();
         $galeri = Galeri::all();
-        $pengumuman = Pengumuman::all();
 
         return view('pages.home', [
             'banner' => $banner,
             'pelayanan' => $pelayanan,
             'inovasi' => $inovasi,
-            'galeri' => $galeri,
-            'pengumuman' => $pengumuman
+            'galeri' => $galeri
         ]);
     }
 
@@ -62,11 +60,9 @@ class FrontController extends Controller
 
     public function inovasi()
     {
-        $pengumuman = Pengumuman::all();
         $inovasi = Inovasi::paginate(4);
         
         return view('pages.inovasi.inovasi-all', [
-            'pengumuman' => $pengumuman,
             'inovasi' =>$inovasi
         ]);
     }
@@ -85,22 +81,18 @@ class FrontController extends Controller
 
     public function galeri()
     {
-        $pengumuman = Pengumuman::all();
         $galeri = Galeri::all();
         return view('pages.galeri.galeri-all', [
             'galeri' => $galeri,
-            'pengumuman' => $pengumuman
         ]);
     }
 
     public function pelayanan()
     {
-        $pengumuman = Pengumuman::all();
         $pelayanan = Pelayanan::all();
 
         return view('pages.pelayanan.pelayanan-all', [
             'pelayanan' => $pelayanan,
-            'pengumuman' => $pengumuman
         ]);
     }
 
@@ -161,12 +153,10 @@ class FrontController extends Controller
 
     public function pengaduan()
     {
-        $pengumuman = Pengumuman::all();
         $kategori = KategoriPengaduan::all();
         $pengaduan = Pengaduan::orderBy('id', 'desc')->take(5)->get();
 
         return view('pages.pengaduan.pengaduan', [
-            'pengumuman' => $pengumuman,
             'kategori' => $kategori,
             'pengaduan' => $pengaduan
         ]);
@@ -200,11 +190,7 @@ class FrontController extends Controller
     
     public function cekPengaduan()
     {
-        $pengumuman = Pengumuman::all();
-
-        return view('pages.pengaduan.cek-status', [
-            'pengumuman' => $pengumuman
-        ]);
+        return view('pages.pengaduan.cek-status');
     }
 
     public function prosesCekPengaduan(Request $request)
