@@ -120,7 +120,7 @@ Layanan Pengaduan - {{settings()->namapolres}}
                     p.innerHTML = pesan;
                     div.appendChild(p);
                     areapesan.appendChild(div)
-                    div.scrollIntoView();
+                    // div.scrollIntoView();
                 
                 btnKirim.disabled = false;
                 btnKirim.value = "Kirim"

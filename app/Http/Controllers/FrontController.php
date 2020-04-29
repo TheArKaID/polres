@@ -163,15 +163,26 @@ class FrontController extends Controller
     {
         $pengumuman = Pengumuman::all();
         $kategori = KategoriPengaduan::all();
+        $pengaduan = Pengaduan::orderBy('id', 'desc')->take(5)->get();
 
         return view('pages.pengaduan.pengaduan', [
             'pengumuman' => $pengumuman,
-            'kategori' => $kategori
+            'kategori' => $kategori,
+            'pengaduan' => $pengaduan
         ]);
     }
 
     public function laporPengaduan(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'category' => 'required',
+            'gender' => 'required',
+            'comment' => 'required',
+        ]);
+
         $laporan = new Pengaduan;
         $laporan->nama = $request['name'];
         $laporan->email = $request['email'];
@@ -190,11 +201,9 @@ class FrontController extends Controller
     public function cekPengaduan()
     {
         $pengumuman = Pengumuman::all();
-        $pengaduan = Pengaduan::orderBy('id', 'desc')->take(5)->get();
 
         return view('pages.pengaduan.cek-status', [
-            'pengumuman' => $pengumuman,
-            'pengaduan' => $pengaduan
+            'pengumuman' => $pengumuman
         ]);
     }
 
@@ -202,7 +211,7 @@ class FrontController extends Controller
     {
         $pengaduan = Pengaduan::where('kode', $request['kode'])->first();
         if($pengaduan==NULL)
-            return redirect("/pengaduan/cek-status")->withErrors("Gagal", "Kode yang anda masukkan Tidak Valid");
+            return redirect("/pengaduan/cek-status")->withErrors("Kode yang anda masukkan Tidak Valid");
         return view("pages.pengaduan.hasil", [
             'pengaduan' => $pengaduan
         ]);

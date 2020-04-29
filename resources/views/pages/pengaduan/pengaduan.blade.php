@@ -18,31 +18,40 @@ Layanan Pengaduan - {{settings()->namapolres}}
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
             <div class="comment-form" style="margin: auto;">
                 <h4>Layanan Pengaduan</h4>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </div>
+                @endif
+                @if (session()->has('Berhasil'))
+                    <div class="alert alert-success">
+                        {{session()->get('Berhasil')}}
+                    </div>
+                @endif
                 <form class="form-contact comment_form" action="/pengaduan/lapor" method="POST">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="text" class="form-control " name="name" required=""
-                                    placeholder="Nama Lengkap Anda">
+                                <input type="text" class="form-control " name="name" placeholder="Nama Lengkap Anda" value="{{old('name')}}" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" required=""
-                                    placeholder="Alamat Email Anda">
+                                <input type="email" class="form-control" name="email" placeholder="Alamat Email Anda" value="{{old('email')}}" required>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="phone" required=""
-                                    placeholder="No Telepon Anda">
+                                <input type="text" class="form-control" name="phone" placeholder="No Telepon Anda" value="{{old('phone')}}" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <select class="form-control select2" name="category" required="">
-                                    <option selected hidden>- Pilih Kategori</option>
+                                <select class="form-control select2" name="category" required>
+                                    <option selected disabled hidden>- Pilih Kategori</option>
                                     @foreach ($kategori as $k)
                                         <option value="{{$k->id}}">{{$k->kategori}}</option>
                                     @endforeach
@@ -52,7 +61,7 @@ Layanan Pengaduan - {{settings()->namapolres}}
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <select class="form-control" name="gender" required="">
-                                    <option value="">- Jenis Kelamin</option>
+                                    <option hidden disabled selected>- Jenis Kelamin</option>
                                     <option value="L">Laki Laki</option>
                                     <option value="P">Perempuan</option>
                                 </select>
@@ -60,8 +69,7 @@ Layanan Pengaduan - {{settings()->namapolres}}
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                    placeholder="Write Comment" required></textarea>
+                                <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"placeholder="Write Comment" required>{{old('comment')}}</textarea>
                             </div>
                         </div>
                     </div>
@@ -71,117 +79,37 @@ Layanan Pengaduan - {{settings()->namapolres}}
                 </form>
             </div>
         </div>
-
-        <div class="mt-5">
-            <h4>Daftar Pengaduan</h4>
-        </div>
-
-        <div class="blog-author">
-            <div class="media align-items-center">
-                <img src="img/blog/author.png" alt="">
-                <div class="media-body">
-                    <a href="#">
-                        <h4>Harvard milan</h4>
-                    </a>
-                    <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
-                        our dominion twon Second divided from</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="comments-area">
-            <div class="comment-list">
-                <div class="single-comment justify-content-between d-flex">
-                    <div class="user justify-content-between d-flex">
-                        <div class="thumb">
-                            <img src="img/comment/comment_1.png" alt="">
-                        </div>
-                        <div class="desc">
-                            <p class="comment">
-                                Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                            </p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <h5>
-                                        <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                </div>
-                                <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="blog-author">
-            <div class="media align-items-center">
-                <img src="img/blog/author.png" alt="">
-                <div class="media-body">
-                    <a href="#">
-                        <h4>Harvard milan</h4>
-                    </a>
-                    <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
-                        our dominion twon Second divided from</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="comments-area">
-            <div class="comment-list">
-                <div class="single-comment justify-content-between d-flex">
-                    <div class="user justify-content-between d-flex">
-                        <div class="thumb">
-                            <img src="img/comment/comment_1.png" alt="">
-                        </div>
-                        <div class="desc">
-                            <p class="comment">
-                                Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                            </p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <h5>
-                                        <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                </div>
-                                <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
+    
+    <div class="row container" style="margin: auto">
+        <div class="card-body" style="overflow: auto">
+            <div class="table-responsive">
+                <table class="table table-bordered" width="100%" collspacing="0">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            @php
+                                $no=1;
+                            @endphp
+                            @foreach ($pengaduan as $p)
+                            <tr>
+                                <td>{{$no++}}</td>
+                                <td>{{substr($p->nama, 0, 1)}}*********</td>
+                                <td>{{$p->kategori->kategori}}</td>
+                                <td>{{$p->status}}</td>
+                            </tr>
+                            @endforeach
 
-    <nav class="blog-pagination justify-content-center d-flex">
-        <ul class="pagination">
-            <li class="page-item">
-                <a href="#" class="page-link" aria-label="Previous">
-                    <i class="ti-angle-left"></i>
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">1</a>
-            </li>
-            <li class="page-item active">
-                <a href="#" class="page-link">2</a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link" aria-label="Next">
-                    <i class="ti-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </section>
 @endsection

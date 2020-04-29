@@ -15,6 +15,13 @@ Layanan Pengaduan - {{settings()->namapolres}}
 <!-- bradcam_area_end -->
 <section class="blog_area single-post-area section-padding pt-0">
     <div class="container mb-100">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </div>
+        @endif
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
             <div class="comment-form" style="margin: auto;">
                 <h4>Masukkan Kode</h4>
@@ -31,37 +38,6 @@ Layanan Pengaduan - {{settings()->namapolres}}
                         <button type="submit" class="btn btn-warning px-5 py-3 text-white">Periksa</button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-
-<div class="row container" style="margin: auto">
-        <div class="card-body" style="overflow: auto">
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" collspacing="0">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Kategori</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            @php
-                                $no=1;
-                            @endphp
-                            @foreach ($pengaduan as $p)
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>{{substr($p->nama, 0, 1)}}*********</td>
-                                <td>{{$p->kategori->kategori}}</td>
-                                <td>{{$p->status}}</td>
-                            </tr>
-                            @endforeach
-
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
