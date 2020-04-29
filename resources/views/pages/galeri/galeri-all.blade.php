@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+Galeri - {{settings()->namapolres}}
 
 @endsection
 

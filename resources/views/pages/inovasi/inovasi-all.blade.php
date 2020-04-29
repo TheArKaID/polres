@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+Daftar Inovasi - {{settings()->namapolres}}
 
 @endsection
 

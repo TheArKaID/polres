@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+{{$berita->judul}} - {{settings()->namapolres}}
 
 @endsection
 

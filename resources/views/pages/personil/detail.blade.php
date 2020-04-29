@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+{{$personil->nama}} - {{settings()->namapolres}}
 
 @endsection
 

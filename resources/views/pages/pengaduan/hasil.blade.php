@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+Layanan Pengaduan - {{settings()->namapolres}}
 
 @endsection
 

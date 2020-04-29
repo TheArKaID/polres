@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+{{$tupoksi->tupoksi}} - {{settings()->namapolres}}
 
 @endsection
 

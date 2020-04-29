@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+Daftar Pelayanan - {{settings()->namapolres}}
 
 @endsection
 

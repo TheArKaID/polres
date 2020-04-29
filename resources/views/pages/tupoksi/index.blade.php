@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+Tugas Pokok dan Fungsi - {{settings()->namapolres}}
 
 @endsection
 

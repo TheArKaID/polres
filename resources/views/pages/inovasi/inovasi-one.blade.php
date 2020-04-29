@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+{{$inovasi->judul}} - {{settings()->namapolres}}
 
 @endsection
 
@@ -23,8 +23,7 @@ Polres Batang
                      <img class="img-fluid" src="{{url('frontend/img/inovasi/'.$inovasi->gambar)}}">
                   </div>
                   <div class="blog_details">
-                     <h2>{{$inovasi->judul}}
-                     </h2>
+                     <h2>{{$inovasi->judul}}</h2>
                      <ul class="blog-info-link mt-3 mb-4">
                         <li><a href="#"><i class="fa fa-user"></i>Inovasi</a></li>
                      </ul>

@@ -2,7 +2,7 @@
 
 @section('title')
 
-Polres Batang
+Daftar Personil - {{settings()->namapolres}}
 
 @endsection
 
@@ -22,10 +22,8 @@ Polres Batang
                 <div class="single-post">
 
                     <div class="blog_details">
-                        <h2>Daftar Personil
-                        </h2>
-                        <ul class="blog-info-link mt-3 mb-4">
-                        </ul>
+                        <h2>Daftar Personil</h2>
+                        <ul class="blog-info-link mt-3 mb-4"></ul>
                         @if ($personil->first()!=NULL)
                             @foreach ($personil as $p)
                                 <div class="row bg-light mb-5">
