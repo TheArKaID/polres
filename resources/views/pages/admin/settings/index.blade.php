@@ -11,9 +11,16 @@
             <i class="fas fa-pencil-alt fa-sm text-white-50"></i> Edit Settings
         </a>
     </div>
-    @if (session('Berhasil'))
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
+    @if (session()->has('Berhasil'))
         <div class="alert alert-success">
-            {{session('Berhasil')}}
+            {{session()->get('Berhasil')}}
         </div>
     @endif
     <div class="row">
