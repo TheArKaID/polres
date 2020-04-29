@@ -23,11 +23,13 @@
                 <div class="form-group">
                     <label for="namapolsek" class="bold">Nama Polsek</label>
                     <input type="text" class="form-control" name="namapolsek" placeholder="Nama Polsek" value="{{$polsek->namapolsek}}" required>
+                    <p>*Masukkan Full Nama Kepolisian Sektor. Misal, <b>Kepolisian Sektor Indonesia Raya</b></p>
                 </div>
                 
                 <div class="form-group">
                     <label for="kapolsek" class="bold">Nama Kapolsek</label>
                     <input type="text" class="form-control" name="kapolsek" placeholder="Nama Kapolsek" value="{{$polsek->kapolsek}}" required>
+                    <p>*Masukkan Nama Lengkap dan Gelar dari Kapolsek. Misal, <i><b>Jenderal (Pol) Idham Azis</b></i> atau <i><b>Jenderal Pol. Drs. Idham Azis M.Si</b></i></p>
                 </div>
 
                 <div class="form-group">
@@ -43,12 +45,12 @@
 
                 <div class="form-group">
                     <label for="notelpon" class="bold">No. Telepon</label>
-                    <input type="text" class="form-control" name="notelpon" placeholder="notelpon" value="{{$polsek->notelpon}}">
+                    <input type="text" class="form-control" name="notelpon" placeholder="08XXXXXXXXXX" value="{{$polsek->notelpon}}">
                 </div>
 
                 <div class="form-group">
                     <label for="email" class="bold">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="email" value="{{$polsek->email}}">
+                    <input type="text" class="form-control" name="email" placeholder="polsek@polsek.id" value="{{$polsek->email}}">
                 </div>
 
                 <div class="form-group">
@@ -68,16 +70,19 @@
                 <div class="form-group">
                     <label for="facebook" class="bold">Facebook</label>
                     <input type="text" class="form-control" name="facebook" placeholder="facebook" value="{{$polsek->facebook}}">
+                    <p>Username Facebook berada setelah url Facebook. Misal, <i>https://facebook.com/<b>DivHumasPolri</b></i></p>
                 </div>
 
                 <div class="form-group">
                     <label for="twitter" class="bold">Twitter</label>
                     <input type="text" class="form-control" name="twitter" placeholder="twitter" value="{{$polsek->twitter}}">
+                    <p>Username Twitter berada setelah url Twitter. Misal, <i>https://twitter.com/<b>DivHumas_Polri</b></i></p>
                 </div>
 
                 <div class="form-group">
                     <label for="instagram" class="bold">Instagram</label>
                     <input type="text" class="form-control" name="instagram" placeholder="instagram" value="{{$polsek->instagram}}">
+                    <p>Username Instagram berada setelah url Instagram. Misal, <i>https://www.instagram.com/<b>divisihumaspolri</b></i></p>
                 </div>
 
                 <div class="form-group">

@@ -22,10 +22,12 @@
                 <div class="form-group">
                     <label for="tupoksi" class="bold">Nama Tupoksi</label>
                     <input type="text" class="form-control" name="tupoksi" placeholder="Nama Tupoksi" value="{{$tupoksi->tupoksi}}" required>
+                    <p>*Nama dari Jabatan yang ada di Polres. Misal, <i><b>Kapolres</b></i> atau <i><b>Divisi Humas Polres</b></i></p>
                 </div>
                 <div class="form-group">
                     <label for="deskripsi" class="bold">Deskripsi</label>
                     <textarea class="form-control" name="deskripsi" placeholder="Deskripsi" required>{{$tupoksi->deskripsi}}</textarea>
+                    <p>*Tugas Pokok dan Fungsi dari Jabatan yang disebutkan di atas.</p>
                 </div>
                 <div class="form-group">
                     <label for="image"  class="bold">Image</label>
