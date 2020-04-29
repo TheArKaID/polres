@@ -21,6 +21,7 @@
                 <div class="form-group">
                     <label for="nama" class="bold">Nama Personil</label>
                     <input type="text" class="form-control" name="nama" value="{{old('nama')}}" placeholder="Nama Personil">
+                    <p>*Masukkan Nama Lengkap dan Gelar dari Personil. Misal, <i><b>Jenderal (Pol) Idham Azis</b></i> atau <i><b>Jenderal Pol. Drs. Idham Azis M.Si</b></i></p>
                 </div>
                 <div class="form-group">
                     <label for="deskripsi" class="bold">Deskripsi</label>
