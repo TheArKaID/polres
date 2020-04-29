@@ -8,7 +8,18 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Pengaduan</h1>
     </div>
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
+    @if (session()->has('Berhasil'))
+        <div class="alert alert-success">
+            {{session()->get('Berhasil')}}
+        </div>
+    @endif
     <div class="row" style="display:block">
         <div class="card-body" style="overflow: auto">
             <div class="table-responsive">
