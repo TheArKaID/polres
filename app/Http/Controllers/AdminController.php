@@ -44,6 +44,11 @@ class AdminController extends Controller
             'pengaduan' => $pengaduan
         ]);
     }
+
+    public function repassword()
+    {
+        return view("pages.admin.repassword");
+    }
     
     public function banner()
     {
