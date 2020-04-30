@@ -10,6 +10,18 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                {{ $error }}
+                            @endforeach
+                        </div>
+                    @endif
+                    @if (session()->has('Berhasil'))
+                        <div class="alert alert-success">
+                            {{session()->get('Berhasil')}}
+                        </div>
+                    @endif
                     <form method="POST" action="repassword">
                         @csrf
                         <div class="form-group row">

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use App\Banner;
 use App\Pelayanan;
 use App\Inovasi;
@@ -47,7 +46,46 @@ class AdminController extends Controller
 
     public function repassword()
     {
-        return view("pages.admin.repassword");
+        $existtoken = \DB::table('password_resets')->where('email', \Auth::user()->email)->first();
+        
+        if($existtoken==null){
+            \DB::table('password_resets')->insert([
+                'email' => \Auth::user()->email,
+                'token' => \Str::random(60)
+            ]);
+            $existtoken = \DB::table('password_resets')->where('email', \Auth::user()->email)->first();
+        }
+
+        return view("pages.admin.repassword",);
+    }
+
+    public function resetpassword(Request $request)
+    {
+        $this->validate($request, [
+            'oldpassword' => 'required',
+            'newpassword' => 'required',
+            'renewpassword' => 'required'
+        ]);
+
+        $existtoken = \DB::table('password_resets')->where('email', \Auth::user()->email)->first();
+        if($existtoken==null){
+            return redirect()->back()->withErrors('Koneksi Gagal');;
+        }
+
+        $checkPass = password_verify($request->oldpassword, \Auth::user()->password);
+        if(!$checkPass){
+            return redirect()->back()->withErrors('Gagal, Password Anda Salah');
+        }
+
+        if($request->newpassword!=$request->renewpassword){
+            return redirect()->back()->withErrors('Password Baru Tidak Sama');
+        }
+
+        $user = \App\User::where('email', \Auth::user()->email)->first();
+        $user->password = \Hash::make($request->newpassword);
+        $user->save();
+        
+        return redirect()->back()->with('Berhasil', "Password Anda telah Diganti");
     }
     
     public function banner()

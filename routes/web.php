@@ -48,7 +48,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/admin', "AdminController@admin")->name('admin');
     Route::get('/admin/repassword', "AdminController@repassword");
-    Route::post('/admin/repassword', "AdminController@repassword");
+    Route::post('/admin/repassword', "AdminController@resetpassword");
 
     // Pengumuman
     Route::get('/admin/pengumuman/', "AdminController@pengumuman");
