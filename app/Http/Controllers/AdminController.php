@@ -56,7 +56,7 @@ class AdminController extends Controller
             $existtoken = \DB::table('password_resets')->where('email', \Auth::user()->email)->first();
         }
 
-        return view("pages.admin.repassword",);
+        return view("pages.admin.repassword");
     }
 
     public function resetpassword(Request $request)
@@ -84,7 +84,7 @@ class AdminController extends Controller
         $user = \App\User::where('email', \Auth::user()->email)->first();
         $user->password = \Hash::make($request->newpassword);
         $user->save();
-        
+
         return redirect()->back()->with('Berhasil', "Password Anda telah Diganti");
     }
     
